@@ -17,7 +17,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
         <a href="<?php echo G5_BBS_URL ?>/logout.php" id="ol_after_logout" class="btn_b04">로그아웃</a>
         <?php if ($is_admin == 'super' || $is_auth) {  ?><a href="<?php echo G5_ADMIN_URL ?>" class="btn_admin btn_04">관리자</a><?php }  ?>
     </header>
-    <ul id="ol_after_private">
+    <!-- <ul id="ol_after_private">
         <li>
             <a href="<?php echo G5_BBS_URL ?>/memo.php" target="_blank" id="ol_after_memo" class="win_memo">
                  <span class="sound_only">안 읽은 </span>쪽지<br>
@@ -36,7 +36,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
             </a>
             
         </li>
-    </ul>
+    </ul> -->
 
 </section>
 

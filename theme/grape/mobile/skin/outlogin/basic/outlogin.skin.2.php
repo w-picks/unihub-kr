@@ -7,7 +7,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
 <div class="ol">
     <button type="button" class="prf_btn"><?php echo get_member_profile_img($member['mb_id']); ?></button>  
      <ul id="ol_after_private">
-        <li>
+        <!-- <li>
             <a href="<?php echo G5_BBS_URL ?>/memo.php" target="_blank" class="win_memo">쪽지
                 <strong><?php echo $memo_not_read ?></strong>
             </a>
@@ -17,7 +17,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
                 <strong><?php echo $point ?></strong>
             </a>
         </li>
-        <li><a href="<?php echo G5_BBS_URL ?>/scrap.php" target="_blank"  class="win_scrap">스크랩</a> </li>
+        <li><a href="<?php echo G5_BBS_URL ?>/scrap.php" target="_blank"  class="win_scrap">스크랩</a> </li> -->
         <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php" title="정보수정">정보수정</a></li>
         <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a> </li>
         <li><?php if ($is_admin == 'super' || $is_auth) { ?><a href="<?php echo G5_ADMIN_URL ?>" class="admin">관리자</a><?php } ?></li>

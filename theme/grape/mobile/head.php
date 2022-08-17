@@ -29,7 +29,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         </div>
         <div id="hd_btn">
             <button type="button" class="hd_menu_btn"><span class="menu-icon"></span><span class="sound_only">전체메뉴</span></button>
-            <button type="button" class="hd_sch_btn"><span class="search-icon"></span><span class="sound_only">검색열기</span></button>
+            <!-- <button type="button" class="hd_sch_btn"><span class="search-icon"></span><span class="sound_only">검색열기</span></button> -->
             <?php echo outlogin('theme/basic'); // 외부 로그인 ?>
         </div>
         <div id="hd_sch">
@@ -90,7 +90,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 						if( empty($row2) ) continue;
 
                         if($k == 0)
-                            echo '<button type="button" class="btn_gnb_op">하위분류</button><ul class="gnb_2dul">'.PHP_EOL;
+                            echo '<button type="button" class="btn_gnb_op" style="display:none;">하위분류</button><ul class="gnb_2dul">'.PHP_EOL;
                     ?>
                         <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><span></span><?php echo $row2['me_name'] ?></a></li>
                     <?php
