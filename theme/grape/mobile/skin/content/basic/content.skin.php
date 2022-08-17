@@ -16,15 +16,17 @@ add_stylesheet('<link rel="stylesheet" href="'.$content_skin_url.'/style.css">',
     </div> -->
 
     <div id="ctt_con">
-        <?php if($g5['title'] == "회사소개") {?>
-            <div>회사소개 하드코딩</div>
-        <?php } else if($g5['title'] == "연혁") {?>
-            <div>연혁 하드코딩</div>
-        <?php } else if($g5['title'] == "자회사 소개") {?>
-            <div>자회사 소개 하드코딩</div>
-        <?php } else if($g5['title'] == "위치") {?>
-            <div>위치 하드코딩</div>
-        <?php } ?>
+        <?php 
+            if($g5['title'] == "회사소개") {
+                include_once(G5_THEME_MOBILE_PATH.'/skin/content/company/company.php');
+            } else if($g5['title'] == "연혁") {
+                include_once(G5_THEME_MOBILE_PATH.'/skin/content/company/about_history.php');
+            } else if($g5['title'] == "자회사 소개") {
+                include_once(G5_THEME_MOBILE_PATH.'/skin/content/company/about_subsidiary.php');
+            } else if($g5['title'] == "위치") {
+                include_once(G5_THEME_MOBILE_PATH.'/skin/content/company/about_location.php');
+            }
+        ?>
     </div>
 
 </article>
