@@ -113,7 +113,7 @@ if (G5_IS_MOBILE) {
 
         <div class="bo_w_tit write_div">
             <label for="wr_subject" class="sound_only">제목<strong>필수</strong></label>
-            <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목">
+            <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목ㅁㅁ">
         </div>
 
         <div class="write_div">

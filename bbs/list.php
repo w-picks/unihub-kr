@@ -180,6 +180,13 @@ if ($is_search_bbs) {
     $sql .= " {$sql_order} limit {$from_record}, $page_rows ";
 }
 
+if($bo_table=='my_investment'){
+    if(!$is_admin == "super"){
+        $sql= str_replace("where", "where mbb_id='$member[mb_id]' and", $sql);
+        $total_count = count(sql_query($sql));
+    }
+}
+
 // 페이지의 공지개수가 목록수 보다 작을 때만 실행
 if($page_rows > 0) {
     $result = sql_query($sql);
