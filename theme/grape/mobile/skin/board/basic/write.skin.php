@@ -113,8 +113,25 @@ if (G5_IS_MOBILE) {
 
         <div class="bo_w_tit write_div">
             <label for="wr_subject" class="sound_only">제목<strong>필수</strong></label>
-            <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목ㅁㅁ">
+            <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목">
         </div>
+
+        <!-- 
+            2022.08.23
+            선택한 대상에게만 보이는 마이페이지 게시판 -> select box option 출력
+        -->
+        <?php 
+            $sql = "SELECT mb_no, mb_id, mb_name, mb_level FROM g5_member WHERE mb_level = 3 AND mb_memo NOT LIKE '%삭제함%'";
+            $result = sql_query($sql); 
+        ?>
+        <?php if($board['bo_table'] == 'my_investment') { ?>
+            <select name='wr_1' required itemname="대상">
+                <option value=''>선택하세요</option>
+                <?php for ($i = 0; $row = sql_fetch_array($result); $i++) { ?>
+                    <option value='<?php echo $row['mb_id'] ?>' <?php if($row['mb_id'] == $write['wr_1']) echo " selected"; ?>><?php echo $row['mb_id'] ?></option>    
+                <?php } ?>
+            </select>
+        <?php } ?>
 
         <div class="write_div">
             <label for="wr_content" class="sound_only">내용<strong>필수</strong></label>

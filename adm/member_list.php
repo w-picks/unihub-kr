@@ -265,7 +265,9 @@ $colspan = 16;
                             <?php
                             if ($leave_msg || $intercept_msg) {
                                 echo $leave_msg . ' ' . $intercept_msg;
-                            } else {
+                            } else if(strpos($row['mb_memo'], "삭제함")) {
+                                echo "삭제됨";
+                            }else {
                                 echo "정상";
                             }
                             ?>
