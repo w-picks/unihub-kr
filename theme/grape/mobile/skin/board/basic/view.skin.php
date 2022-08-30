@@ -45,20 +45,21 @@ if (G5_IS_MOBILE) {
     </section>   
 
     <section id="bo_v_atc">
-        <h2 id="bo_v_atc_title">본문</h2>
+        <h2 id="bo_v_atc_title">본문 111</h2> 
 
          <?php
-        // 파일 출력
-        $v_img_count = count($view['file']);
-        if($v_img_count) {
-            echo "<div id=\"bo_v_img\">\n";
+        // 파일 출력 -> idea 투자하기 썸네일 본문 숨김
+        // $v_img_count = count($view['file']);
+        // var_dump($view['file'][0]);
+        // if($v_img_count) {
+        //     echo "<div id=\"bo_v_img\">\n";
 
-            foreach($view['file'] as $view_file) {
-                echo get_file_thumbnail($view_file);
-            }
+        //     foreach($view['file'] as $view_file) {
+        //         echo get_file_thumbnail($view_file);
+        //     }
 
-            echo "</div>\n";
-        }
+        //     echo "</div>\n";
+        // }
          ?>
         <div id="bo_v_con"><?php echo get_view_thumbnail($view['content']); ?></div>
         <?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>

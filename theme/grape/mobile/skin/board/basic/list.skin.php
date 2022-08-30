@@ -82,50 +82,105 @@ if (G5_IS_MOBILE) {
         <ul>
             <?php
             for ($i=0; $i<count($list); $i++) {
+                // 투자하기 리스트 idea
+                if($_GET['bo_table'] == 'investment') {
             ?>
-            <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
-            
                 <?php
-                if ($is_category && $list[$i]['ca_name']) {
-                ?>
-                <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
-                <?php } ?>
-                <div class="bo_subject">
-
-                    <?php if ($is_checkbox) { // 게시글별 체크박스 ?>
-                    <span class="sel bo_chk li_chk">
-                        <label for="chk_wr_id_<?php echo $i ?>"><span class="chk_img"></span> <span class="sound_only"><?php echo $list[$i]['subject'] ?></span></label>
-                        <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
-                    </span>
+                    $thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], "50", "40");
+                    if($thumb['src']) {
+                        $img_content = '<img src="'.$thumb['src'].'" alt="'.$thumb['alt'].'" width="50" height="40">';
+                    } else {
+                        $img_content = '<span>no image</span>';
+                    }
+                    echo $img_content;
+                ?>   
+                <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
+                
+                    <?php
+                    if ($is_category && $list[$i]['ca_name']) {
+                    ?>
+                    <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
                     <?php } ?>
+                    <div class="bo_subject">
+
+                        <?php if ($is_checkbox) { // 게시글별 체크박스 ?>
+                        <span class="sel bo_chk li_chk">
+                            <label for="chk_wr_id_<?php echo $i ?>"><span class="chk_img"></span> <span class="sound_only"><?php echo $list[$i]['subject'] ?></span></label>
+                            <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
+                        </span>
+                        <?php } ?>
+                        
+                        <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
+                            <?php echo $list[$i]['icon_reply']; ?>
+                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon">[공지]</strong><?php } ?> 
+                            <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
+                            <?php echo $list[$i]['subject'] ?>
+                            <?php
+                            // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
+
+                            if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
+                            if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
+                            if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+                            if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
+
+                            ?>
+                        </a>
+
+                    </div>
+                    <div class="bo_info">
+                        <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?>
+                        <span class="bo_date"> <i class="fa fa-clock-o"></i> <?php echo $list[$i]['datetime2'] ?></span>
+                        <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
+                        <?php if ($list[$i]['wr_good']) { ?><i class="fa fa-thumbs-o-up"></i> <?php echo $list[$i]['wr_good'] ?> <?php } ?>
+                        <?php if ($list[$i]['wr_nogood']) { ?><i class="fa fa-thumbs-o-down"></i> <?php echo $list[$i]['wr_nogood'] ?> <?php } ?>
                     
-                    <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
-                        <?php echo $list[$i]['icon_reply']; ?>
-                        <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon">[공지]</strong><?php } ?> 
-                        <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
-                        <?php echo $list[$i]['subject'] ?>
-                        <?php
-                        // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
-
-                        if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
-                        if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
-                        if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
-                        if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
-
-                        ?>
-                    </a>
-
-                </div>
-                <div class="bo_info">
-                    <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?>
-                    <span class="bo_date"> <i class="fa fa-clock-o"></i> <?php echo $list[$i]['datetime2'] ?></span>
-                    <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
-                    <?php if ($list[$i]['wr_good']) { ?><i class="fa fa-thumbs-o-up"></i> <?php echo $list[$i]['wr_good'] ?> <?php } ?>
-                    <?php if ($list[$i]['wr_nogood']) { ?><i class="fa fa-thumbs-o-down"></i> <?php echo $list[$i]['wr_nogood'] ?> <?php } ?>
+                    </div>
+                    
+                </li><?php } else { ?>
+                    <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
-                </div>
-                
-            </li><?php } ?>
+                    <?php
+                    if ($is_category && $list[$i]['ca_name']) {
+                    ?>
+                    <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
+                    <?php } ?>
+                    <div class="bo_subject">
+
+                        <?php if ($is_checkbox) { // 게시글별 체크박스 ?>
+                        <span class="sel bo_chk li_chk">
+                            <label for="chk_wr_id_<?php echo $i ?>"><span class="chk_img"></span> <span class="sound_only"><?php echo $list[$i]['subject'] ?></span></label>
+                            <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
+                        </span>
+                        <?php } ?>
+                        
+                        <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
+                            <?php echo $list[$i]['icon_reply']; ?>
+                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon">[공지]</strong><?php } ?> 
+                            <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
+                            <?php echo $list[$i]['subject'] ?>
+                            <?php
+                            // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
+
+                            if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
+                            if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
+                            if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+                            if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
+
+                            ?>
+                        </a>
+
+                    </div>
+                    <div class="bo_info">
+                        <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?>
+                        <span class="bo_date"> <i class="fa fa-clock-o"></i> <?php echo $list[$i]['datetime2'] ?></span>
+                        <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
+                        <?php if ($list[$i]['wr_good']) { ?><i class="fa fa-thumbs-o-up"></i> <?php echo $list[$i]['wr_good'] ?> <?php } ?>
+                        <?php if ($list[$i]['wr_nogood']) { ?><i class="fa fa-thumbs-o-down"></i> <?php echo $list[$i]['wr_nogood'] ?> <?php } ?>
+                    
+                    </div>
+                    
+                </li>
+            <?php }} ?>
             <?php if (count($list) == 0) { echo '<li class="empty_table">게시물이 없습니다.</li>'; } ?>
         </ul>
     </div>

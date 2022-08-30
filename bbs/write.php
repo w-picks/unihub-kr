@@ -405,7 +405,7 @@ if ($is_use_captcha) {
     $captcha_js   = chk_captcha_js();
 }
 
-$is_dhtml_editor = false;
+$is_dhtml_editor = true;
 $is_dhtml_editor_use = false;
 $editor_content_js = '';
 if(!is_mobile() || defined('G5_IS_MOBILE_DHTML_USE') && G5_IS_MOBILE_DHTML_USE)

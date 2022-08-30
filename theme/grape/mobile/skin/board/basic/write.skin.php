@@ -116,8 +116,36 @@ if (G5_IS_MOBILE) {
             <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목">
         </div>
 
+        <!-- 투자하기 작성페이지 -> 추가 항목 기입란 idea -->
+        <?php if($board['bo_table'] == 'investment') { ?>
+        <div class="bo_w_tit write_div">
+            <label for="wr_6" class="sound_only">설명</label>
+            <input type="text" name="wr_6" value="<?php echo $wr_6 ?>" id="wr_6" required class="frm_input full_input required" placeholder="설명">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_1" class="sound_only">시작일</label>
+            <input type="text" name="wr_1" value="<?php echo $wr_1 ?>" id="wr_1" required class="frm_input full_input required" placeholder="시작일">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_2" class="sound_only">종료일</label>
+            <input type="text" name="wr_2" value="<?php echo $wr_2 ?>" id="wr_2" required class="frm_input full_input required" placeholder="종료일">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_3" class="sound_only">목표금액</label>
+            <input type="text" name="wr_3" value="<?php echo $wr_3 ?>" id="wr_3" required class="frm_input full_input required" placeholder="목표금액">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_4" class="sound_only">도달금액</label>
+            <input type="text" name="wr_4" value="<?php echo $wr_4 ?>" id="wr_4" required class="frm_input full_input required" placeholder="도달금액">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_5" class="sound_only">이자율</label>
+            <input type="text" name="wr_5" value="<?php echo $wr_5 ?>" id="wr_5" required class="frm_input full_input required" placeholder="이자율">
+        </div>
+        <?php } ?>
+
         <!-- 
-            2022.08.23
+            2022.08.23 idea
             선택한 대상에게만 보이는 마이페이지 게시판 -> select box option 출력
         -->
         <?php 
@@ -134,6 +162,9 @@ if (G5_IS_MOBILE) {
         <?php } ?>
 
         <div class="write_div">
+            <?php if($board['bo_table'] == 'investment') { ?>
+                <p>상세설명</p>
+            <?php } ?>
             <label for="wr_content" class="sound_only">내용<strong>필수</strong></label>
             <?php if($write_min || $write_max) { ?>
             <!-- 최소/최대 글자 수 사용 시 -->
@@ -146,32 +177,52 @@ if (G5_IS_MOBILE) {
             <?php } ?>
         </div>
 
+        <!-- 투자하기 작성페이지 -> 썸네일 및 링크 숨김 idea -->
+        <?php if($_GET['bo_table'] == 'investment') { ?>
+            <?php for ($i=0; $is_file && $i<1; $i++) { ?>
+            <div class="bo_w_flie write_div">
+                <div class="file_wr write_div">
+                    <label for="bf_file_<?php echo $i+1 ?>" class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i><span class="sound_only">파일 #<?php echo $i+1 ?></span></label>
+                    <input type="file" name="bf_file[]" id="bf_file_<?php echo $i+1 ?>" title="파일첨부 <?php echo $i+1 ?> : 용량 <?php echo $upload_max_filesize ?> 이하만 업로드 가능" class="frm_file ">
+                </div>
+                <?php if ($is_file_content) { ?>
+                <input type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="full_input frm_input" size="50" placeholder="파일 설명을 입력해주세요.">
+                <?php } ?>
 
-        <?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
-        <div class="bo_w_link write_div">
-            <label for="wr_link<?php echo $i ?>"><i class="fa fa-link" aria-hidden="true"></i> <span class="sound_only">링크 #<?php echo $i ?></span></label>
-            <input type="text" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){echo $write['wr_link'.$i];} ?>" id="wr_link<?php echo $i ?>" class="frm_input wr_link">
-        </div>
-        <?php } ?>
-
-        
-        <?php for ($i=0; $is_file && $i<$file_count; $i++) { ?>
-        <div class="bo_w_flie write_div">
-            <div class="file_wr write_div">
-                <label for="bf_file_<?php echo $i+1 ?>" class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i><span class="sound_only">파일 #<?php echo $i+1 ?></span></label>
-                <input type="file" name="bf_file[]" id="bf_file_<?php echo $i+1 ?>" title="파일첨부 <?php echo $i+1 ?> : 용량 <?php echo $upload_max_filesize ?> 이하만 업로드 가능" class="frm_file ">
+                <?php if($w == 'u' && $file[$i]['file']) { ?>
+                <span class="file_del">
+                    <input type="checkbox" id="bf_file_del<?php echo $i ?>" name="bf_file_del[<?php echo $i;  ?>]" value="1"> <label for="bf_file_del<?php echo $i ?>"><?php echo $file[$i]['source'].'('.$file[$i]['size'].')';  ?> 파일 삭제</label>
+                </span>
+                <?php } ?>
+                
             </div>
-            <?php if ($is_file_content) { ?>
-            <input type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="full_input frm_input" size="50" placeholder="파일 설명을 입력해주세요.">
+            <?php } ?>
+        <?php } else { ?>
+            <?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
+            <div class="bo_w_link write_div">
+                <label for="wr_link<?php echo $i ?>"><i class="fa fa-link" aria-hidden="true"></i> <span class="sound_only">링크 #<?php echo $i ?></span></label>
+                <input type="text" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){echo $write['wr_link'.$i];} ?>" id="wr_link<?php echo $i ?>" class="frm_input wr_link">
+            </div>
             <?php } ?>
 
-            <?php if($w == 'u' && $file[$i]['file']) { ?>
-            <span class="file_del">
-                <input type="checkbox" id="bf_file_del<?php echo $i ?>" name="bf_file_del[<?php echo $i;  ?>]" value="1"> <label for="bf_file_del<?php echo $i ?>"><?php echo $file[$i]['source'].'('.$file[$i]['size'].')';  ?> 파일 삭제</label>
-            </span>
+            <?php for ($i=0; $is_file && $i<$file_count; $i++) { ?>
+            <div class="bo_w_flie write_div">
+                <div class="file_wr write_div">
+                    <label for="bf_file_<?php echo $i+1 ?>" class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i><span class="sound_only">파일 #<?php echo $i+1 ?></span></label>
+                    <input type="file" name="bf_file[]" id="bf_file_<?php echo $i+1 ?>" title="파일첨부 <?php echo $i+1 ?> : 용량 <?php echo $upload_max_filesize ?> 이하만 업로드 가능" class="frm_file ">
+                </div>
+                <?php if ($is_file_content) { ?>
+                <input type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="full_input frm_input" size="50" placeholder="파일 설명을 입력해주세요.">
+                <?php } ?>
+
+                <?php if($w == 'u' && $file[$i]['file']) { ?>
+                <span class="file_del">
+                    <input type="checkbox" id="bf_file_del<?php echo $i ?>" name="bf_file_del[<?php echo $i;  ?>]" value="1"> <label for="bf_file_del<?php echo $i ?>"><?php echo $file[$i]['source'].'('.$file[$i]['size'].')';  ?> 파일 삭제</label>
+                </span>
+                <?php } ?>
+                
+            </div>
             <?php } ?>
-            
-        </div>
         <?php } ?>
 
         <?php if ($is_use_captcha) { //자동등록방지 ?>
