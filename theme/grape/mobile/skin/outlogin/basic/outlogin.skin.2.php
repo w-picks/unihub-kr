@@ -19,7 +19,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
         </li>
         <li><a href="<?php echo G5_BBS_URL ?>/scrap.php" target="_blank"  class="win_scrap">스크랩</a> </li> -->
         <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php" title="정보수정">정보수정</a></li>
-        <!-- idea 투자리포트 -->
+        <!-- ideahub 투자리포트 -->
         <li><a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=my_investment" title="투자리포트">투자리포트</a></li>
         <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a> </li>
         <li><?php if ($is_admin == 'super' || $is_auth) { ?><a href="<?php echo G5_ADMIN_URL ?>" class="admin">관리자</a><?php } ?></li>

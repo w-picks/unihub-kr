@@ -116,36 +116,36 @@ if (G5_IS_MOBILE) {
             <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목">
         </div>
 
-        <!-- 투자하기 작성페이지 -> 추가 항목 기입란 idea -->
+        <!-- 투자하기 작성페이지 -> 추가 항목 기입란 ideahub -->
         <?php if($board['bo_table'] == 'investment') { ?>
         <div class="bo_w_tit write_div">
             <label for="wr_6" class="sound_only">설명</label>
-            <input type="text" name="wr_6" value="<?php echo $wr_6 ?>" id="wr_6" required class="frm_input full_input required" placeholder="설명">
+            <input type="text" name="wr_6" value="<?php echo $wr_6 ?>" id="wr_6" required class="frm_input full_input" placeholder="설명">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_1" class="sound_only">시작일</label>
-            <input type="text" name="wr_1" value="<?php echo $wr_1 ?>" id="wr_1" required class="frm_input full_input required" placeholder="시작일">
+            <input type="text" name="wr_1" value="<?php echo $wr_1 ?>" id="wr_1" required class="frm_input full_input" placeholder="시작일">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_2" class="sound_only">종료일</label>
-            <input type="text" name="wr_2" value="<?php echo $wr_2 ?>" id="wr_2" required class="frm_input full_input required" placeholder="종료일">
+            <input type="text" name="wr_2" value="<?php echo $wr_2 ?>" id="wr_2" required class="frm_input full_input" placeholder="종료일">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_3" class="sound_only">목표금액</label>
-            <input type="text" name="wr_3" value="<?php echo $wr_3 ?>" id="wr_3" required class="frm_input full_input required" placeholder="목표금액">
+            <input type="text" name="wr_3" value="<?php echo $wr_3 ?>" id="wr_3" required class="frm_input full_input" placeholder="목표금액">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_4" class="sound_only">도달금액</label>
-            <input type="text" name="wr_4" value="<?php echo $wr_4 ?>" id="wr_4" required class="frm_input full_input required" placeholder="도달금액">
+            <input type="text" name="wr_4" value="<?php echo $wr_4 ?>" id="wr_4" required class="frm_input full_input" placeholder="도달금액">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_5" class="sound_only">이자율</label>
-            <input type="text" name="wr_5" value="<?php echo $wr_5 ?>" id="wr_5" required class="frm_input full_input required" placeholder="이자율">
+            <input type="text" name="wr_5" value="<?php echo $wr_5 ?>" id="wr_5" required class="frm_input full_input" placeholder="이자율">
         </div>
         <?php } ?>
 
         <!-- 
-            2022.08.23 idea
+            2022.08.23 ideahub
             선택한 대상에게만 보이는 마이페이지 게시판 -> select box option 출력
         -->
         <?php 
@@ -177,7 +177,7 @@ if (G5_IS_MOBILE) {
             <?php } ?>
         </div>
 
-        <!-- 투자하기 작성페이지 -> 썸네일 및 링크 숨김 idea -->
+        <!-- 투자하기 작성페이지 -> 썸네일 및 링크 숨김 ideahub -->
         <?php if($_GET['bo_table'] == 'investment') { ?>
             <?php for ($i=0; $is_file && $i<1; $i++) { ?>
             <div class="bo_w_flie write_div">

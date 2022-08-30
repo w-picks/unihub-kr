@@ -82,7 +82,7 @@ if (G5_IS_MOBILE) {
         <ul>
             <?php
             for ($i=0; $i<count($list); $i++) {
-                // 투자하기 리스트 idea
+                // 투자하기 리스트 ideahub
                 if($_GET['bo_table'] == 'investment') {
             ?>
                 <?php

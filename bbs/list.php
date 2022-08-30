@@ -180,7 +180,7 @@ if ($is_search_bbs) {
     $sql .= " {$sql_order} limit {$from_record}, $page_rows ";
 }
 
-// 2022.08.23
+// 2022.08.23 ideahub
 // 선택한 대상에게만 보이는 마이페이지 게시판 -> 대상과 로그인 일치 게시물만 출력
 if($bo_table=='my_investment'){
     if(!$is_admin == "super"){
