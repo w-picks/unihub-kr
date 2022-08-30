@@ -10,5 +10,5 @@ $menu["menu900"] = array(
     // array('900600', '이모티콘 관리', '' . G5_SMS5_ADMIN_URL . '/form_list.php', 'emoticon_list'),
     array('900700', '휴대폰번호 그룹', '' . G5_SMS5_ADMIN_URL . '/num_group.php', 'hp_group', 1),
     array('900800', '휴대폰번호 관리', '' . G5_SMS5_ADMIN_URL . '/num_book.php', 'hp_manage', 1),
-    array('900900', '휴대폰번호 파일', '' . G5_SMS5_ADMIN_URL . '/num_book_file.php', 'hp_file', 1)
+    // array('900900', '휴대폰번호 파일', '' . G5_SMS5_ADMIN_URL . '/num_book_file.php', 'hp_file', 1)
 );
