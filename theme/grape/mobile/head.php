@@ -23,10 +23,47 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
  
 
     <div id="hd_wrapper">
+            <div id="logo">
+                <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/idh_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            </div>
+            <div id="gnb">
 
-        <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/m_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
-        </div>
+                <ul id="gnb_1dul">
+                <?php
+                $menu_datas = get_menu_db(1, true);
+                $i = 0;
+                foreach( $menu_datas as $row ){
+                    if( empty($row) ) continue;
+                ?>
+                    <li class="gnb_1dli">
+                        <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
+                        <?php
+                        $k = 0;
+                        foreach( (array) $row['sub'] as $row2 ){
+                            if( empty($row2) ) continue;
+
+                            if($k == 0)
+                                echo '<button type="button" class="btn_gnb_op" style="display:none;">하위분류</button><ul class="gnb_2dul">'.PHP_EOL;
+                        ?>
+                            <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><span></span><?php echo $row2['me_name'] ?></a></li>
+                        <?php
+                        $k++;
+                        }	//end foreach $row2
+
+                        if($k > 0)
+                            echo '</ul>'.PHP_EOL;
+                        ?>
+                    </li>
+                <?php
+                $i++;
+                }	//end foreach $row
+
+                if ($i == 0) {  ?>
+                    <li id="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하세요.<?php } ?></li>
+                <?php } ?>
+                </ul>
+
+            </div>
         <div id="hd_btn">
             <button type="button" class="hd_menu_btn"><span class="menu-icon"></span><span class="sound_only">전체메뉴</span></button>
             <!-- <button type="button" class="hd_sch_btn"><span class="search-icon"></span><span class="sound_only">검색열기</span></button> -->
@@ -73,44 +110,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             </div>
         </div>
 
-        <div id="gnb">
-
-            <ul id="gnb_1dul">
-            <?php
-            $menu_datas = get_menu_db(1, true);
-			$i = 0;
-			foreach( $menu_datas as $row ){
-				if( empty($row) ) continue;
-            ?>
-                <li class="gnb_1dli">
-                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
-                    <?php
-                    $k = 0;
-                    foreach( (array) $row['sub'] as $row2 ){
-						if( empty($row2) ) continue;
-
-                        if($k == 0)
-                            echo '<button type="button" class="btn_gnb_op" style="display:none;">하위분류</button><ul class="gnb_2dul">'.PHP_EOL;
-                    ?>
-                        <li class="gnb_2dli"><a href="<?php echo $row2['me_link']; ?>" target="_<?php echo $row2['me_target']; ?>" class="gnb_2da"><span></span><?php echo $row2['me_name'] ?></a></li>
-                    <?php
-					$k++;
-                    }	//end foreach $row2
-
-                    if($k > 0)
-                        echo '</ul>'.PHP_EOL;
-                    ?>
-                </li>
-            <?php
-			$i++;
-            }	//end foreach $row
-
-            if ($i == 0) {  ?>
-                <li id="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하세요.<?php } ?></li>
-            <?php } ?>
-            </ul>
-
-        </div>
+        
 
      
         <script>
