@@ -6,7 +6,9 @@
 html {
   overflow-y: scroll;
   height: 100%;
+  width: 100%;
   min-width: 320px;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -15,6 +17,7 @@ body {
   font-size: 0.813em;
   height: 100%;
   font-family: "Pretendard", AppleSDGothicNeo-Regular, "Malgun Gothic", "맑은 고딕", dotum, "돋움", sans-serif;
+  width: 100%;
 }
 html,
 h1,
@@ -306,7 +309,7 @@ ul {
 .gnb_2dul {
   display: none;
   position: absolute;
-  top: 85px;
+  top: 100%;
   left: 0;
   min-width: 100%;
   z-index: 99;
@@ -373,7 +376,12 @@ ul {
   background: transparent;
   height: 85px;
   float: left;
+}
+#hd_btn > button {
   display: none;
+}
+#hd_btn #ol_after_private {
+  top: 100%;
 }
 
 #hd_sch {
@@ -423,6 +431,104 @@ ul {
 }
 #hd_sch .btn_close:hover {
   color: #000;
+}
+
+/* 공통 */
+#wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+.mo {
+  display: none;
+}
+.pc {
+  display: block;
+}
+.default_btn {
+  font-size: 16px;
+  padding: 18px 22px 18px 33px;
+  border-radius: 100px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.default_btn > div {
+  position: relative;
+  z-index: 3;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  transition: all 1s;
+}
+.default_btn:hover > div {
+  color: #2d72db;
+}
+.default_btn svg {
+  margin-left: 18px;
+  vertical-align: middle;
+  margin-top: -2px;
+  cursor: pointer;
+}
+.default_btn > div svg path {
+  transition: all 1s;
+}
+.default_btn:hover > div svg path {
+  stroke: #2d72db;
+}
+.default_btn span {
+  display: block;
+  border-radius: 50%;
+  width: 0px;
+  height: 0px;
+  background: #fff;
+  position: absolute;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  transform: translate(-50%, -50%);
+}
+.default_btn:hover span {
+  width: 300px;
+  height: 300px;
+}
+.default_btn.blue {
+  border-color: #2d72db;
+  color: #2d72db;
+}
+.default_btn.blue svg path {
+  stroke: #2d72db;
+}
+.default_btn.blue span {
+  background-color: #2d72db;
+}
+.default_btn.blue:hover > div {
+  color: #fff;
+}
+.default_btn.blue:hover svg path {
+  stroke: #fff;
+}
+.default_btn.blue:hover span {
+  width: 450px;
+  height: 450px;
+}
+.scroll-trans {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s;
+}
+.scroll-trans-delay-300 {
+  transition-delay: 0.3s;
+}
+.scroll-trans-delay-400 {
+  transition-delay: 0.4s;
+}
+.scroll-trans-delay-500 {
+  transition-delay: 0.5s;
+}
+.scroll-trans.on {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 /*전체메뉴*/
@@ -517,7 +623,507 @@ ul {
 /* section2 - 모집중인 프로젝트*/
 #section2 {
   height: 918px;
-  /* background: url(/img/project_sec_bg.png) no-repeat center / cover; */
+  position: relative;
+}
+.project_slide_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+  width: 750px;
+}
+.project_slide_content .swiper-slide {
+}
+.project_slide_content .slide-name {
+  font-size: 20px;
+  margin-bottom: 29px;
+}
+.project_slide_content h3 {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+.project_slide_content .caption {
+  font-size: 18px;
+  margin-bottom: 51px;
+  font-weight: 100;
+}
+.project_slide_content ul {
+  width: 693px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.project_slide_content ul li {
+  width: 210px;
+  height: 206px;
+  padding: 41px 0;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(60, 44, 160, 0.5);
+  background: #f0f5ff;
+  border-radius: 32px;
+}
+.project_slide_content .slide_2 ul li {
+  box-shadow: 0px 4px 20px rgba(34, 108, 113, 0.5);
+}
+.project_slide_content ul li p {
+  color: #202a3e;
+  font-size: 20px;
+}
+.project_slide_content ul li div {
+  margin-top: 29px;
+  font-size: 25px;
+  color: #1e1e1e;
+}
+.project_slide_content ul li div b {
+  font-size: 40px;
+  color: #2d72db;
+}
+.project_slide_content .slide_2 ul li div b {
+  color: #2b9ca4;
+}
+.project_slide_content button {
+  margin-top: 54px;
+}
+.project_slide_bg {
+}
+.project_slide_bg .swiper-slide {
+  height: 918px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project_slide_bg .slide_1 {
+  background: url(/img/project_sec_bg.png) no-repeat center / cover;
+}
+.project_slide_bg .slide_content_bg {
+  width: 1252px;
+  height: 717px;
+  border-radius: 52px;
+}
+.project_slide_bg .slide_1 .slide_content_bg {
+  background: radial-gradient(92.01% 456.46% at 0% 50%, rgba(45, 114, 219, 0.95) 12.98%, rgba(141, 129, 232, 0.7) 100%);
+}
+.project_slide_bg .slide_2 .slide_content_bg {
+  background: radial-gradient(92.01% 456.46% at 0% 50%, rgba(46, 169, 176, 0.8) 12.98%, rgba(110, 218, 147, 0.7) 100%);
+}
+.project_slide_bg .swiper-btn {
+  width: 62px;
+  height: 62px;
+  background-size: 60px 60px;
+}
+.project_slide_bg .swiper-btn.swiper-button-prev {
+  background-image: url(/img/swiper-arrow.png);
+  transform: rotate(180deg);
+  left: calc(50% - 570px);
+}
+.project_slide_bg .swiper-btn.swiper-button-next {
+  background-image: url(/img/swiper-arrow.png);
+  right: auto;
+  left: calc(50% + 510px);
+}
+.project_slide_bg.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project_slide_bg .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  opacity: 1;
+}
+.project_slide_bg .swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+/* section3 투자현황 */
+#section3.invest_status {
+  height: 943px;
+  background: url("/img/invest_status_bg.png") no-repeat center / cover;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.invest_status .txt_box {
+  padding-top: 125px;
+  margin-right: 196px;
+}
+.invest_status .txt_box p {
+  font-size: 20px;
+  color: #506285;
+  margin-bottom: 29px;
+}
+.invest_status .txt_box h2 {
+  font-size: 45px;
+  color: #040810;
+  margin-bottom: 66px;
+}
+
+.invest_status .img_container {
+  display: flex;
+  width: calc((287px * 2) + 21px);
+  justify-content: space-between;
+  margin-left: 196px;
+  margin-top: -50px;
+}
+.invest_status .img_container > div.left {
+  margin-top: 110px;
+}
+.invest_status .img_container > div .img_box {
+  width: 287px;
+  border-radius: 26px;
+  background: #ddd;
+  position: relative;
+  margin-bottom: 20px;
+}
+.invest_status .img_container > div .img_box.sm {
+  height: 222px;
+}
+.invest_status .img_container > div .img_box.lg {
+  height: 333px;
+}
+.invest_status .img_container > div .img_box .project_name {
+  position: absolute;
+  font-size: 16px;
+  left: 21px;
+  bottom: 23px;
+  color: #fff;
+}
+
+/* section4 배너 */
+#section4.invest_banner {
+  background: url("/img/invest_banner_bg.png") no-repeat center / cover;
+  height: 929px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 108px;
+  box-sizing: border-box;
+}
+#section4.invest_banner h2 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 44px;
+}
+#section4.invest_banner .img {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  width: max-content;
+}
+#section4.invest_banner .img img {
+}
+#section4.invest_banner .img:after {
+  content: "";
+  display: block;
+  width: 3000px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 296px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* section5 지금까지 펀딩에 */
+#section5.funding_review {
+  padding-bottom: 90px;
+  width: 100%;
+  overflow: hidden;
+}
+.funding_review .txt_animation {
+  width: 100%;
+  position: relative;
+}
+.funding_review .txt_animation > div {
+  position: absolute;
+  width: 2950px;
+  white-space: nowrap;
+  overflow: hidden;
+  left: 0;
+}
+.funding_review .txt_animation .txt_ani_1 {
+  animation: txtAni1 30s linear infinite;
+}
+@keyframes txtAni1 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -2950px;
+  }
+}
+.funding_review .txt_animation .txt_ani_2 {
+  left: 2950px;
+  animation: txtAni2 30s linear infinite;
+}
+@keyframes txtAni2 {
+  0% {
+    left: 2950px;
+  }
+  100% {
+    left: 0;
+  }
+}
+.funding_review .txt_animation span {
+  color: #f0f5ff;
+  font-size: 120px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 70px;
+}
+.funding_review article {
+  width: 980px;
+  text-align: center;
+  margin: auto;
+  margin-top: 190px;
+}
+.funding_review article span {
+  font-size: 15px;
+  color: #040810;
+}
+.funding_review article h2 {
+  font-size: 40px;
+  color: #040810;
+  margin-top: 29px;
+  margin-bottom: 48px;
+}
+.funding_review article ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.funding_review article ul li {
+  width: 307px;
+  height: 379px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background: url("/img/funding_1.png") no-repeat center / cover;
+  color: #fff;
+  text-align: center;
+}
+.funding_review article ul li:nth-of-type(1) {
+}
+.funding_review article ul li:nth-of-type(2) {
+  background-image: url("/img/funding_2.png");
+}
+.funding_review article ul li:nth-of-type(3) {
+  background-image: url("/img/funding_2.png");
+}
+.funding_review article ul li em {
+  font-style: normal;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 37px;
+}
+.funding_review article ul li p {
+  font-size: 25px;
+}
+.funding_review article ul li p b {
+  font-size: 50px;
+}
+.funding_review article ul li:nth-of-type(1) p b {
+  font-size: 35px;
+}
+
+/* 언론기사 */
+.lt_review {
+  background: rgba(240, 245, 255, 0.5);
+  padding-top: 107px;
+  padding-bottom: 100px;
+}
+.lt_review article {
+  width: 1140px;
+  margin: auto;
+}
+.lt_review .title_wrap {
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lt_review .title_wrap h2 {
+  font-size: 40px;
+  color: #040810;
+}
+.lt_review .title_wrap button {
+  height: max-content;
+}
+.lt_review .lt_rv_wr {
+}
+.lt_review .lt_rv_wr ul {
+}
+.lt_review .lt_rv_wr ul li {
+  padding: 26px 23px 26px 30px;
+  border-bottom: 1px solid #c1cbe0;
+  display: flex;
+}
+.lt_review .lt_rv_wr ul li:last-of-type {
+  border-bottom: none;
+}
+
+.lt_review .lt_rv_wr ul li .lt_wr {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .tag {
+  display: block;
+  font-size: 16px;
+  color: #2d72db;
+  font-weight: 700;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content {
+  margin-left: 80px;
+  width: 822px;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit {
+  display: flex;
+  align-items: center;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit .lt_date {
+  display: none;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit > div {
+  width: 100%;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit strong {
+  font-size: 20px;
+  font-weight: normal;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit button {
+  margin-left: 22px;
+  width: 34px;
+  height: 34px;
+  box-sizing: border-box;
+  color: #669eff;
+  border: 1px solid #669eff;
+  background: none;
+  border-radius: 100%;
+  line-height: 32px;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .content .lt_detail {
+  width: 730px;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.3s;
+  font-size: 20px;
+  color: #506285;
+}
+.lt_review .lt_rv_wr ul li.on .lt_wr .content .lt_detail {
+  margin-top: 18px;
+  height: 50px;
+  overflow: auto;
+  visibility: visible;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .lt_date {
+  font-size: 16px;
+  color: #506285;
+  width: 72px;
+  display: block;
+  flex-shrink: 0;
+  text-align: right;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .more {
+  font-size: 16px;
+  flex-shrink: 0;
+  color: #2d72db;
+  font-weight: 700;
+  width: 72px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .more svg {
+  width: 11px;
+}
+.lt_review .lt_rv_wr ul li .lt_wr .more svg path {
+  stroke: #2d72db;
+}
+.lt_review .lt_rv_wr ul li:hover {
+  background: #e6eeff;
+}
+.lt_review .lt_rv_wr ul li:hover .lt_wr .lt_date {
+  display: none;
+}
+.lt_review .lt_rv_wr ul li:hover .lt_wr .more {
+  display: flex;
+}
+
+/* 카카오톡 배너 */
+#section7.kakao_plus_banner {
+  text-align: center;
+  background: #ffdb5d;
+  height: 78px;
+  position: relative;
+}
+#section7.kakao_plus_banner img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 671px;
+}
+
+/* 하단 레이아웃 */
+#ft {
+  padding-top: 62px;
+  padding-bottom: 86px;
+  background: #202a3e;
+}
+.ft_wr {
+  width: 798px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ft_wr .footer_logo {
+}
+.ft_wr .footer_logo img {
+}
+.ft_wr .footer_menu {
+  width: 498px;
+  display: flex;
+  justify-content: space-between;
+}
+.ft_wr .footer_menu > li {
+  border-right: 1px solid #353e51;
+  padding-right: 48px;
+}
+.ft_wr .footer_menu > li:last-of-type {
+  border: none;
+}
+.ft_wr .footer_menu > li h6 {
+  color: #b6bdcb;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+.ft_wr .footer_menu > li ul {
+}
+.ft_wr .footer_menu > li ul li {
+}
+.ft_wr .footer_menu > li ul li a {
+  font-size: 14px;
+  color: #6f7b94;
+  display: block;
+  line-height: 30px;
 }
 
 @media (min-width: 970px) {
@@ -576,8 +1182,15 @@ ul {
 }
 
 @media (max-width: 969px) {
-  #hd {
-    height: 55px;
+  .mo {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+  .default_btn {
+    font-size: 14px;
+    padding: 16px 22px 16px 33px;
   }
   #gnb {
     display: none;
@@ -667,6 +1280,320 @@ ul {
   #hd_sch .btn_close {
     width: 55px;
     height: 55px;
+  }
+  #main_vid article {
+    width: 100%;
+    text-align: center;
+  }
+  #main_vid article h2 {
+    font-size: 35px;
+  }
+  #main_vid article p {
+    font-size: 15px;
+  }
+  #section1 {
+    width: 100%;
+    padding-top: 67px;
+    padding-bottom: 50px;
+  }
+  #section1 article {
+    display: block;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  #section1 article h2 {
+    font-size: 30px;
+    line-height: 39px;
+    margin-bottom: 58px;
+  }
+  #section1 article p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  #section2 {
+    height: 656px;
+  }
+  .project_slide_bg .swiper-slide {
+    height: 656px;
+  }
+  .project_slide_bg .slide_content_bg {
+    height: 500px;
+    width: calc(100% - 44px);
+    border-radius: 28px;
+  }
+  .project_slide_content {
+    width: 100%;
+  }
+  .project_slide_content .slide-name {
+    font-size: 15px;
+    margin-bottom: 21px;
+  }
+  .project_slide_content h3 {
+    font-size: 30px;
+    margin-bottom: 9px;
+  }
+  .project_slide_content .caption {
+    font-size: 15px;
+    margin-bottom: 54px;
+  }
+  .project_slide_content ul {
+    width: calc(100% - 68px);
+  }
+  .project_slide_content ul li {
+    width: 31.5%;
+    height: 120px;
+    border-radius: 20px;
+    padding: 19px 0;
+  }
+  .project_slide_content ul li p {
+    font-size: 12px;
+  }
+  .project_slide_content ul li div {
+    margin-top: 17px;
+    font-size: 16px;
+  }
+  .project_slide_content ul li div b {
+    font-size: 25px;
+  }
+  .project_slide_bg.swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 30px;
+  }
+  #section3.invest_status {
+    background: #f0f5ff;
+    display: block;
+    height: auto;
+    padding-bottom: 50px;
+  }
+  .invest_status .txt_box {
+    padding: 0 37px;
+    box-sizing: border-box;
+    margin: 0;
+    padding-top: 79px;
+  }
+  .invest_status .txt_box p {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .invest_status .txt_box h2 {
+    font-size: 30px;
+    margin-bottom: 36px;
+  }
+  .invest_status .img_container {
+    width: 100%;
+    margin: 0;
+    padding: 0 14px;
+    box-sizing: border-box;
+    margin-top: 71px;
+  }
+  .invest_status .img_container > div {
+    width: 48%;
+  }
+  .invest_status .img_container > div.left {
+    margin-top: 70px;
+  }
+  .invest_status .img_container > div.left .img_box:last-of-type {
+    display: none;
+  }
+  .invest_status .img_container > div .img_box {
+    width: 100%;
+  }
+  .invest_status .img_container > div .img_box.sm {
+    height: 144px;
+  }
+  .invest_status .img_container > div .img_box.lg {
+    height: 216px;
+  }
+  #section4.invest_banner {
+    padding-top: 90px;
+    height: auto;
+  }
+  #section4.invest_banner h2 {
+    font-size: 30px;
+  }
+  #section4.invest_banner .img {
+    width: 100%;
+  }
+  #section4.invest_banner .img img {
+    width: 100%;
+  }
+  .funding_review .txt_animation span {
+    font-size: 55px;
+    margin-right: 29px;
+  }
+  .funding_review .txt_animation > div {
+    width: 1137px;
+  }
+  .funding_review .txt_animation .txt_ani_1 {
+    animation-duration: 20s;
+  }
+  .funding_review .txt_animation .txt_ani_2 {
+    animation-duration: 20s;
+  }
+  @keyframes txtAni1 {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -1137px;
+    }
+  }
+  @keyframes txtAni2 {
+    0% {
+      left: 1137px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  .funding_review .txt_animation {
+    margin-top: 20px;
+  }
+  .funding_review article {
+    margin-top: 140px;
+    width: 100%;
+  }
+  .funding_review article span {
+    font-size: 13px;
+  }
+  .funding_review article h2 {
+    font-size: 30px;
+    margin-top: 16px;
+    margin-bottom: 50px;
+  }
+  .funding_review article ul {
+    display: block;
+    padding: 0 56px;
+    box-sizing: border-box;
+  }
+  .funding_review article ul li {
+    width: 100%;
+    border-radius: 25px;
+    height: 187px;
+    margin-bottom: 24px;
+  }
+  .funding_review article ul li em {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .funding_review article ul li p {
+    font-size: 20px;
+  }
+  .funding_review article ul li p b {
+    font-size: 40px;
+  }
+  .funding_review article ul li:nth-of-type(1) p b {
+    font-size: 30px;
+  }
+  .funding_review article ul li {
+    transition-delay: 0.3s;
+  }
+  .lt_review {
+    padding-top: 67px;
+  }
+  .lt_review article {
+    width: 100%;
+  }
+  .lt_review .title_wrap {
+    padding: 0 23px;
+    box-sizing: border-box;
+    margin-bottom: 57px;
+  }
+  .lt_review .title_wrap h2 {
+    font-size: 30px;
+  }
+  .lt_review .lt_rv_wr ul {
+    padding: 0 17px;
+    box-sizing: border-box;
+  }
+  .lt_review .lt_rv_wr ul li {
+    padding: 16px 10px 16px 12px;
+  }
+  .lt_review .lt_rv_wr ul li.on {
+    background: none;
+  }
+  .lt_review .lt_rv_wr ul li:hover {
+    background: none;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content {
+    width: 100%;
+    margin-left: 0;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content .content_tit .lt_date {
+    display: block;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content .lt_detail {
+    width: calc(100% - 60px);
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+  .lt_review .lt_rv_wr ul li.on .lt_wr .content .lt_detail {
+    height: 34px;
+    margin-top: 15px;
+  }
+  .lt_review .lt_rv_wr ul li.on .lt_wr .content .lt_detail p {
+    display: inline;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content .lt_detail .more_mo {
+    display: inline;
+    color: #2d72db;
+    font-weight: bold;
+  }
+  .lt_review .lt_rv_wr ul li.on .lt_wr .content_tit .lt_date {
+    display: block;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .tag {
+    width: 90px;
+    font-size: 12px;
+    position: relative;
+    top: 8px;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .lt_date {
+    text-align: left;
+    font-size: 12px;
+    display: none;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content .content_tit strong {
+    font-size: 14px;
+    margin-top: 3px;
+    display: block;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content .content_tit > div {
+    width: 100%;
+  }
+  .lt_review .lt_rv_wr ul li .lt_wr .content .content_tit button {
+    flex-shrink: 0;
+  }
+  .lt_review .lt_rv_wr ul li:hover .lt_wr .more {
+    display: none;
+  }
+  #section7.kakao_plus_banner img {
+    width: 100%;
+  }
+  #ft {
+    padding: 47px 56px;
+  }
+  .ft_wr {
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .ft_wr .footer_logo {
+    display: none;
+  }
+  .ft_wr .footer_menu {
+    width: 303px;
+  }
+  .ft_wr .footer_menu > li {
+    padding: 0;
+    border: none;
+  }
+  .ft_wr .footer_menu > li h6 {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .ft_wr .footer_menu > li ul li a {
+    font-size: 12px;
+    line-height: 26px;
   }
 }
 
@@ -1042,58 +1969,6 @@ ul {
   }
 }
 
-/* 하단 레이아웃 */
-#ft {
-  background: #495057;
-  text-align: center;
-  line-height: 20px;
-}
-.ft_wr {
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 40px 20px;
-}
-.ft_wr:after {
-  display: block;
-  visibility: hidden;
-  clear: both;
-  content: "";
-}
-#ft h1 {
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-}
-#ft p {
-  margin: 0;
-  padding: 10px 0;
-}
-
-#ft_company {
-  float: left;
-}
-#ft_company a {
-  display: inline-block;
-  padding: 0 10px;
-  border-left: 1px solid #575757;
-  color: #b9b9b9;
-  font-weight: 400;
-  font-size: 1.077em;
-}
-#ft_copy {
-  float: right;
-  color: #b9b9b9;
-}
-#ft_copy b {
-  color: inherit;
-}
-#ft_copy a {
-  color: inherit;
-  text-decoration: none;
-}
-
 #top_btn {
   position: fixed;
   bottom: 10px;
@@ -1124,9 +1999,6 @@ ul {
 }
 
 @media (max-width: 969px) {
-  .ft_wr {
-    padding: 30px 20px 20px;
-  }
   #ft_copy {
     width: 100%;
   }

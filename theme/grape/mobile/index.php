@@ -14,64 +14,139 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
     </section>
     <section id="section1">
         <article>
-            <h2>아이디어허브는<br><span>IP 수익화 플랫폼</span><br>입니다.</h2>
-            <p>특허를 발굴하고 개인/기관 투자를 통해<br>특허에서 발생되는 수익을 공유하는 플랫폼.<br>아이디어허브를 통해 글로벌 수익화를 실현하세요.</p>
+            <h2 class="scroll-trans">아이디어허브는<br><span>IP 수익화 플랫폼</span><br>입니다.</h2>
+            <p class="scroll-trans scroll-trans-delay-300">특허를 발굴하고 개인/기관 투자를 통해<br>특허에서 발생되는 수익을 공유하는 플랫폼.<br>아이디어허브를 통해 글로벌 수익화를 실현하세요.</p>
         </article>
     </section>
     <section id="section2">
         <div class="project_slide_content swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide slide_1">
                     <p class="slide-name">모집중인 프로젝트</p>
                     <h3>Medical Device</h3>
                     <p class="caption">RF(고주파)를 이용한 의료기기 관련 특허</p>
                     <ul>
                         <li>
                             <p>예상수익률</p>
-                            <div><span>연 40%</span><br>이상</div>
+                            <div><b>연 40%</b><br>이상</div>
                         </li>
                         <li>
                             <p>모집금액</p>
-                            <div><span>5</span>억원</div>
+                            <div><b>5</b>억원</div>
                         </li>
                         <li>
                             <p>모집기간</p>
-                            <div><span>11.30</span>까지</div>
+                            <div><b>11.30</b><br class="mo">까지</div>
                         </li>
                     </ul>
-                    <button>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg>
+                    <button class="default_btn"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
+                    <span></span>
                     </button>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide slide_2">
                     <p class="slide-name">모집중인 프로젝트</p>
-                    <h3>Medical Device</h3>
-                    <p class="caption">RF(고주파)를 이용한 의료기기 관련 특허</p>
+                    <h3>Streaming Project</h3>
+                    <p class="caption">음성,영상,애니메이션 등을 실시간 재생하는 기술 관련 특허</p>
                     <ul>
                         <li>
                             <p>예상수익률</p>
-                            <div><span>연 40%</span><br>이상</div>
+                            <div><b>연 30%</b><br>이상</div>
                         </li>
                         <li>
                             <p>모집금액</p>
-                            <div><span>5</span>억원</div>
+                            <div><b>3</b>억원</div>
                         </li>
                         <li>
                             <p>모집기간</p>
-                            <div><span>11.30</span>까지</div>
+                            <div><b>12.31</b><br class="mo">까지</div>
                         </li>
                     </ul>
-                    <button>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg>
+                    <button class="default_btn"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
+                    <span></span>
                     </button>
                 </div>
             </div>
         </div>
         <div class="project_slide_bg swiper">
-            <div class="swiper_wrapper">
-                <div class="swiper-slide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide_1">
+                    <div class="slide_content_bg"></div>
+                </div>
+                <div class="swiper-slide slide_2">
                     <div class="slide_content_bg"></div>
                 </div>
             </div>
+            <div class="swiper-button-prev swiper-btn"></div>
+            <div class="swiper-button-next swiper-btn"></div>
+            <div class="swiper-pagination"></div>
         </div>
+    </section>
+    <section id="section3" class="invest_status">
+        <article class="txt_box scroll-trans">
+            <p>아이디어허브 투자자이신가요?</p>
+            <h2>나의 투자 현황을<br>알아보세요!</h2> 
+            <button class="default_btn blue"><div>나의 투자 레포트<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
+            <span></span>
+            </button>
+        </article>
+        <article class="img_container scroll-trans scroll-trans-delay-300">
+            <div class="left">
+                <div class="img_box sm">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+                <div class="img_box lg">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+                <div class="img_box sm">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+                <div class="img_box lg">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="img_box lg">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+                <div class="img_box sm">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+                <div class="img_box lg">
+                    <p class="project_name">프로젝트 이름</p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="section4" class="invest_banner">
+        <h2 class="scroll-trans">지식재산권의 시대,<br>IP를 활용하고 IP에 투자하세요</h2>
+        <div class="img scroll-trans">
+            <img src="<?php echo G5_IMG_URL ?>/invest_banner_in.png" class="pc">
+            <img src="<?php echo G5_IMG_URL ?>/invest_banner_in_mo.png" class="mo">
+        </div>
+    </section>
+    <section id="section5" class="funding_review">
+        <div class="txt_animation">
+            <div class="txt_ani_1"><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span></div>
+            <div class="txt_ani_2"><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span></div>
+        </div>
+        <article>
+            <span class="scroll-trans">IDEAHUB</span>
+            <h2 class="scroll-trans">지금까지 펀딩에<br>성공한 프로젝트는?</h2>
+            <ul>
+                <li>
+                    <em>프로젝트명</em>
+                    <p><b>IoT Licensing</b></p>
+                </li>
+                <li>
+                    <em>총 투자모집 금액</em>
+                    <p><b>2</b>억 <b>1400</b>만</p>
+                </li>
+                <li>
+                    <em>수익률</em>
+                    <p><b>49.67</b>%</p>
+                </li>
+            </ul>
+        </article>
     </section>
 </div>
 
@@ -83,8 +158,54 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 echo latest('theme/review', 'broadcast', 5, 20);
 ?>
 
+<section id="section7" class="kakao_plus_banner">
+<img src="<?php echo G5_IMG_URL ?>/kakao_plus_banner.png" class="pc">
+<img src="<?php echo G5_IMG_URL ?>/kakao_plus_banner_mo.png" class="mo">
+</section>
+
 <script>
-    const swiper = new Swiper('.project_slide_content', {});
+    const swiperContent = new Swiper('.project_slide_content', {});
+    const swiperBg = new Swiper('.project_slide_bg', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        effect : "fade"
+    });
+
+    swiperContent.controller.control = swiperBg
+    swiperBg.controller.control = swiperContent;
+
+    //button effect
+    $('.default_btn').on('mouseover',function(e){
+        var x = e.pageX;
+        var y = e.pageY;
+        var offX = $(this).offset().left;
+        var offY = $(this).offset().top;
+        
+        $('.default_btn span').css({
+            left:x-offX, top:y-offY,
+        })
+        
+    })
+    
+    $('.default_btn').on('mouseout',function(e){
+        
+        var x = e.pageX;
+        var y = e.pageY;
+        var offX = $(this).offset().left;
+        var offY = $(this).offset().top;
+        
+        $('.default_btn span').css({
+            left:x-offX, top:y-offY,
+        })
+    })
+                
+                
+    
 </script>
 
 <?php

@@ -75,6 +75,7 @@ add_javascript('<script src="'.G5_JS_URL.'/common.js?ver='.G5_JS_VER.'"></script
 add_javascript('<script src="'.G5_JS_URL.'/wrest.js?ver='.G5_JS_VER.'"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/placeholders.min.js"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/swiper/swiper.min.js"></script>', 0);
+add_javascript('<script src="'.G5_JS_URL.'/main_common.js"></script>', 0);
 
 add_javascript('<script src="'.G5_THEME_JS_URL.'/theme_common.js"></script>', 1);
 

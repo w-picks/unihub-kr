@@ -7,14 +7,42 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 <div id="ft">
     <div class="ft_wr">
-            
-
-            <div id="ft_company">
+         
+<div class="footer_logo">
+    <img src="<?php echo G5_IMG_URL ?>/footer_logo.png">
+</div>
+            <!-- <div id="ft_company">
                 <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=company">회사소개</a>
                 <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=privacy">개인정보처리방침</a>
                 <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=provision">서비스이용약관</a>
-            </div>
-            <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div>
+            </div> -->
+            <!-- <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div> -->
+            <ul class="footer_menu">
+                <li>
+                    <h6>About</h6>
+                    <ul>
+                        <li><a href="/">About</a></li>
+                        <li><a href="/">C.I</a></li>
+                        <li><a href="/">아이디어허브팁</a></li>
+                        <li><a href="/">파트너&투자자</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>Service</h6>
+                    <ul>
+                        <li><a href="/">IP 라이센싱</a></li>
+                        <li><a href="/">특허 우산 서비스</a></li>
+                        <li><a href="/">EoU DB</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>Contact</h6>
+                    <ul>
+                        <li><a href="/">공지사항</a></li>
+                        <li><a href="/">보도자료</a></li>
+                    </ul>
+                </li>
+            </ul>
 
     </div>
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
