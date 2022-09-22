@@ -116,6 +116,21 @@ if (G5_IS_MOBILE) {
             <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목">
         </div>
 
+        <!-- 
+            2022.09.22 ideahub
+            보도자료 신문사 태그
+        -->
+        <?php if($board['bo_table'] == 'broadcast') { ?>
+        <div class="bo_w_tit write_div">
+            <label for="wr_1" class="sound_only">신문사 태그</label>
+            <input type="text" name="wr_1" value="<?php echo $wr_1 ?>" id="wr_1" required class="frm_input full_input" placeholder="신문사 태그">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_2" class="sound_only">링크</label>
+            <input type="text" name="wr_2" value="<?php echo $wr_2 ?>" id="wr_2" required class="frm_input full_input" placeholder="링크">
+        </div>
+        <?php } ?>
+
         <!-- 투자하기 작성페이지 -> 추가 항목 기입란 ideahub -->
         <?php if($board['bo_table'] == 'investment') { ?>
         <div class="bo_w_tit write_div">

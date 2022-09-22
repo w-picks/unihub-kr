@@ -25,7 +25,7 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
     ?>
         <li>
             <div class="lt_wr">
-                <span class="tag">테크42</span>
+                <span class="tag"><?php echo $list[$i]['wr_1']; ?></span>
                 <!-- <span class="lt_img"><?php echo get_member_profile_img($list[$i]['mb_id']); ?></span> -->
                 <div class="content">
                     <div class="content_tit">
@@ -46,12 +46,12 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
                 <button>+</button>
                 </div>
                 <div class="lt_detail"><p> <?php echo get_text(cut_str(strip_tags($list[$i]['wr_content']), 100), 1); ?>
-                </p><a href="<?php echo $list[$i]['href'] ?>" class="more_mo mo">전문보기</a>
+                </p><a href="<?php echo $list[$i]['wr_2'] ?>" class="more_mo mo">전문보기</a>
     </div>
                 </div>
                 <!-- <span class="lt_date"><?php echo $list[$i]['datetime2']; ?>  / <?php echo $list[$i]['name'] ?></span> -->
                 <span class="lt_date pc"><?php echo $list[$i]['datetime2']; ?></span>
-                <a href="<?php echo $list[$i]['href'] ?>" class="more">전문보기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></a>
+                <a href="<?php echo $list[$i]['wr_2'] ?>" class="more">전문보기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></a>
             </div>
         </li>
     <?php }  ?>
