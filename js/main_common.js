@@ -2,15 +2,19 @@ window.addEventListener("load", () => {
   const fundingReviewEle = document.querySelector(".funding_review ul");
 
   const mainResizeMo = () => {
-    fundingReviewEle.classList.add("scroll-trans");
+    if (fundingReviewEle) {
+      fundingReviewEle.classList.add("scroll-trans");
+    }
   };
 
   const mainResizePc = () => {
-    fundingReviewEle.classList.remove("scroll-trans");
-    let i = 3;
-    fundingReviewEle.querySelectorAll("li").forEach((item, ind) => {
-      item.classList.add(`scroll-trans-delay-${i++}00`, "scroll-trans");
-    });
+    if (fundingReviewEle) {
+      fundingReviewEle.classList.remove("scroll-trans");
+      let i = 3;
+      fundingReviewEle.querySelectorAll("li").forEach((item, ind) => {
+        item.classList.add(`scroll-trans-delay-${i++}00`, "scroll-trans");
+      });
+    }
   };
 
   if (window.innerWidth < 969) {

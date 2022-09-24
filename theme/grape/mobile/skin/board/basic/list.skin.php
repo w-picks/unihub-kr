@@ -20,14 +20,12 @@ if (G5_IS_MOBILE) {
 } 
 ?>
 
-<div id="bo_list_total" class="pc_view">
-    <span>전체 <?php echo number_format($total_count) ?>건</span>
-    <?php echo $page ?> 페이지
-</div>
 
-<div id="nav">
+<div id="notice_news">
+<!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
-</div>
+</div> -->
+<h1><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></h1>
 <?php if ($is_category) { ?>
 <nav id="bo_cate">
     <h2><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']) ?> 카테고리</h2>
@@ -37,6 +35,8 @@ if (G5_IS_MOBILE) {
 </nav>
 <?php } ?>
 
+
+<?php if($board['bo_table'] != 'investment') { ?>
 <div id="bo_list">
     
     <fieldset id="bo_sch">
@@ -51,15 +51,22 @@ if (G5_IS_MOBILE) {
             <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
             <option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
             <option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
-            <option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
+            <!-- <option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
             <option value="mb_id,0"<?php echo get_selected($sfl, 'mb_id,0'); ?>>회원아이디(코)</option>
             <option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>글쓴이</option>
-            <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option>
+            <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option> -->
         </select>
-        <input name="stx" value="<?php echo stripslashes($stx) ?>" placeholder="검색어(필수)" required id="stx" class="sch_input" size="15" maxlength="20">
-        <button type="submit" value="검색" class="sch_btn"><i class="fa fa-search" aria-hidden="true"></i> <span class="sound_only">검색</span></button>
+        <div class="input_wrap">
+        <input name="stx" value="<?php echo stripslashes($stx) ?>" placeholder="검색어를 입력해주세요." required id="stx" class="sch_input" size="15" maxlength="20">
+        <button type="submit" value="검색" class="sch_btn"><img src="<?php echo G5_IMG_URL ?>/ico_search.png"></button>
+        </div>
         </form>
     </fieldset>
+
+    
+<div id="bo_list_total" class="pc_view">
+    <span>총 <em><?php echo number_format($total_count) ?></em>건</span>
+</div>
 
 
     <form name="fboardlist" id="fboardlist" action="<?php echo G5_BBS_URL; ?>/board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
@@ -112,7 +119,7 @@ if (G5_IS_MOBILE) {
                         
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
-                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon">[공지]</strong><?php } ?> 
+                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><img src="<?php echo G5_IMG_URL ?>/ico_announce.png"></strong><?php } ?> 
                             <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
                             <?php echo $list[$i]['subject'] ?>
                             <?php
@@ -152,10 +159,13 @@ if (G5_IS_MOBILE) {
                             <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
                         </span>
                         <?php } ?>
-                        
+
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
-                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon">[공지]</strong><?php } ?> 
+                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><img src="<?php echo G5_IMG_URL ?>/ico_announce.png"></strong><?php }else{ ?>
+                                <span class="number">0</span>
+                                <?php } ?> 
+                                <p>
                             <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
                             <?php echo $list[$i]['subject'] ?>
                             <?php
@@ -167,6 +177,7 @@ if (G5_IS_MOBILE) {
                             if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
 
                             ?>
+                            </p>
                         </a>
 
                     </div>
@@ -207,11 +218,14 @@ if (G5_IS_MOBILE) {
     </div>
     <?php } ?>
     </form>
-
+    </div>
     
 
     <!-- 게시판 목록 시작 -->
 </div>
+<?php } else { ?>
+    <div>aaa</div>
+<?php } ?>
 
 <?php if($is_checkbox) { ?>
 <noscript>
