@@ -5,7 +5,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">', 0);
 ?>
 <div class="ol">
-    <button type="button" class="prf_btn"><?php echo get_member_profile_img($member['mb_id']); ?></button>  
+    <button type="button" class="prf_btn">마이페이지</button>  
      <ul id="ol_after_private">
         <!-- <li>
             <a href="<?php echo G5_BBS_URL ?>/memo.php" target="_blank" class="win_memo">쪽지
@@ -24,6 +24,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
         <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a> </li>
         <li><?php if ($is_admin == 'super' || $is_auth) { ?><a href="<?php echo G5_ADMIN_URL ?>" class="admin">관리자</a><?php } ?></li>
     </ul>
+    <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='<?php echo G5_BBS_URL ?>/faq.php'">문의하기</button>
 </div>
 
 <script>

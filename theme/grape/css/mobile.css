@@ -369,13 +369,15 @@ ul {
 }
 #hd_btn .ol {
   padding: 13px 20px;
+  display: flex;
+  align-items: center;
 }
 #hd_btn .ol a {
   color: #8496ba;
   font-size: 13px;
   padding: 0 8px;
 }
-#hd_btn .ol a.contact_us {
+#hd_btn .ol .contact_us {
   color: #4d93ff;
   border: 1px solid #4d93ff;
   border-radius: 100px;
@@ -383,6 +385,7 @@ ul {
   height: 30px;
   line-height: 28px;
   text-align: center;
+  margin-left: 8px;
 }
 #hd_btn button {
   width: 42px;
@@ -1508,15 +1511,14 @@ ul {
 
   #al_menu .menu_wr {
     position: absolute;
-    top: 0;
-    padding-top: 70px;
+    top: 70px;
     /* left: 0; */
     left: auto;
     right: 0;
-    height: 100%;
+    height: calc(100vh - 70px);
     width: 76%;
     max-height: 100%;
-    overflow-y: auto;
+    overflow: visible;
   }
   #al_menu .bg {
     margin-top: 70px;
@@ -1527,6 +1529,7 @@ ul {
     padding: 0 25px;
     text-align: right;
     box-sizing: content-box;
+    top: -70px;
   }
   #al_menu .btn_close:before {
     content: "";
@@ -1549,6 +1552,47 @@ ul {
     top: 50%;
     left: 50%;
     transform-origin: left top;
+  }
+  #al_menu .ol {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 0;
+  }
+  #al_menu .ol > a {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    padding: 22px 0;
+    height: auto;
+    font-size: 18px;
+  }
+  #al_menu .ol > a.login {
+    position: relative;
+  }
+  #al_menu .ol > a.login:before {
+    content: "";
+    width: 1px;
+    height: 22px;
+    background: #c1cbe0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -11px;
+  }
+  #al_menu .ol > a img {
+    width: 24px;
+    margin-right: 6px;
+  }
+  #al_menu .ol > a.logout {
+    width: 100%;
+    color: #8496ba;
   }
   #menu {
     padding: 25px 15px 0 15px;
@@ -1586,6 +1630,12 @@ ul {
     background: transparent;
     color: #506285;
     height: 70px;
+  }
+  #menu .btn_menu_op i {
+    transition: all 0.3s;
+  }
+  #menu .btn_menu_op.on i {
+    transform: rotate(180deg);
   }
   #menu .sub_menu {
     display: none;
@@ -2798,7 +2848,7 @@ ul {
 .btn_s {
   display: inline-block;
   height: 33px;
-  line-height: 30px;
+  line-height: 33px;
   border-radius: 30px;
   padding: 0 15px;
   transition: 0.3s all ease-in-out;
@@ -3404,52 +3454,51 @@ textarea.required {
 .pg_page,
 .pg_current {
   display: inline-block;
-  padding: 0 13px;
-  height: 35px;
-  color: #959595;
-  line-height: 35px;
+  width: 28px;
+  height: 28px;
+  color: #8496ba;
+  line-height: 26px;
   vertical-align: middle;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 50%;
+  border: 1px solid #fff;
 }
-.pg a:focus,
+.pg_current {
+  border-color: #2d72db;
+  color: #2d72db;
+  font-weight: normal;
+}
+/* .pg a:focus,
 .pg a:hover {
   text-decoration: none;
   background-color: #f8f8f8;
-}
-.pg_page {
-  background: #eee;
-}
+} */
 .pg_start {
-  background: url(../img/btn_first.gif) no-repeat 50% 50% #eee;
+  background: url(../img/btn_first.gif) no-repeat 50% 50%;
   width: 35px;
   height: 35px;
   text-indent: -999px;
   overflow: hidden;
 }
 .pg_prev {
-  background: url(../img/btn_prev.gif) no-repeat 50% 50% #eee;
+  background: url(../img/btn_prev.gif) no-repeat 50% 50%;
   width: 35px;
   height: 35px;
   text-indent: -999px;
   overflow: hidden;
 }
 .pg_next {
-  background: url(../img/btn_next.gif) no-repeat 50% 50% #eee;
+  background: url(../img/btn_next.gif) no-repeat 50% 50%;
   width: 35px;
   height: 35px;
   text-indent: -999px;
   overflow: hidden;
 }
 .pg_end {
-  background: url(../img/btn_end.gif) no-repeat 50% 50% #eee;
+  background: url(../img/btn_end.gif) no-repeat 50% 50%;
   width: 35px;
   height: 35px;
   text-indent: -999px;
   overflow: hidden;
-}
-.pg_current {
-  display: inline-block;
-  background: #494949;
-  color: #fff;
-  font-weight: normal;
-  line-height: 35px;
 }

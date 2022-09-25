@@ -18,6 +18,7 @@ if (G5_IS_MOBILE) {
 } 
 ?>
   
+  <?php if($board['bo_table'] != 'investment') { ?>
 <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
 </div>
@@ -208,6 +209,67 @@ if (G5_IS_MOBILE) {
 
 </article>
 
+<?php } else { ?>
+    <div id="invest_detail">
+        <div class="invest_wrap">
+        <article class="detail_container">
+            <ul class="tags">
+                <li>#이자울 9%</li>
+                <li>#채권형</li>
+                <li>#일반화사체</li>
+            </ul>
+            <h1 class="title">[1차] 고주파 Medical 기술</h1>
+            <div class="thum_content">
+                <div class="thum_nail">
+                    <img src="<?php echo G5_IMG_URL ?>/test_img.png">
+                </div>
+                <ul class="tags_mo">
+                    <li>#이자울 9%</li>
+                    <li>#채권형</li>
+                    <li>#일반화사체</li>
+                </ul>
+                <div class="detail_content">
+                    <h2 class="title"><span class="funding_state">펀딩중</span>[1차] 고주파 Medical 기술</h2>
+                    <div class="amount_container">
+                        <p class="amount"><em>500000</em>원</p>
+                        <span class="amount_state">투자완료</span>
+                    </div>
+                    <div class="target">
+                        <p class="target_amount"><span>목표금액</span><em>2000000</em>원</p>
+                        <p class="funding_result"><span>펀딩성공</span><em>134</em>%</p>
+                        <button class="invest_btn">투자하기</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="tab_container">
+            <ul class="tabs">
+                <li class="on">핵심정보</li>
+                <li>투자정보</li>
+            </ul>
+            <div class="tab_content">
+                <div class="tab_con1">
+                    <ul>
+                        <li>
+                            <span>펀딩 시작일</span>
+                            <p>2022.03.31</p>
+                        </li>
+                        <li>
+                            <span>펀딩 종료일</span>
+                            <p>2022.03.31</p>
+                        </li>
+                        <li>
+                            <span>연 이자율</span>
+                            <p>9%</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        </div>
+    </div>
+<?php } ?>
+
 <script>
 <?php if ($board['bo_download_point'] < 0) { ?>
 $(function() {
@@ -286,4 +348,18 @@ function excute_good(href, $el, $tx)
         }, "json"
     );
 }
+
+const investDetail = document.querySelector("#invest_detail");
+if(investDetail){
+    const targetBtn = $(".target .invest_btn");
+    $(".detail_content").append(targetBtn);
+    //목표금액 target_amount
+    //투자금액 amount
+    const amount = $(".amount em").html();
+    const tagetAmount = $(".target_amount em").html();
+    const fundingPersent = (Number(amount) / Number(tagetAmount)) * 100;
+        $(".funding_result em").html(fundingPersent);
+}
+
+
 </script>

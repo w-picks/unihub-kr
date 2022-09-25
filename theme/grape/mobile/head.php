@@ -178,7 +178,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 				if( empty($row) ) continue;
             ?>
                 <li class="menu_li">
-                    <h2><a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="menu_a"><?php echo $row['me_name'] ?></a></h2>
+                    <!-- <h2><a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="menu_a"><?php echo $row['me_name'] ?></a></h2> -->
+                    <h2><?php echo $row['me_name'] ?></h2>
                     <?php
                     $k = 0;
                     foreach( (array) $row['sub'] as $row2 ){
@@ -204,18 +205,48 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <li id="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <br><a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하세요.<?php } ?></li>
             <?php } ?>
             </ul>
-            <button type="button" class="btn_close"><i class="fa fa-times"></i><span class="sound_only">닫기</span></button>
+            <button type="button" class="btn_close"><span class="sound_only">닫기</span></button>
+            <div class="ol">
+            <?php if (!$is_member){ ?>
+  <a href="<?php echo G5_BBS_URL ?>/login.php" class="btn_s login" ><img src="<?php echo G5_IMG_URL ?>/ico_login_mo.png">로그인</a>
+  <a href="<?php echo G5_BBS_URL ?>/register.php" class="btn_s " ><img src="<?php echo G5_IMG_URL ?>/ico_join_mo.png">회원가입</a>
+  <?php }else { ?>
+  
+    <a href="<?php echo G5_BBS_URL ?>/logout.php" class="btn_s logout">로그아웃</a>
+    <?php } ?>
+  
+</div>
         </div>
         <script>
-        $(".btn_menu_op").click(function(){
-            $(this).next(".sub_menu").slideToggle(300);
+        $(".menu_li h2").click(function(){
+            $(this).siblings(".sub_menu").slideToggle(300);
+            $(this).siblings(".btn_menu_op").toggleClass("on")
         });
         $("#al_menu .btn_close").click(function(){
             $("#al_menu").hide();
+            $(".hd_menu_btn").show();
         });
         $(".hd_menu_btn").click(function(){
             $("#al_menu").show();
+            $(this).hide();
         });
+
+        if(window.innerWidth > 969){
+            $(".hd_menu_btn").hide();
+        }else{
+            $(".hd_menu_btn").show();
+
+        }
+        
+        $(window).on("resize", () => {
+            if(window.innerWidth > 969){
+                $(".hd_menu_btn").hide();
+            }else{
+                $(".hd_menu_btn").show();
+
+            }
+
+        })
         </script>
     </div>
 </header>

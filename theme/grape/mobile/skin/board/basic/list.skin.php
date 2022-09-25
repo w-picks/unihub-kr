@@ -20,8 +20,11 @@ if (G5_IS_MOBILE) {
 } 
 ?>
 
-
-<div id="notice_news">
+<?php if($board['bo_table'] != 'investment') { ?>
+    <div id="notice_news">
+<?php }else { ?>
+    <div id="investment">
+<?php } ?>
 <!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
 </div> -->
@@ -35,10 +38,21 @@ if (G5_IS_MOBILE) {
 </nav>
 <?php } ?>
 
+<?php if($board['bo_table'] == 'investment') { ?>
+    <div class="invest_tab_wrap">
+        <ul class="invest_tab">
+            <li class="on">전체</li>
+            <li>펀딩 중 프로젝트</li>
+            <li>오픈 예정 프로젝트</li>
+            <li>종료된 프로젝트</li>
+        </ul>
+    </div>
+<?php } ?>
 
-<?php if($board['bo_table'] != 'investment') { ?>
+
+<?php if($board['bo_table']) { ?>
 <div id="bo_list">
-    
+    <article class="invest_article">
     <fieldset id="bo_sch">
         <legend>게시물 검색</legend>
 
@@ -58,16 +72,22 @@ if (G5_IS_MOBILE) {
         </select>
         <div class="input_wrap">
         <input name="stx" value="<?php echo stripslashes($stx) ?>" placeholder="검색어를 입력해주세요." required id="stx" class="sch_input" size="15" maxlength="20">
-        <button type="submit" value="검색" class="sch_btn"><img src="<?php echo G5_IMG_URL ?>/ico_search.png"></button>
+        <button type="submit" value="검색" class="sch_btn"><img src="<?php echo G5_IMG_URL ?>/ico_search.svg"></button>
         </div>
         </form>
     </fieldset>
 
     
 <div id="bo_list_total" class="pc_view">
-    <span>총 <em><?php echo number_format($total_count) ?></em>건</span>
+    <span>총 <em><?php echo number_format($total_count) ?></em>
+    <?php if($board['bo_table'] == 'investment') { ?>
+        개의 프로젝트가 있습니다.
+        <?php } else { ?>
+            건
+            <?php } ?>
+</span>
 </div>
-
+</article>
 
     <form name="fboardlist" id="fboardlist" action="<?php echo G5_BBS_URL; ?>/board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
@@ -86,40 +106,42 @@ if (G5_IS_MOBILE) {
             <label for="chkall"><span class="chk_img"></span> 전체선택</label>
         </div>
         <?php } ?>
-        <ul>
+        <ul class="project_list">
             <?php
             for ($i=0; $i<count($list); $i++) {
                 // 투자하기 리스트 ideahub
                 if($_GET['bo_table'] == 'investment') {
             ?>
+                <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
+                <div class="img_wrap">
                 <?php
-                    $thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], "50", "40");
+                    $thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], "600", "226");
                     if($thumb['src']) {
-                        $img_content = '<img src="'.$thumb['src'].'" alt="'.$thumb['alt'].'" width="50" height="40">';
+                        $img_content = '<img src="'.$thumb['src'].'" alt="'.$thumb['alt'].'" >';
                     } else {
                         $img_content = '<span>no image</span>';
                     }
                     echo $img_content;
                 ?>   
-                <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
-                
+                </div>
+                <div class="project_content">
                     <?php
                     if ($is_category && $list[$i]['ca_name']) {
                     ?>
                     <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link"><?php echo $list[$i]['ca_name'] ?></a>
                     <?php } ?>
                     <div class="bo_subject">
-
+                        <h2>
                         <?php if ($is_checkbox) { // 게시글별 체크박스 ?>
                         <span class="sel bo_chk li_chk">
                             <label for="chk_wr_id_<?php echo $i ?>"><span class="chk_img"></span> <span class="sound_only"><?php echo $list[$i]['subject'] ?></span></label>
                             <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
                         </span>
                         <?php } ?>
-                        
+                        <span class="funding_state success">펀딩성공</span>
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
-                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><img src="<?php echo G5_IMG_URL ?>/ico_announce.png"></strong><?php } ?> 
+                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php } ?> 
                             <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
                             <?php echo $list[$i]['subject'] ?>
                             <?php
@@ -127,22 +149,42 @@ if (G5_IS_MOBILE) {
 
                             if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
                             if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
-                            if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+                            // if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
                             if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
 
                             ?>
                         </a>
+                        </h2>
 
-                    </div>
-                    <div class="bo_info">
+                        <ul class="tags">
+                                <li>#이자율 9%</li>
+                                <li>#채권형</li>
+                                <li>#일반회사체</li>
+                            </ul>
+
+                        </div>
+                            <div class="funding_content">
+                                <div class="amount_wrap">
+                                    <div class="amount">
+                                        <span class="now_amount"><em>5000000</em>원</span>
+                                        <span class="target_amount">/<em>2000000</em>원</span>
+                                    </div>
+                                    <div class="persent"><em>92</em>%</div>
+                                </div>
+                                <div class="funding_state_bar">
+                                    <span class="gauge"></span>
+                                </div>
+                            </div>
+
+                    <!-- <div class="bo_info">
                         <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?>
                         <span class="bo_date"> <i class="fa fa-clock-o"></i> <?php echo $list[$i]['datetime2'] ?></span>
                         <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
                         <?php if ($list[$i]['wr_good']) { ?><i class="fa fa-thumbs-o-up"></i> <?php echo $list[$i]['wr_good'] ?> <?php } ?>
                         <?php if ($list[$i]['wr_nogood']) { ?><i class="fa fa-thumbs-o-down"></i> <?php echo $list[$i]['wr_nogood'] ?> <?php } ?>
                     
-                    </div>
-                    
+                    </div> -->
+                </div>
                 </li><?php } else { ?>
                     <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
@@ -162,7 +204,7 @@ if (G5_IS_MOBILE) {
 
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
-                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon"><img src="<?php echo G5_IMG_URL ?>/ico_announce.png"></strong><?php }else{ ?>
+                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php }else{ ?>
                                 <span class="number">0</span>
                                 <?php } ?> 
                                 <p>
@@ -182,8 +224,12 @@ if (G5_IS_MOBILE) {
 
                     </div>
                     <div class="bo_info">
-                        <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?>
-                        <span class="bo_date"> <i class="fa fa-clock-o"></i> <?php echo $list[$i]['datetime2'] ?></span>
+                        <!-- <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?> -->
+                        <span class="bo_date"><?php echo $list[$i]['datetime2'] ?></span>
+                        <div class="views">
+                        <img src="<?php echo G5_IMG_URL ?>/ico_view.svg">
+                        <span>조회수</span>
+                        </div>
                         <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
                         <?php if ($list[$i]['wr_good']) { ?><i class="fa fa-thumbs-o-up"></i> <?php echo $list[$i]['wr_good'] ?> <?php } ?>
                         <?php if ($list[$i]['wr_nogood']) { ?><i class="fa fa-thumbs-o-down"></i> <?php echo $list[$i]['wr_nogood'] ?> <?php } ?>
@@ -224,7 +270,10 @@ if (G5_IS_MOBILE) {
     <!-- 게시판 목록 시작 -->
 </div>
 <?php } else { ?>
-    <div>aaa</div>
+    <!-- 투자하기 게시판 -->
+    
+    
+
 <?php } ?>
 
 <?php if($is_checkbox) { ?>
@@ -300,4 +349,43 @@ function select_copy(sw) {
 }
 </script>
 <?php } ?>
+<script>
+    const boardMo = () => {
+        $("#bo_sch .sch_btn").on("click", (e)=>{
+            console.log("cc")
+            if(!$("#bo_sch").hasClass("on")){
+                e.preventDefault();
+                $("#bo_sch").addClass("on")
+            }
+        })
+
+        $("#bo_sch").on("click", (e)=>{
+            if(e.target.id === "bo_sch"){
+                $("#bo_sch").removeClass("on");
+            }
+
+        })
+    }
+
+    if(window.innerWidth < 969){
+        boardMo()
+    }
+
+    $(window).resize(()=>{
+        boardMo()
+    })
+
+    const fundingContent = document.querySelector(".funding_content")
+    const nowAmount = $(".now_amount em").html()
+    const fundingAmount = $(".target_amount em").html()
+    const fundingPersent = $(".funding_content .persent em").html()
+    //.toLocaleString('ko-KR')
+    if(fundingContent){
+        const fundingPersentResult = (Number(nowAmount) / Number(fundingAmount)) * 100;
+        $(".funding_content .persent em").html(fundingPersentResult);
+        $(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
+    }
+    
+</script>
+
 <!-- 게시판 목록 끝 -->

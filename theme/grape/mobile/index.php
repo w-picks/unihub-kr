@@ -5,7 +5,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 
 ?>
 
-<div id="wrapper">
+<div id="main_wrapper">
     <section id="main_vid">
         <article>
             <h2>세계 최초의<br>특허 투자 플랫폼</h2>

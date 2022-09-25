@@ -23,7 +23,360 @@ filter: blur(3px);}
      padding-bottom:27px;
      margin-bottom:43px;
      border-bottom: 1px solid #202A3E;
+     color:#040810;
  }
+ #investment {
+     width:1020px;
+     margin:auto;
+
+ }
+ #investment h1{
+     font-size:35px;
+     padding-top:70px;
+     padding-bottom:56px;
+     color:#040810;
+     text-align: center;
+ }
+ .invest_tab{
+     display: flex;
+ }
+ .invest_tab li{
+     padding: 11px 17px;
+     font-size: 16px;
+     color:#506285;
+     border-bottom:3px solid #fff;
+}
+.invest_tab li.on{
+    border-color:#2D72DB;
+    color:#040810;
+    font-weight: 700;;
+}
+#investment .invest_article{
+    display: flex;
+    justify-content: space-between;
+    height:86px;
+    border-top:1px solid #C1CBE0;
+    align-items: center;
+}
+#investment .invest_article > *{
+    margin:0;
+    width:auto;
+} 
+#investment .invest_article #bo_sch{
+    order:2;
+}
+#investment .invest_article #bo_list_total{
+    order:1;
+}
+#investment .invest_article #bo_sch select{
+    display: none;
+}
+#investment .invest_article #bo_sch .input_wrap{
+    margin:0;
+}
+#investment .invest_article #bo_sch .sch_input{
+    width:280px;
+}
+#investment .board_list ul{
+    border:none;
+}
+#investment .board_list li{
+    display: block;
+}
+#investment .board_list .project_list{
+    border:none;
+}
+#investment .board_list .project_list > li{
+    border: 1px solid #C1CBE0;
+    border-radius: 12px;
+    padding:0;
+    height:226px;
+    display: flex;
+}
+#investment .board_list .project_list > li .img_wrap{
+    width:306px;
+    height:100%;
+    display:flex;
+    flex-shrink: 0;
+}
+#investment .board_list .project_list > li .img_wrap img{
+    width:100%;
+    height:auto;
+    object-fit: cover;
+}
+#investment .board_list .project_list > li .project_content{
+    width:100%;
+}
+#investment .board_list .bo_subject{
+    display: block;
+    font-size: 22px;
+}
+#investment .board_list .bo_subject h2{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+#investment .board_list .bo_subject h2 .funding_state{
+    font-size: 15px;
+    color:#8496BA;
+    line-height:10px;
+    border-right:1px solid #C1CBE0;
+    padding-right:10px;
+    margin-right:13px;
+}
+#investment .board_list .bo_subject h2 .funding_state.success{
+    color:#2D72DB;
+}
+#investment .board_list .bo_subject h2 .funding_state.ing{
+    color:#FF7262;
+}
+#investment .board_list ul.tags{
+    display: flex;
+    align-items: center;
+    margin-top:12px;
+}
+#investment .board_list ul.tags li{
+    font-size: 13px;
+    color:#506285;
+    height:30px;
+    line-height:30px;
+    padding:0 10px;
+    background:#F0F3F9;
+    border-radius: 100px;
+    margin-right:6px;
+    border:none;
+}
+#investment .project_list{
+    margin-bottom:40px
+}
+#investment .project_content{
+    padding: 26px 31px 25px 17px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height:100%;
+}
+#investment .funding_content .amount_wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#investment .funding_content .amount_wrap em{
+    font-style: normal;
+}
+#investment .funding_content .amount{
+    display: flex;
+    align-items: baseline;
+}
+#investment .funding_content .amount .now_amount{
+    font-size:18px;
+    font-weight: 600;
+}
+#investment .funding_content .amount .target_amount{
+    font-size:12px;
+    margin-left:6px;
+    color:#8496BA;
+}
+#investment .funding_content .persent{
+    font-size:18px;
+    font-weight: bold;
+    color:#2D72DB;
+}
+#investment .funding_content .funding_state_bar{
+    width:100%;
+    height:9px;
+    border-radius: 10px;
+    background:#E6EBF5;
+    margin-top:11px;
+    position: relative;
+    overflow:hidden
+}
+#investment .funding_content .funding_state_bar .gauge{
+    position: absolute;
+    top:0;
+    left:0;
+    width:50%;
+    height:100%;
+    background:#2D72DB;
+    border-radius: 10px;
+}
+/* 투자하기 디테일 */
+#invest_detail{
+    background:#F7F8FB;
+    padding-top:25px;
+    padding-bottom:100px;
+    color:#040810;
+}
+#invest_detail em{
+    font-style: normal;
+}
+#invest_detail .invest_wrap{
+    width:100%;
+    max-width:1020px;
+    border-radius: 16px;
+    background:#fff;
+    margin:auto;
+    padding:35px 55px;
+    box-sizing: border-box;
+}
+#invest_detail .tags{
+    display: flex;
+}
+#invest_detail .tags_mo{
+    display: none;;
+}
+#invest_detail .tags li{
+    color:#506285;
+    font-size: 13px;
+    background:#F0F3F9;
+    height:30px;
+    line-height:30px;
+    padding:0 10px;
+    border-radius: 100px;
+    margin-right:6px;
+}
+#invest_detail h1.title{
+    font-size: 25px;
+    margin:15px 0;
+}
+#invest_detail .thum_content{
+    display: flex;
+    height:330px;
+    justify-content: space-between;
+}
+#invest_detail .thum_content .thum_nail{
+    width:564px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    display: flex;
+    overflow:hidden;
+}
+#invest_detail .thum_content .thum_nail img{
+    width:100%;
+    object-fit: cover;
+}
+#invest_detail .detail_content{
+    height:100%;
+    width:330px;
+    border-radius: 6px;
+    border:1px solid #C1CBE0;
+    padding:18px;
+    padding-top:24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+#invest_detail .detail_content h2.title{
+    font-size: 20px;
+}
+#invest_detail .detail_content h2.title .funding_state{
+    font-size:13px;
+    color:#2D72DB;
+    display: block;
+    margin-bottom:8px;
+}
+#invest_detail .detail_content .amount_container{
+    background:#F0F5FF;
+    display: flex;
+    align-items: center;
+    height:50px;
+    width:100%;
+    border-bottom:3px solid #2D72DB;
+    justify-content: center;
+}
+#invest_detail .detail_content .amount_container .amount{
+    font-size: 18px;
+    font-weight: 500;
+}
+#invest_detail .detail_content .amount_container .amount_state{
+    font-size: 15px;
+    color:#2D72DB;
+    font-weight: 300;
+    margin-left:14px;
+}
+#invest_detail .detail_content .target p{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-weight:600;
+}
+#invest_detail .detail_content .target p span{
+    font-size:13px;
+    color:#506285;
+    border-right:1px solid #A7B0C1;
+    height:8px;
+    line-height:8px;
+    padding-right:6px;
+    margin-right:9px;
+    font-weight: normal;
+}
+#invest_detail .detail_content .target_amount{}
+#invest_detail .detail_content .funding_result{
+    color:#2D72DB;
+}
+#invest_detail .detail_content .invest_btn{
+    height:46px;
+    background:#2D72DB;
+    border-radius: 7px;
+    color:#fff;
+    font-size: 18px;
+    width:100%;
+    border:none;
+    margin-top:20px;
+}
+#invest_detail .tab_container{
+    margin-top:36px;
+}
+#invest_detail .tab_container .tabs{
+    display: flex;
+    align-items: center;
+    width:100%;
+    border-bottom:1px solid #C1CBE0
+}
+#invest_detail .tab_container .tabs li{
+    padding:11px;
+    font-size: 16px;
+    color: #506285;
+}
+#invest_detail .tab_container .tabs li.on{
+    color:#040810;
+    font-weight:600;
+    border-bottom:3px solid #2D72DB
+}
+#invest_detail .tab_container .tab_content{}
+#invest_detail .tab_container .tab_content > div{
+    padding:33px 20px;
+    box-sizing: border-box;
+}
+#invest_detail .tab_container .tab_content > div.tab_con1{}
+#invest_detail .tab_container .tab_content > div.tab_con1 ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#invest_detail .tab_container .tab_content > div.tab_con1 ul li{
+    width:273px;
+    height:134px;
+    background:#F0F5FF;
+    border:1px solid #D2E1FF;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+#invest_detail .tab_container .tab_content > div.tab_con1 ul li span{
+    font-size: 16px;
+    color:#506285;
+}
+#invest_detail .tab_container .tab_content > div.tab_con1 ul li p{
+    font-size: 23px;
+    font-weight: bold;
+    margin-top:7px
+}
+
 /* 게시판 버튼 */
 /* 목록 버튼 */
 #bo_list a.btn_b01 {}
@@ -86,7 +439,7 @@ white-space: nowrap;overflow-x: auto;
 /* #bo_sch:after {display:block;visibility:hidden;clear:both;content:""} */
 #bo_sch legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 #bo_sch select{
-    background:#CDDEFF url("/img/ico_select_arrow.png") no-repeat right 19px center;
+    background:#CDDEFF url("/img/ico_select_arrow.svg") no-repeat right 19px center;
     color:#2D72DB;
     -o-appearance: none;
     -webkit-appearance: none;
@@ -95,7 +448,7 @@ white-space: nowrap;overflow-x: auto;
     border:none;
     border-radius: 100px;
     padding-left:29px;
-    padding-right:10px;
+    padding-right:43px;
     height:50px;
     font-size: 16px;
 }
@@ -160,10 +513,10 @@ white-space: nowrap;overflow-x: auto;
     justify-content: space-between;
     align-items: center;
 }
-.board_list .bo_notice  {background:#f7f7f7}
-.board_list .bo_subject{font-size:18px;font-weight:500;display: flex; align-items: center;}
+.board_list .bo_notice  {background:#F8F9FB}
+.board_list .bo_subject{font-size:18px;font-weight:500;display: flex; align-items: center;color:#040810}
 .board_list .bo_subject .notice_icon{width:76px;}
-.board_list .bo_subject .number{width:76px;}
+.board_list .bo_subject .number{width:76px; color:#8496BA; font-size:16px; font-weight: normal;}
 .board_list .bo_cate_link{color:#ea185f;margin-bottom:10px;display:block}
 
 .board_list .fa-download{width:16px;height:16px;line-height:16px;background:#e89f31;color:#fff;text-align:center;font-size:10px;border-radius:4px;vertical-align:middle;}
@@ -173,9 +526,19 @@ white-space: nowrap;overflow-x: auto;
 .board_list .hot_icon{display:inline-block;width: 16px;line-height:16px ;font-size:0.833em;color:#fff;background:#e52955;;border-radius:4pxtext-align:center;;vertical-align:middle;font-weight:normal;font-size:11px}
 .board_list .fa-lock{display: inline-block;line-height: 14px;width: 16px;font-size: 0.833em;color: #fff;background: #262b88;text-align: center;border-radius: 4px;font-size: 12px;border:1px solid #262b88}
 
-.board_list .bo_info {line-height:20px;color:#86909a}
+.board_list .bo_info {
+    color:#506285;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
 .board_list .bo_info .sv_member{color:#86909a;font-weight:normal}
-.board_list .bo_info img{vertical-align:top;border-radius:30px}
+.board_list .bo_info .views{
+    display: flex;
+    align-items: center;
+    margin-left:96px
+}
+.board_list .bo_info img{margin-right:6px;}
 .board_list .bo_info i{margin-left:5px}
 
 .bo_fx {margin:20px 0}
@@ -189,6 +552,308 @@ white-space: nowrap;overflow-x: auto;
     #bo_sch .sch_input{width:68%;float:right;} */
     #bo_list .all_chk{margin:10px 0}
     #nav{top:60px}
+    #notice_news h1{
+        padding-top:36px;
+        padding-bottom:43px;
+        margin-bottom:0;
+        border:none;
+        width:100%;
+        padding-left:23px;
+        font-size: 25px;
+        box-sizing: border-box;
+        height:109px;
+    }
+    #bo_sch{
+        width:100%;
+        position: absolute;
+        top:0;
+        right:0;
+        z-index: 1;
+    }
+    #bo_sch:before{
+        content:'';
+        display: none;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100vh;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: -1;
+    }
+    #bo_sch form{
+     display: flex;
+    }
+    #bo_sch select{
+        background-color:#F2F4F9;
+        border-radius: 0;
+        color : #8496BA;
+        background-image:url("/img/ico_select_arrow_mo.svg");
+        height:69px;
+        visibility: hidden;
+        padding-right:43px;
+        font-size: 15px;
+    }
+    #bo_sch .input_wrap{
+        border-radius: 0;
+        margin:0;
+        width:100%;
+        display: flex;
+        background:none;
+    }
+    #bo_sch .input_wrap input{
+        width:100%;
+        height:69px;
+        visibility: hidden;
+    }
+    #bo_sch .sch_btn{
+        padding:0 23px;
+        height:96px;
+        border-radius: 0;
+    }
+    #bo_sch.on{
+        filter:drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15))
+    }
+    #bo_sch.on:before{
+        display: block;
+    }
+    #bo_sch.on select{
+        visibility: visible;
+    }
+    #bo_sch.on .input_wrap{
+        background-color:#F2F4F9;
+    }
+    #bo_sch.on .input_wrap input{
+        visibility: visible;
+    }
+    #bo_sch.on .sch_btn{
+        height:69px
+    }
+    #bo_list_total{
+        margin-bottom:23px;
+        padding-left:23px;
+        box-sizing: border-box;
+        font-size: 14px;
+        width:100%;
+    }
+    .board_list li{
+        padding:18px 24px;
+        display: block;
+        position: relative;
+    }
+    .board_list .bo_subject{
+        font-size: 15px;
+        align-items: flex-start;
+    }
+    .board_list .bo_subject .number {
+        width:34px;
+        height:42px;
+        display: flex;
+        align-items: center;
+    }
+    .board_list .bo_subject .notice_icon img{
+        width:20px;
+    }
+    .board_list .bo_info{
+        padding-left:60px;
+        font-size: 13px;
+        position: absolute;
+        left:0;
+        bottom:18px;
+    }
+    .board_list .bo_info .views{
+        margin-left:11px;
+    }
+    .board_list .bo_info .views img{
+        width:20px;
+        margin-right: 2px;
+    }
+    #investment{
+        width:100%;
+    }
+    #investment h1{
+        padding-top: 36px;
+        padding-bottom: 43px;
+        margin-bottom: 0;
+        border: none;
+        width: 100%;
+        padding-left: 23px;
+        font-size: 25px;
+        box-sizing: border-box;
+        height: 109px;
+        text-align: left;
+    }
+    .invest_tab_wrap{
+        width:100%;
+        overflow-x: scroll;
+    }
+    .invest_tab{
+        width: max-content;
+        padding:0 16px;
+        box-sizing: border-box;
+    }
+    .invest_tab li{
+        font-size:14px;
+        padding:11px;
+    }
+    #investment .invest_article{
+        height:54px;
+    }
+    #investment .invest_article #bo_sch{
+        width:100%;
+    }
+    #investment .invest_article #bo_sch .sch_input{
+        width:100%;
+    }
+    #investment .board_list .project_list > li{
+        border:none;
+        height:117px;
+    }
+    #investment .board_list .project_list > li .img_wrap{
+        width:146px;
+    }
+    #investment .board_list .project_list > li .project_content{
+        padding:0 15px 0 8px;
+    }
+    #investment .board_list .bo_subject{
+        font-size: 15px;
+        
+    }
+    #investment .board_list .bo_subject h2{
+        flex-flow: column;
+        align-items: flex-start;
+    }
+    #investment .board_list .bo_subject h2 a{
+        font-weight: 600;
+    }
+    #investment .board_list .bo_subject h2 .funding_state{
+        border-right:none;
+        font-size: 12px;
+        margin-bottom:4px;
+    }
+    #investment .board_list ul.tags{
+        margin-top:5px;
+    }
+    #investment .board_list ul.tags li{
+        font-size:11px;
+        padding:0;
+        line-height:1;
+        background:none;
+        height:auto;
+    }
+    #investment .funding_content .amount .now_amount{
+        font-size:14px;
+    }
+    #investment .funding_content .persent{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    #investment .funding_content .funding_state_bar{
+        height:4px;
+        margin-top:5px;
+    }
+    /* 투자하기 디테일 모바일 */
+    #invest_detail{
+        padding:0;
+    }
+    #invest_detail .invest_wrap{
+        padding:0;
+    }
+    #invest_detail .detail_container{
+        display: flex;
+        flex-flow: column;
+    }
+    #invest_detail h1.title{
+        display: none;
+    }
+    #invest_detail .thum_content{
+        width:100%;
+        flex-flow: column;
+        height:auto;
+    }
+    #invest_detail .thum_content .thum_nail{
+        height:241px;
+    }
+    #invest_detail .tags{
+        display: none;;
+    }
+    #invest_detail .tags_mo{
+        display: flex;
+        padding:22px 23px;
+        box-sizing: border-box;
+    }
+    #invest_detail .tags_mo li{
+        color:#506285;
+        border-radius: 100px;
+        font-size:12px;
+        background:none;
+        padding:0;
+        margin-right:6px;
+        height:auto;
+        line-height: normal;
+    }
+    #invest_detail .detail_content{
+        width:100%;
+        border:none;
+        padding: 0 23px;
+    }
+    #invest_detail .detail_content h2.title{
+        font-size: 16px;
+        order:1;
+        padding-bottom:15px;
+        margin-bottom:15px;
+        border-bottom:1px solid #E6EBF5;
+    }
+    #invest_detail .detail_content h2.title .funding_state{
+        font-size: 12px;
+        margin-bottom:6px;
+    }
+    #invest_detail .target{
+        order:2;
+    }
+    #invest_detail .detail_content .amount_container{
+        order:3;
+        margin-top:25px;
+    }
+    #invest_detail .detail_content .target_amount{
+        margin-bottom:4px;
+    }
+    #invest_detail .detail_content .invest_btn{
+        order:4;
+        height:58px;
+        margin-top:28px;
+        border-radius: 0;
+        width:calc(100% + 46px);
+        margin-left:-23px;
+    }
+    #invest_detail .tab_container{
+        margin-top:42px;
+    }
+    #invest_detail .tab_container .tabs{
+        justify-content: space-around;
+    }
+    #invest_detail .tab_container .tab_content > div{
+        padding:32px 23px;
+    }
+    #invest_detail .tab_container .tab_content > div.tab_con1 ul{
+        flex-flow: column;
+    }
+    #invest_detail .tab_container .tab_content > div.tab_con1 ul li{
+        height:53px;
+        width:100%;
+        flex-flow:row;
+        justify-content: space-between;
+        align-items: center;
+        padding:0 26px;
+        margin-bottom:11px;
+    }
+    #invest_detail .tab_container .tab_content > div.tab_con1 ul li span{
+        font-size: 12px;
+    }
+    #invest_detail .tab_container .tab_content > div.tab_con1 ul li p{
+        font-size: 18px;
+        margin:0;;
+    }
 }
 @media (min-width: 970px){
     /* #bo_sch {float:right;} */

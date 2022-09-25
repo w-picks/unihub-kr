@@ -16,7 +16,7 @@ echo '<div class="bo_top_img">'.conv_content($fm['fm_mobile_head_html'], 1).'</d
 if( count($faq_master_list) ){
 ?>
 
-<nav id="bo_cate">
+<!-- <nav id="bo_cate">
     <h2>자주하시는질문 분류</h2>
     <ul id="bo_cate_ul">
         <?php
@@ -33,8 +33,15 @@ if( count($faq_master_list) ){
         }
         ?>
     </ul>
-</nav>
+</nav> -->
 <?php } ?>
+
+<div id="faq_wrapper">
+
+<div class="faq_tit">
+<h1><?php echo $category_msg.$v['fm_subject'];?></h1>
+<a href="<?php echo G5_BBS_URL ?>/qawrite.php" class="direct_btn">1:1 문의<img src="<?php echo G5_IMG_URL ?>/ico_direct_faq.svg"></a>
+</div>
 
 
 <div id="faq_wrap" class="faq_<?php echo $fm_id; ?>">
@@ -43,8 +50,8 @@ if( count($faq_master_list) ){
         <form name="faq_search_form" method="get">
         <input type="hidden" name="fm_id" value="<?php echo $fm_id;?>">
         <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-        <input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="frm_input" size="15" maxlength="15">
-        <button type="submit" value="검색" class="btn_submit"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+        <input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="frm_input" size="15" maxlength="15" placeholder="궁금한 점을 입력하세요!">
+        <button type="submit" value="검색" class="btn_submit"><img src="<?php echo G5_IMG_URL ?>/ico_search.svg"><span class="sound_only">검색</span></button>
         </form>
     </div>
    <?php // FAQ 내용
@@ -59,11 +66,13 @@ if( count($faq_master_list) ){
                     continue;
             ?>
             <li>
-                <h3><span class="faq_alp faq_alp_q">Q</span><a href="#none" onclick="return faq_open(this);"><?php echo conv_content($v['fa_subject'], 1); ?></a></h3>
+            <a href="#none" onclick="return faq_open(this);">
+            <h3>Q. <?php echo conv_content($v['fa_subject'], 1); ?></h3>
+                <img src="<?php echo G5_IMG_URL ?>/ico_faq_arrow.svg"></a>
                 <div class="con_inner">
-                    <span class="faq_alp faq_alp_a">A</span>
+                    
                     <?php echo conv_content($v['fa_content'], 1); ?>
-                    <div class="con_closer"><button type="button" class="closer_btn">닫기</button></div>
+                    <!-- <div class="con_closer"><button type="button" class="closer_btn">닫기</button></div> -->
                 </div>
             </li>
             <?php
@@ -84,6 +93,8 @@ if( count($faq_master_list) ){
         }
     }
     ?>
+</div>
+
 </div>
 
 <?php echo get_paging($page_rows, $page, $total_page, $_SERVER['SCRIPT_NAME'].'?'.$qstr.'&amp;page='); ?>
@@ -108,9 +119,14 @@ function faq_open(el)
 {
     var $con = $(el).closest("li").find(".con_inner");
 
+    
+
     if($con.is(":visible")) {
         $con.slideUp();
+        $(el).addClass("on");
     } else {
+        $(el).removeClass("on");
+
         $("#faq_con .con_inner:visible").css("display", "none");
 
         $con.slideDown(
