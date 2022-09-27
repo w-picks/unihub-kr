@@ -18,12 +18,20 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <p class="scroll-trans scroll-trans-delay-300">특허를 발굴하고 개인/기관 투자를 통해<br>특허에서 발생되는 수익을 공유하는 플랫폼.<br>아이디어허브를 통해 글로벌 수익화를 실현하세요.</p>
         </article>
     </section>
+
+    <!-- 모집중인 프로젝트 -->
+    <?php
+    $sql = " select * from g5_write_investment where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";        
+    $result = sql_query($sql);
+    for ($i=0; $row = sql_fetch_array($result); $i++) {
+        echo $row['wr_subject'];
+    ?>
     <section id="section2">
         <div class="project_slide_content swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide_1">
                     <p class="slide-name">모집중인 프로젝트</p>
-                    <h3>Medical Device</h3>
+                    <h3><?php echo $row['wr_subject'] ?></h3>
                     <p class="caption">RF(고주파)를 이용한 의료기기 관련 특허</p>
                     <ul>
                         <li>
@@ -81,6 +89,10 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <div class="swiper-pagination"></div>
         </div>
     </section>
+    <?php
+    }
+    ?>
+
     <section id="section3" class="invest_status">
         <article class="txt_box scroll-trans">
             <p>아이디어허브 투자자이신가요?</p>
