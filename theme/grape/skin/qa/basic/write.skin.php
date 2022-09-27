@@ -31,7 +31,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <div class="form_01">
         <ul>
             <?php if ($category_option) { ?>
-            <li>
+            <li>aaa
                 <label for="qa_category" class="sound_only">분류<strong>필수</strong></label>
                 <select name="qa_category" id="qa_category" required >
                     <option value="">분류를 선택하세요</option>

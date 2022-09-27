@@ -56,9 +56,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
             </li>
             <?php } ?>
 
+            <!-- 
+                ideahub 1:1문의하기
+                필드 추가
+             -->
+             <li>
+                <label for="qa_1" class="sound_only">이름<strong>필수</strong></label>
+                <input type="text" name="qa_1" value="<?php echo get_text($write['qa_1']); ?>" id="qa_1" required class="frm_input required" maxlength="100" placeholder="이름">
+            </li>
+
             <?php if ($is_hp) { ?>
             <li>
-                <label for="qa_hp" class="sound_only">휴대폰</label>
+                <label for="qa_hp" class="sound_only">휴대폰<strong>필수</strong></label>
                 <input type="text" name="qa_hp" value="<?php echo get_text($write['qa_hp']); ?>" id="qa_hp" <?php echo $req_hp; ?> class="<?php echo $req_hp.' '; ?>frm_input full_input" size="30" placeholder="휴대폰">
                 <?php if($qaconfig['qa_use_sms']) { ?>
                 <input type="checkbox" name="qa_sms_recv" value="1" <?php if($write['qa_sms_recv']) echo 'checked="checked"'; ?>> 답변등록 SMS알림 수신
@@ -88,7 +97,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
                 </div>
             </li>
 
-            <li class="bo_w_flie">
+            <!-- <li class="bo_w_flie">
                 <div class="file_wr">
                     <span class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i><span class="sound_only">파일 #2</span></span>
                     <input type="file" name="bf_file[2]" title="파일첨부 2 :  용량 <?php echo $upload_max_filesize; ?> 이하만 업로드 가능" class="frm_file">
@@ -96,7 +105,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
                     <input type="checkbox" id="bf_file_del2" name="bf_file_del[2]" value="1"> <label for="bf_file_del2"><?php echo $write['qa_source2']; ?> 파일 삭제</label>
                     <?php } ?>
                 </div>
-            </li>
+            </li> -->
 
         </ul>
     </div>
