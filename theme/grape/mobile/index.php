@@ -21,7 +21,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 
     <!-- 모집중인 프로젝트 -->
     <?php
-    $sql = " select * from g5_write_investment where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";        
+    $sql = " select * from g5_write_investment where order by wr_num desc limit 0, 3 ";        
     $result = sql_query($sql);
     for ($i=0; $row = sql_fetch_array($result); $i++) {
         echo $row['wr_subject'];
