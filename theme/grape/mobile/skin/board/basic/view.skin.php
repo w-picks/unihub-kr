@@ -214,9 +214,29 @@ if (G5_IS_MOBILE) {
         <div class="invest_wrap">
         <article class="detail_container">
             <ul class="tags">
-                <li><?php echo $view['wr_6'] ?></li>
-                <!-- <li>#채권형</li>
-                <li>#일반화사체</li> -->
+                <li>#이자율 <?php echo $view['wr_5'] ?>%</li>
+                <?php 
+                if($view['wr_9']) {
+                    ?>
+                    <li>
+                    <?php 
+                        echo $view['wr_9']
+                    ?>
+                    </li>
+                    <?php 
+                }
+                if($view['wr_10']) {
+                    ?>
+                    <li>
+                    <?php 
+                        echo $view['wr_10']
+                    ?>
+                    </li>
+                    <?php 
+                }
+                ?>
+                <!-- <li><?php echo $view['wr_9'] ?></li> -->
+                <!-- <li><?php echo $view['wr_10'] ?></li> -->
             </ul>
             <h1 class="title"><?php echo $view['wr_subject'] ?></h1>
             <div class="thum_content">
@@ -229,7 +249,29 @@ if (G5_IS_MOBILE) {
                     <li>#일반화사체</li> -->
                 </ul>
                 <div class="detail_content">
-                    <h2 class="title"><span class="funding_state">펀딩중</span><?php echo $view['wr_subject'] ?></h2>
+                    <h2 class="title">
+                    <?php 
+                        $now = strtotime(date("Y-m-d"));
+                        $target_start = strtotime(date('Y-m-d', strtotime($view['wr_1'])));
+                        $target_end = strtotime(date('Y-m-d', strtotime($view['wr_2'])));
+                        $success_tag = $view['wr_3'] < $view['wr_4'];
+                        if($now < $target_start) {
+                        ?>
+                            <span class="funding_state success">펀딩예정</span>
+                        <?php     
+                        } else if($now > $target_end) {
+                        ?>
+                            <span class="funding_state success">펀딩종료</span>
+                        <?php
+                        } else if($now > $target_start && $now < $target_end) {
+                        ?>
+                            <span class="funding_state success">펀딩중</span>
+                        <?php
+                        } 
+                        ?>
+
+                        <?php echo $view['wr_subject'] ?>
+                    </h2>
                     <div class="amount_container">
                         <p class="amount"><em><?php echo $view['wr_4'] ?></em>원</p>
                         <span class="amount_state">투자완료</span>
@@ -237,7 +279,7 @@ if (G5_IS_MOBILE) {
                     <div class="target">
                         <p class="target_amount"><span>목표금액</span><em><?php echo $view['wr_3'] ?></em>원</p>
                         <p class="funding_result"><span>펀딩성공</span><em>0</em>%</p>
-                        <button class="invest_btn">투자하기</button>
+                        <button class="invest_btn" onclick="location.href='<?php echo G5_BBS_URL ?>/qawrite.php'">투자하기</button>
                     </div>
                 </div>
             </div>
@@ -252,15 +294,15 @@ if (G5_IS_MOBILE) {
                     <ul>
                         <li>
                             <span>펀딩 시작일</span>
-                            <p><?php echo $view['wr_1'] ?></p>
+                            <p><?php echo date('Y.m.d', strtotime($view['wr_1'])) ?></p>
                         </li>
                         <li>
                             <span>펀딩 종료일</span>
-                            <p><?php echo $view['wr_2'] ?></p>
+                            <p><?php echo date('Y.m.d', strtotime($view['wr_2'])) ?></p>
                         </li>
                         <li>
                             <span>연 이자율</span>
-                            <p><?php echo $view['wr_5'] ?></p>
+                            <p><?php echo $view['wr_5'] ?>%</p>
                         </li>
                     </ul>
                 </div>

@@ -21,10 +21,10 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 
     <!-- 모집중인 프로젝트 -->
     <?php
-    $sql = " select * from g5_write_investment where order by wr_num desc limit 0, 3 ";        
+    $sql = " select * from g5_write_investment where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";        
     $result = sql_query($sql);
     for ($i=0; $row = sql_fetch_array($result); $i++) {
-        echo $row['wr_subject'];
+        // var_dump($row)
     ?>
     <section id="section2">
         <div class="project_slide_content swiper">
@@ -32,22 +32,22 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 <div class="swiper-slide slide_1">
                     <p class="slide-name">모집중인 프로젝트</p>
                     <h3><?php echo $row['wr_subject'] ?></h3>
-                    <p class="caption">RF(고주파)를 이용한 의료기기 관련 특허</p>
+                    <p class="caption"><?php echo $row['wr_6'] ?></p>
                     <ul>
                         <li>
                             <p>예상수익률</p>
-                            <div><b>연 40%</b><br>이상</div>
+                            <div><b>연 <?php echo $row['wr_5'] ?>%</b><br>이상</div>
                         </li>
                         <li>
                             <p>모집금액</p>
-                            <div><b>5</b>억원</div>
+                            <div><b><?php echo ceil($row['wr_4']/100000000) ?></b>억원</div>
                         </li>
                         <li>
                             <p>모집기간</p>
-                            <div><b>11.30</b><br class="mo">까지</div>
+                            <div><b><?php echo date('m.d', strtotime($row['wr_2'])) ?></b><br class="mo">까지</div>
                         </li>
                     </ul>
-                    <button class="default_btn"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
+                    <button class="default_btn" onclick="location.href='<?php echo G5_BBS_URL ?>/board.php?bo_table=investment&wr_id=<?php echo $row['wr_id'] ?>'"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
                     <span></span>
                     </button>
                 </div>

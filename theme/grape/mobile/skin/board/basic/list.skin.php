@@ -38,7 +38,9 @@ if (G5_IS_MOBILE) {
 </nav>
 <?php } ?>
 
-<?php if($board['bo_table'] == 'investment') { ?>
+<?php if($board['bo_table'] == 'investment') { 
+    $tab_tag; // 1 : 오픈 예정, 2: 펀딩 중, 3: 종료
+?>
     <div class="invest_tab_wrap">
         <ul class="invest_tab">
             <li class="on">전체</li>
@@ -140,7 +142,34 @@ if (G5_IS_MOBILE) {
                             <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
                         </span>
                         <?php } ?>
-                        <span class="funding_state success">펀딩성공</span>
+                        <?php 
+                        $now = strtotime(date("Y-m-d"));
+                        $target_start = strtotime(date('Y-m-d', strtotime($list[$i]['wr_1'])));
+                        $target_end = strtotime(date('Y-m-d', strtotime($list[$i]['wr_2'])));
+                        $success_tag = $list[$i]['wr_3'] < $list[$i]['wr_4'];
+                        if($now < $target_start) {
+                            $tab_tag = 1;
+                        ?>
+                            <span class="funding_state success">펀딩예정</span>
+                        <?php     
+                        } else if($now > $target_end) {
+                            $tab_tag = 3;
+                        ?>
+                            <span class="funding_state success">펀딩종료</span>
+                        <?php
+                        } else if($success_tag == 1) {
+                            $tab_tag = 2;
+                        ?>
+                            <span class="funding_state success">펀딩성공</span>
+                        <?php
+                        } else if($now > $target_start && $now < $target_end) {
+                            $tab_tag = 2;
+                        ?>
+                            <span class="funding_state success">펀딩중</span>
+                        <?php
+                        } 
+                        ?>
+                        <!-- <span class="funding_state success">펀딩성공</span> -->
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
                             <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php } ?> 
@@ -168,10 +197,27 @@ if (G5_IS_MOBILE) {
                                 // $e = "11:11:1"
                                 if(!preg_match_all("/#[^\s#]+/g",$a)){
 
-                                    echo $a;
+                                    // echo $a;
                                 }
 
-                                  ?>
+                                ?>
+                                    #이자율 <?php echo $list[$i]['wr_5'] ?>%
+                                <?php 
+                                if($list[$i]['wr_9']) {
+                                    ?>
+                                    <?php 
+                                        echo $list[$i]['wr_9']
+                                    ?>
+                                    <?php 
+                                }
+                                if($list[$i]['wr_10']) {
+                                    ?>
+                                    <?php 
+                                        echo $list[$i]['wr_10']
+                                    ?>
+                                    <?php 
+                                }
+                                ?>
                             </ul>
 
                         </div>
@@ -269,7 +315,7 @@ if (G5_IS_MOBILE) {
         <?php if ($rss_href || $write_href) { ?>
         <ul class="btn_wr">
             <?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" class="btn_m btn_b01">RSS</a></li><?php } ?>
-            <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn_admin" target="_blank"><i class="fa fa-cog"></i><span class="sound_only">관리자</span></a></li><?php } ?>
+            <!-- <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn_admin" target="_blank"><i class="fa fa-cog"></i><span class="sound_only">관리자</span></a></li><?php } ?> -->
             <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_m btn_b02">글쓰기</a></li><?php } ?>
         </ul>
         <?php } ?>

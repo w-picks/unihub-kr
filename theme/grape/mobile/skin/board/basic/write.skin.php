@@ -139,23 +139,31 @@ if (G5_IS_MOBILE) {
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_1" class="sound_only">시작일</label>
-            <input type="text" name="wr_1" value="<?php echo $wr_1 ?>" id="wr_1" required class="frm_input full_input" placeholder="시작일">
+            <input type="text" name="wr_1" value="<?php echo $wr_1 ?>" id="wr_1" required class="frm_input full_input" placeholder="시작일 (20220101 형식)">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_2" class="sound_only">종료일</label>
-            <input type="text" name="wr_2" value="<?php echo $wr_2 ?>" id="wr_2" required class="frm_input full_input" placeholder="종료일">
+            <input type="text" name="wr_2" value="<?php echo $wr_2 ?>" id="wr_2" required class="frm_input full_input" placeholder="종료일 (20220131 형식)">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_3" class="sound_only">목표금액</label>
-            <input type="text" name="wr_3" value="<?php echo $wr_3 ?>" id="wr_3" required class="frm_input full_input" placeholder="목표금액">
+            <input type="text" name="wr_3" value="<?php echo $wr_3 ?>" id="wr_3" required class="frm_input full_input" placeholder="목표금액 (숫자)">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_4" class="sound_only">도달금액</label>
-            <input type="text" name="wr_4" value="<?php echo $wr_4 ?>" id="wr_4" required class="frm_input full_input" placeholder="도달금액">
+            <input type="text" name="wr_4" value="<?php echo $wr_4 ?>" id="wr_4" required class="frm_input full_input" placeholder="도달금액 (숫자)">
         </div>
         <div class="bo_w_tit write_div">
             <label for="wr_5" class="sound_only">이자율</label>
-            <input type="text" name="wr_5" value="<?php echo $wr_5 ?>" id="wr_5" required class="frm_input full_input" placeholder="이자율">
+            <input type="text" name="wr_5" value="<?php echo $wr_5 ?>" id="wr_5" required class="frm_input full_input" placeholder="이자율 (% 제외한 숫자 입력)">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_9" class="sound_only">태그1</label>
+            <input type="text" name="wr_9" value="<?php echo $wr_9 ?>" id="wr_9" class="frm_input full_input" placeholder="태그1 (#채권형)">
+        </div>
+        <div class="bo_w_tit write_div">
+            <label for="wr_10" class="sound_only">태그2</label>
+            <input type="text" name="wr_10" value="<?php echo $wr_10 ?>" id="wr_10" class="frm_input full_input" placeholder="태그2 (#일반회사체)">
         </div>
         <?php } ?>
 
