@@ -214,29 +214,29 @@ if (G5_IS_MOBILE) {
         <div class="invest_wrap">
         <article class="detail_container">
             <ul class="tags">
-                <li>#이자울 9%</li>
-                <li>#채권형</li>
-                <li>#일반화사체</li>
+                <li><?php echo $view['wr_6'] ?></li>
+                <!-- <li>#채권형</li>
+                <li>#일반화사체</li> -->
             </ul>
-            <h1 class="title">[1차] 고주파 Medical 기술</h1>
+            <h1 class="title"><?php echo $view['wr_subject'] ?></h1>
             <div class="thum_content">
                 <div class="thum_nail">
-                    <img src="<?php echo G5_IMG_URL ?>/test_img.png">
+                    <img src="<?php echo $view['file'][0][path]."/".$view['file'][0][file] ?>">
                 </div>
                 <ul class="tags_mo">
-                    <li>#이자울 9%</li>
-                    <li>#채권형</li>
-                    <li>#일반화사체</li>
+                    <li><?php echo $view['wr_6'] ?></li>
+                    <!-- <li>#채권형</li>
+                    <li>#일반화사체</li> -->
                 </ul>
                 <div class="detail_content">
-                    <h2 class="title"><span class="funding_state">펀딩중</span>[1차] 고주파 Medical 기술</h2>
+                    <h2 class="title"><span class="funding_state">펀딩중</span><?php echo $view['wr_subject'] ?></h2>
                     <div class="amount_container">
-                        <p class="amount"><em>500000</em>원</p>
+                        <p class="amount"><em><?php echo $view['wr_4'] ?></em>원</p>
                         <span class="amount_state">투자완료</span>
                     </div>
                     <div class="target">
-                        <p class="target_amount"><span>목표금액</span><em>2000000</em>원</p>
-                        <p class="funding_result"><span>펀딩성공</span><em>134</em>%</p>
+                        <p class="target_amount"><span>목표금액</span><em><?php echo $view['wr_3'] ?></em>원</p>
+                        <p class="funding_result"><span>펀딩성공</span><em>0</em>%</p>
                         <button class="invest_btn">투자하기</button>
                     </div>
                 </div>
@@ -252,20 +252,37 @@ if (G5_IS_MOBILE) {
                     <ul>
                         <li>
                             <span>펀딩 시작일</span>
-                            <p>2022.03.31</p>
+                            <p><?php echo $view['wr_1'] ?></p>
                         </li>
                         <li>
                             <span>펀딩 종료일</span>
-                            <p>2022.03.31</p>
+                            <p><?php echo $view['wr_2'] ?></p>
                         </li>
                         <li>
                             <span>연 이자율</span>
-                            <p>9%</p>
+                            <p><?php echo $view['wr_5'] ?></p>
                         </li>
                     </ul>
                 </div>
             </div>
         </article>
+        </div>
+    </div>
+
+    <div id="bo_v_top">
+        <ul class="bo_v_left">
+            <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn_m">수정</a></li><?php } ?>
+            <?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn_m" onclick="del(this.href); return false;"> 삭제</a></li><?php } ?>
+            <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;"> 복사</a></li><?php } ?>
+            <?php if ($move_href) { ?><li><a href="<?php echo $move_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;">이동</a></li><?php } ?>
+            <?php if ($search_href) { ?><li><a href="<?php echo $search_href ?>" class="btn_b01 btn_m">검색</a></li><?php } ?>
+
+        </ul>
+        <div class="bo_v_right"> 
+            <a href="<?php echo $list_href ?>" class="btn_b01 btn_m">목록</a>
+            <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01 btn_m">답변</a><?php } ?>
+            <?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn_b02 btn_m">글쓰기</a><?php } ?>
+
         </div>
     </div>
 <?php } ?>
@@ -359,6 +376,9 @@ if(investDetail){
     const tagetAmount = $(".target_amount em").html();
     const fundingPersent = (Number(amount) / Number(tagetAmount)) * 100;
         $(".funding_result em").html(fundingPersent);
+
+    $(".amount em").html(Number(amount).toLocaleString('ko-KR'))
+    $(".target_amount em").html(Number(tagetAmount).toLocaleString('ko-KR'))
 }
 
 

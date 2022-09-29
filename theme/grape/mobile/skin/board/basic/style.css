@@ -92,6 +92,7 @@ filter: blur(3px);}
     padding:0;
     height:226px;
     display: flex;
+    margin-bottom:20px;
 }
 #investment .board_list .project_list > li .img_wrap{
     width:306px;

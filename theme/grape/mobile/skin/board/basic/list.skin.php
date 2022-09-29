@@ -111,13 +111,15 @@ if (G5_IS_MOBILE) {
             for ($i=0; $i<count($list); $i++) {
                 // 투자하기 리스트 ideahub
                 if($_GET['bo_table'] == 'investment') {
-            ?>
+                    ?>
                 <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 <div class="img_wrap">
-                <?php
+                    <?php
+                    $row = '';
                     $thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], "600", "226");
                     if($thumb['src']) {
-                        $img_content = '<img src="'.$thumb['src'].'" alt="'.$thumb['alt'].'" >';
+
+                        $img_content = '<img src="'.$thumb['ori'].'" alt="'.$thumb['alt'].'" >';
                     } else {
                         $img_content = '<span>no image</span>';
                     }
@@ -157,17 +159,27 @@ if (G5_IS_MOBILE) {
                         </h2>
 
                         <ul class="tags">
-                                <li>#이자율 9%</li>
-                                <li>#채권형</li>
-                                <li>#일반회사체</li>
+                                <?php
+                                // preg_replace('/(#[^\s#]+)/g','',$list[$i]['wr_6'])
+                                // echo $list[$i]['wr_6']
+                                // $aaa = split('#', "#aaa")
+                                // echo $asd
+                                $a = $list[$i]['wr_6'];
+                                // $e = "11:11:1"
+                                if(!preg_match_all("/#[^\s#]+/g",$a)){
+
+                                    echo $a;
+                                }
+
+                                  ?>
                             </ul>
 
                         </div>
                             <div class="funding_content">
                                 <div class="amount_wrap">
                                     <div class="amount">
-                                        <span class="now_amount"><em>5000000</em>원</span>
-                                        <span class="target_amount">/<em>2000000</em>원</span>
+                                        <span class="now_amount"><em><?php echo $list[$i]['wr_4'] ?></em>원</span>
+                                        <span class="target_amount">/<em><?php echo $list[$i]['wr_3'] ?></em>원</span>
                                     </div>
                                     <div class="persent"><em>92</em>%</div>
                                 </div>
@@ -376,15 +388,31 @@ function select_copy(sw) {
     })
 
     const fundingContent = document.querySelector(".funding_content")
-    const nowAmount = $(".now_amount em").html()
-    const fundingAmount = $(".target_amount em").html()
-    const fundingPersent = $(".funding_content .persent em").html()
+    // const nowAmount = $(".now_amount em").html()
+    // const fundingAmount = $(".target_amount em").html()
+    const projectList = $(".project_list > li");
     //.toLocaleString('ko-KR')
+    // console.log(fundingAmount)
     if(fundingContent){
-        const fundingPersentResult = (Number(nowAmount) / Number(fundingAmount)) * 100;
-        $(".funding_content .persent em").html(fundingPersentResult);
-        $(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
+        for(let i = 0; i<projectList.length; i++){
+            console.log(i)
+            // projectList.eq(i).find(".now_amount").text();
+            let nowAmount = document.querySelectorAll(".now_amount em");
+            let fundingAmount = document.querySelectorAll(".target_amount em");
+            console.log(Number(nowAmount[i].innerText))
+            let fundingPersentResult = (Number(nowAmount[i].innerText) / Number(fundingAmount[i].innerText)) * 100;
+            projectList.eq(i).find(".funding_content .persent em").html(fundingPersentResult);
+            projectList.eq(i).find(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
+
+            nowAmount[i].innerHTML = Number(nowAmount[i].innerText).toLocaleString('ko-KR')
+            fundingAmount[i].innerHTML = Number(fundingAmount[i].innerText).toLocaleString('ko-KR')
+        }
+        // const fundingPersentResult = (Number(nowAmount) / Number(fundingAmount)) * 100;
+        // $(".funding_content .persent em").html(fundingPersentResult);
+        // $(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
     }
+
+    console.log()
     
 </script>
 
