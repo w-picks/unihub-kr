@@ -13,7 +13,7 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
     <article>
     <div class="title_wrap">
     <h2>아이디어허브<br>언론기사</h2>
-    <button class="default_btn blue"><div>더보기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
+    <button class="default_btn blue" onclick="location.href='<?php echo G5_BBS_URL ?>/board.php?bo_table=broadcast'"><div>더보기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
             <span></span>
             </button>
     </div>
