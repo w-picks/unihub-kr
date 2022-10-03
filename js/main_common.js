@@ -32,6 +32,10 @@ window.addEventListener("load", () => {
   });
 
   const scrollTrans = document.querySelectorAll(".scroll-trans");
+  if (scrollTrans.length > 0) {
+    scrollTrans[0].classList.add("on");
+  }
+
   for (let i = 0; i < scrollTrans.length; i++) {
     const clientRectY = window.pageYOffset + scrollTrans[i].getBoundingClientRect().top;
     const windowHt = window.innerHeight - 50;

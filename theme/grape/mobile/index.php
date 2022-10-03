@@ -8,8 +8,8 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 <div id="main_wrapper">
     <section id="main_vid">
         <article>
-            <h2>세계 최초의<br>특허 투자 플랫폼</h2>
-            <p>누구나 기술에 투자할 수 있는 기회,<br>아이디어허브를 통해 특허권에 투자하세요.</p>
+            <h2 class="scroll-trans">세계 최초의<br>특허 투자 플랫폼</h2>
+            <p class="scroll-trans">누구나 기술에 투자할 수 있는 기회,<br>아이디어허브를 통해 특허권에 투자하세요.</p>
         </article>
     </section>
     <section id="section1">
@@ -20,23 +20,24 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
     </section>
 
     <!-- 모집중인 프로젝트 -->
-    <?php
-    $sql = " select * from g5_write_investment where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";        
-    $result = sql_query($sql);
-    for ($i=0; $row = sql_fetch_array($result); $i++) {
-        // var_dump($row)
-    ?>
+    
     <section id="section2">
         <div class="project_slide_content swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide slide_1">
+            <?php
+            $sql = " select * from g5_write_investment where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";        
+            $result = sql_query($sql);
+            for ($i=0; $row = sql_fetch_array($result); $i++) {
+                // var_dump($row)
+            ?>
+                <div class="swiper-slide slide_<?php echo $i+1 ?>">
                     <p class="slide-name">모집중인 프로젝트</p>
                     <h3><?php echo $row['wr_subject'] ?></h3>
                     <p class="caption"><?php echo $row['wr_6'] ?></p>
                     <ul>
                         <li>
                             <p>예상수익률</p>
-                            <div><b>연 <?php echo $row['wr_5'] ?>%</b><br>이상</div>
+                            <div><b>연 <?php echo $row['wr_5'] ?></b><br>이상</div>
                         </li>
                         <li>
                             <p>모집금액</p>
@@ -51,7 +52,10 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                     <span></span>
                     </button>
                 </div>
-                <div class="swiper-slide slide_2">
+                <?php
+                }
+                ?>
+                <!-- <div class="swiper-slide slide_2">
                     <p class="slide-name">모집중인 프로젝트</p>
                     <h3>Streaming Project</h3>
                     <p class="caption">음성,영상,애니메이션 등을 실시간 재생하는 기술 관련 특허</p>
@@ -72,7 +76,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                     <button class="default_btn"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
                     <span></span>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="project_slide_bg swiper">
@@ -89,9 +93,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <div class="swiper-pagination"></div>
         </div>
     </section>
-    <?php
-    }
-    ?>
+    
 
     <section id="section3" class="invest_status">
         <article class="txt_box scroll-trans">

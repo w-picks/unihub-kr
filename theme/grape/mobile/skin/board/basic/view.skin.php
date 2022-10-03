@@ -19,13 +19,15 @@ if (G5_IS_MOBILE) {
 ?>
   
   <?php if($board['bo_table'] != 'investment') { ?>
-<div id="nav">
+<!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
-</div>
+</div> -->
+
+<h1 id="bo_v_title"><?php echo $board['bo_subject'] ?></h1>
 
 <article id="bo_v">
     <header>
-        <h2 id="bo_v_title">
+        <h2>
             <?php if ($category_name) { ?>
             <span class="bo_v_cate"><?php echo $view['ca_name']; // 분류 출력 끝 ?></span> 
             <?php } ?>
@@ -38,11 +40,13 @@ if (G5_IS_MOBILE) {
     </header>
 
      <section id="bo_v_info">
-        <h2>페이지 정보</h2>
-        <span class="sound_only">작성자 </span><?php echo $view['name'] ?><span class="ip"><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></span>
-        <span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?>
-        <span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> <?php echo number_format($view['wr_hit']) ?>회</strong>
-        <span class="sound_only">댓글</span><strong><i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo number_format($view['wr_comment']) ?>건</strong>
+        <!-- <h2>페이지 정보</h2> -->
+        <span class="sound_only">작성자 </span><?php echo $view['name'] ?>
+        <!-- <span class="ip"><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></span> -->
+        <span class="sound_only">작성일</span>
+        <span><?php echo date("Y-m-d H:i", strtotime($view['wr_datetime'])) ?></span>
+        <span class="sound_only">조회</span><strong><img src="<?php echo G5_IMG_URL ?>/view_icon.svg"> <?php echo number_format($view['wr_hit']) ?></strong>
+        <!-- <span class="sound_only">댓글</span><strong><i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo number_format($view['wr_comment']) ?>건</strong> -->
     </section>   
 
     <section id="bo_v_atc">
@@ -136,12 +140,12 @@ if (G5_IS_MOBILE) {
         <?php } ?>
 
 
-        <div id="bo_v_share">
+        <!-- <div id="bo_v_share">
             <?php
             include_once(G5_SNS_PATH."/view.sns.skin.php");
             ?>
             <?php if ($scrap_href) { ?><a href="<?php echo $scrap_href;  ?>" target="_blank" class="btn_m btn_b01 btn_scrap" onclick="win_scrap(this.href); return false;">스크랩</a><?php } ?>
-        </div>
+        </div> -->
 
 
         <?php if ( $good_href || $nogood_href) { ?>
@@ -202,10 +206,10 @@ if (G5_IS_MOBILE) {
     </div>
 
   
-    <?php
+    <!-- <?php
     // 코멘트 입출력
-    include_once(G5_BBS_PATH.'/view_comment.php');
-     ?>
+    // include_once(G5_BBS_PATH.'/view_comment.php');
+     ?> -->
 
 </article>
 
@@ -235,8 +239,6 @@ if (G5_IS_MOBILE) {
                     <?php 
                 }
                 ?>
-                <!-- <li><?php echo $view['wr_9'] ?></li> -->
-                <!-- <li><?php echo $view['wr_10'] ?></li> -->
             </ul>
             <h1 class="title"><?php echo $view['wr_subject'] ?></h1>
             <div class="thum_content">
@@ -257,15 +259,19 @@ if (G5_IS_MOBILE) {
                         $success_tag = $view['wr_3'] < $view['wr_4'];
                         if($now < $target_start) {
                         ?>
-                            <span class="funding_state success">펀딩예정</span>
+                            <span class="funding_state disabled">펀딩예정</span>
                         <?php     
                         } else if($now > $target_end) {
                         ?>
-                            <span class="funding_state success">펀딩종료</span>
+                            <span class="funding_state disabled">펀딩종료</span>
+                        <?php
+                          } else if($success_tag == 1) {
+                        ?>
+                            <span class="funding_state success">펀딩성공</span>
                         <?php
                         } else if($now > $target_start && $now < $target_end) {
                         ?>
-                            <span class="funding_state success">펀딩중</span>
+                            <span class="funding_state ing">펀딩중</span>
                         <?php
                         } 
                         ?>
@@ -279,7 +285,12 @@ if (G5_IS_MOBILE) {
                     <div class="target">
                         <p class="target_amount"><span>목표금액</span><em><?php echo $view['wr_3'] ?></em>원</p>
                         <p class="funding_result"><span>펀딩성공</span><em>0</em>%</p>
+                        
+                        <?php if($now > $target_end){ ?>
+                        <button class="invest_btn" disabled >투자하기</button>
+                        <?php } else { ?>
                         <button class="invest_btn" onclick="location.href='<?php echo G5_BBS_URL ?>/qawrite.php'">투자하기</button>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

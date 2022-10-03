@@ -45,6 +45,7 @@ filter: blur(3px);}
      font-size: 16px;
      color:#506285;
      border-bottom:3px solid #fff;
+     cursor:pointer;
 }
 .invest_tab li.on{
     border-color:#2D72DB;
@@ -130,6 +131,9 @@ filter: blur(3px);}
 }
 #investment .board_list .bo_subject h2 .funding_state.ing{
     color:#FF7262;
+}
+#investment .board_list .bo_subject h2 .funding_state.disabled{
+    color:#8496BA;
 }
 #investment .board_list ul.tags{
     display: flex;
@@ -278,6 +282,12 @@ filter: blur(3px);}
     display: block;
     margin-bottom:8px;
 }
+#invest_detail .detail_content h2.title .funding_state.ing{
+    color:#FF7262;
+}
+#invest_detail .detail_content h2.title .funding_state.disabled{
+    color:#8496BA;
+}
 #invest_detail .detail_content .amount_container{
     background:#F0F5FF;
     display: flex;
@@ -326,6 +336,11 @@ filter: blur(3px);}
     width:100%;
     border:none;
     margin-top:20px;
+}
+#invest_detail .detail_content .invest_btn:disabled{
+    background:#C1CBE0;
+    color:#fff;
+    cursor:default;
 }
 #invest_detail .tab_container{
     margin-top:36px;
@@ -873,22 +888,54 @@ white-space: nowrap;overflow-x: auto;
 #wr_email, #wr_homepage, #wr_subject, .wr_link {width:100%}
 
 /* 게시판 읽기 */
-#bo_v {margin:0 auto;max-width:1280px;padding:0 20px;}
+#bo_v_title{
+    width:1020px;
+    margin:auto;
+    padding:90px 0 27px 0;
+    box-sizing: border-box;
+    color:#040810;
+    font-size: 35px;
+    border-bottom: 1px solid #202A3E;
 
+}
+#bo_v {
+    width:1020px;
+    margin:auto;
+}
 #bo_v_table {padding: 10px;color:#999;font-size:0.9em;font-weight:bold}
-
-#bo_v header {margin:20px 0 10px}
-#bo_v_title {}
 .bo_v_cate{color:#ea185f}
-.bo_v_tit{display:block;font-size:2em;margin:10px 0 0}
+.bo_v_tit{
+    font-size:20px;
+    margin-top:27px;
+    margin-bottom:18px;
+    display: block;
+}
 
-#bo_v_info {margin:0 0px 30px;color:#86909a;line-height:20px;}
-#bo_v_info h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
-#bo_v_info strong {display:inline-block;font-weight:normal;margin:0 5px}
-#bo_v_info .profile_img img{border-radius:50%;vertical-align:top}
-#bo_v_info .sv_member{color:#86909a}
-#bo_v_info i{margin:0 3px 0 8px}
-
+#bo_v_info {
+    font-size: 13px;
+    color:#8496BA;
+    display: flex;
+    padding:12px 0;
+    border-top:1px solid #E6EBF5;
+    border-bottom:1px solid #E6EBF5;
+}
+#bo_v_info > * {
+    margin-right:12px;
+    padding-right:12px;
+    border-right:1px solid #E6EBF5;
+    line-height:12px;
+    height:12px;
+}
+#bo_v_info > *:last-of-type {
+    border-right:none;
+}
+#bo_v_info .sv_member{
+    font-size: 13px;
+    color:#8496BA;
+}
+#bo_v_info strong{
+    font-weight: normal;
+}
 #bo_v_file {margin:0 }
 #bo_v_file h2  {position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 #bo_v_file ul {margin:0;padding:0;list-style:none}
@@ -949,7 +996,7 @@ box-shadow: 1px 2px 8px #e2e4f1}
 #bo_v_img a.view_image{display:block}
 #bo_v_img img {margin-bottom:15px;max-width:100%;height:auto}
 
-#bo_v_con {min-height:200px;margin-bottom:20px;width:100%;line-height:1.7em;word-break:break-all;overflow:hidden}
+#bo_v_con {min-height:200px;margin-bottom:20px;width:100%;line-height:1.7em;word-break:break-all;overflow:hidden; padding:26px; box-sizing: border-box;}
 #bo_v_con a {color:#000;text-decoration:underline}
 #bo_v_con img {max-width:100%;height:auto}
 

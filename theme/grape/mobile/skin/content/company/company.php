@@ -1,19 +1,19 @@
 <section id="intro_main">
     <article>
-        <h2>아이디어허브는<br>유일하고 유익한 <br class="mo">아이디어를 <br class="pc">연결합니다</h2>
-        <p>우수특허권과 투자자를 연결하는<br>IP WAY MAKER</p>
+        <h2 class="scroll-trans">아이디어허브는<br>유일하고 유익한 <br class="mo">아이디어를 <br class="pc">연결합니다</h2>
+        <p class="scroll-trans">우수특허권과 투자자를 연결하는<br>IP WAY MAKER</p>
     </article>
 </section>
 <section id="intro_2">
     <article>
-        <div class="left_container">
+        <div class="left_container scroll-trans">
         <h2>인류의 역사는<br>위대한 발명의 역사입니다.</h2>
         <p>완성된 발명이 ‘특허권'이라는 권리로 머물러 있는게 아니라 <br class="pc">
         상품화되고 재화로 환원될 수 있다면- <br>
         발명가는 Motivation을 얻고, 기업은 글로벌 시장으로의 발판을<br class="pc">
         마련 할 수 있을 것 입니다.</p>
         </div>
-        <div class="right_container">
+        <div class="right_container scroll-trans-delay-300 scroll-trans">
             <img src="<?php echo G5_IMG_URL ?>/intro2_ceo.png">
             <p>아이디어허브(주) 대표 임경수</p>
         </div>
@@ -21,8 +21,8 @@
 </section>
 <section id="our_mission">
     <article>
-        <h3>Our Mission</h3>
-        <div class="our_txt">
+        <h3 class="scroll-trans">Our Mission</h3>
+        <div class="our_txt scroll-trans">
             <h2>아이디어허브는 2016년 설립된<br><span>특허수익화전문서비스</span> 기업입니다.</h2>
             <ol>
                 <li>
@@ -40,12 +40,12 @@
             </ol>
         </div>
         <div class="our_300">
-            <div>
+            <div class="scroll-trans-delay-300 scroll-trans">
                 <img src="<?php echo G5_IMG_URL ?>/ico_our_mission_heart.png">
                 <b><span>300</span>건</b>
                 <p>특허 라이센스 계약 체결 300건 이상</p>
             </div>
-            <div>
+            <div class="scroll-trans-delay-400 scroll-trans">
                 <img src="<?php echo G5_IMG_URL ?>/ico_our_mission_heart.png">
                 <b><span>3,000</span>건</b>
                 <p>
@@ -54,7 +54,7 @@
                     분야에서 약 3,000여건의 특허 확보
                 </p>
             </div>
-            <div>
+            <div class="scroll-trans-delay-500 scroll-trans">
                 <img src="<?php echo G5_IMG_URL ?>/ico_our_mission_heart.png">
                 <b><span>300</span>건</b>
                 <p>방대한 특허 포트폴리오를 기반으로<br>
@@ -65,8 +65,8 @@
 </section>
 <section id="our_history">
     <article>
-        <h3>Our History</h3>
-        <ul>
+        <h3 class="scroll-trans">Our History</h3>
+        <ul class="scroll-trans">
             <li>
                 <div class="year">2022</div>
                 <div class="history_list">
@@ -123,9 +123,9 @@
 </section>
 <section id="idb_ci">
     <article>
-        <h3>CI 소개</h3>
-        <p>모던하고 미래지향적인 심볼은 허브를 연상시키는 이니셜 i와 H의 합성으로 기업의 전문성과 체계적인 비즈니스를 표현합니다.</p>
-        <div class="ci_wrap">
+        <h3 class="scroll-trans">CI 소개</h3>
+        <p class="scroll-trans">모던하고 미래지향적인 심볼은 허브를 연상시키는 이니셜 i와 H의 합성으로 기업의 전문성과 체계적인 비즈니스를 표현합니다.</p>
+        <div class="ci_wrap scroll-trans">
             <img src="<?php echo G5_IMG_URL ?>/ci_logo_1.png">
             <img src="<?php echo G5_IMG_URL ?>/ci_logo_2.png">
             <img src="<?php echo G5_IMG_URL ?>/ci_logo_3.png">
@@ -134,7 +134,7 @@
 </section>
 <section id="way_to_idb">
     <article>
-        <div>
+        <div class="scroll-trans">
             <h3>찾아오시는 길</h3>
             <address>
             서울시 서초구 강남대로 251, 10층 (06735)<br>(3호선, 신분당선 양재역 2번 출구 도보 1분 거리)
@@ -144,7 +144,7 @@
                 <p class="tel">ideahub@ideahub.co.kr</p>
             </div>
         </div>
-        <div id="map"></div>
+        <div id="map" class="scroll-trans scroll-trans-delay-300"></div>
     </article>
 </section>
 

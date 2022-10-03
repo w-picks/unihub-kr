@@ -393,6 +393,7 @@ ul {
   background: transparent;
   height: 85px;
   float: left;
+  font-size: 13px;
 }
 #hd_btn > button {
   display: none;
@@ -686,6 +687,12 @@ ul {
 }
 .project_slide_content .slide_2 ul li {
   box-shadow: 0px 4px 20px rgba(34, 108, 113, 0.5);
+}
+.project_slide_content .slide_2 .default_btn:hover > div {
+  color: #53abac;
+}
+.project_slide_content .slide_2 .default_btn:hover > div svg path {
+  stroke: #53abac;
 }
 .project_slide_content ul li p {
   color: #202a3e;
@@ -1000,9 +1007,10 @@ ul {
   font-size: 16px;
   color: #2d72db;
   font-weight: 700;
+  width: max-content;
+  min-width: 148px;
 }
 .lt_review .lt_rv_wr ul li .lt_wr .content {
-  margin-left: 80px;
   width: 822px;
 }
 .lt_review .lt_rv_wr ul li .lt_wr .content .content_tit {
@@ -1907,7 +1915,7 @@ ul {
     height: 34px;
     margin-top: 15px;
   }
-  .lt_review .lt_rv_wr ul li.on .lt_wr .content .lt_detail p {
+  .lt_review .lt_rv_wr ul li .lt_wr .content .lt_detail p {
     display: inline;
   }
   .lt_review .lt_rv_wr ul li .lt_wr .content .lt_detail .more_mo {
@@ -1923,6 +1931,7 @@ ul {
     font-size: 12px;
     position: relative;
     top: 8px;
+    min-width: auto;
   }
   .lt_review .lt_rv_wr ul li .lt_wr .lt_date {
     text-align: left;

@@ -39,17 +39,20 @@ if (G5_IS_MOBILE) {
 <?php } ?>
 
 <?php if($board['bo_table'] == 'investment') { 
-    $tab_tag; // 1 : 오픈 예정, 2: 펀딩 중, 3: 종료
+    $tab_tag; // 0:전체,  1 : 오픈 예정, 2: 펀딩 중, 3: 종료
 ?>
     <div class="invest_tab_wrap">
-        <ul class="invest_tab">
-            <li class="on">전체</li>
-            <li>펀딩 중 프로젝트</li>
-            <li>오픈 예정 프로젝트</li>
-            <li>종료된 프로젝트</li>
+        <ul class="invest_tab" >
+            <li class="on" onclick="tabHandle(0)">전체</li>
+            <li onclick="tabHandle(2)">펀딩 중 프로젝트</li>
+            <li onclick="tabHandle(1)">오픈 예정 프로젝트</li>
+            <li onclick="tabHandle(3)">종료된 프로젝트</li>
         </ul>
     </div>
 <?php } ?>
+
+
+
 
 
 <?php if($board['bo_table']) { ?>
@@ -113,8 +116,32 @@ if (G5_IS_MOBILE) {
             for ($i=0; $i<count($list); $i++) {
                 // 투자하기 리스트 ideahub
                 if($_GET['bo_table'] == 'investment') {
+                    // var_dump($list[$i])
                     ?>
-                <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
+                    <?php
+                        $success_tag = $list[$i]['wr_3'] < $list[$i]['wr_4'];
+                        $now = strtotime(date("Y-m-d"));
+                        $target_start = strtotime(date('Y-m-d', strtotime($list[$i]['wr_1'])));
+                        $target_end = strtotime(date('Y-m-d', strtotime($list[$i]['wr_2'])));
+                        if($now < $target_start) {
+                            $tab_tag = 1;
+                        ?>
+                        <?php     
+                        } else if($now > $target_end) {
+                            $tab_tag = 3;
+                        ?>
+                        <?php
+                        } else if($success_tag == 1) {
+                            $tab_tag = 2;
+                        ?>
+                        <?php
+                        } else if($now > $target_start && $now < $target_end) {
+                            $tab_tag = 2;
+                        ?>
+                        <?php
+                        } 
+                        ?>
+                <li class="tabTag_<?php echo $tab_tag ?><?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 <div class="img_wrap">
                     <?php
                     $row = '';
@@ -143,19 +170,20 @@ if (G5_IS_MOBILE) {
                         </span>
                         <?php } ?>
                         <?php 
+                        
+                        $success_tag = $list[$i]['wr_3'] < $list[$i]['wr_4'];
                         $now = strtotime(date("Y-m-d"));
                         $target_start = strtotime(date('Y-m-d', strtotime($list[$i]['wr_1'])));
                         $target_end = strtotime(date('Y-m-d', strtotime($list[$i]['wr_2'])));
-                        $success_tag = $list[$i]['wr_3'] < $list[$i]['wr_4'];
                         if($now < $target_start) {
                             $tab_tag = 1;
                         ?>
-                            <span class="funding_state success">펀딩예정</span>
+                            <span class="funding_state disabled">펀딩예정</span>
                         <?php     
                         } else if($now > $target_end) {
                             $tab_tag = 3;
                         ?>
-                            <span class="funding_state success">펀딩종료</span>
+                            <span class="funding_state disabled">펀딩종료</span>
                         <?php
                         } else if($success_tag == 1) {
                             $tab_tag = 2;
@@ -165,11 +193,10 @@ if (G5_IS_MOBILE) {
                         } else if($now > $target_start && $now < $target_end) {
                             $tab_tag = 2;
                         ?>
-                            <span class="funding_state success">펀딩중</span>
+                            <span class="funding_state ing">펀딩중</span>
                         <?php
                         } 
                         ?>
-                        <!-- <span class="funding_state success">펀딩성공</span> -->
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
                             <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php } ?> 
@@ -188,33 +215,25 @@ if (G5_IS_MOBILE) {
                         </h2>
 
                         <ul class="tags">
-                                <?php
-                                // preg_replace('/(#[^\s#]+)/g','',$list[$i]['wr_6'])
-                                // echo $list[$i]['wr_6']
-                                // $aaa = split('#', "#aaa")
-                                // echo $asd
-                                $a = $list[$i]['wr_6'];
-                                // $e = "11:11:1"
-                                if(!preg_match_all("/#[^\s#]+/g",$a)){
+                                    <li>#이자율 <?php echo $list[$i]['wr_5'] ?>%</li>
 
-                                    // echo $a;
-                                }
-
-                                ?>
-                                    #이자율 <?php echo $list[$i]['wr_5'] ?>%
                                 <?php 
                                 if($list[$i]['wr_9']) {
                                     ?>
+                                    <li>
                                     <?php 
                                         echo $list[$i]['wr_9']
                                     ?>
+                                    </li>
                                     <?php 
                                 }
                                 if($list[$i]['wr_10']) {
                                     ?>
+                                    <li>
                                     <?php 
                                         echo $list[$i]['wr_10']
                                     ?>
+                                    </li>
                                     <?php 
                                 }
                                 ?>
@@ -243,7 +262,9 @@ if (G5_IS_MOBILE) {
                     
                     </div> -->
                 </div>
-                </li><?php } else { ?>
+            </li> 
+            <?php } else { ?>
+                <!-- // 투자하기 리스트 ideahub end -->
                     <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
                     <?php
@@ -410,7 +431,6 @@ function select_copy(sw) {
 <script>
     const boardMo = () => {
         $("#bo_sch .sch_btn").on("click", (e)=>{
-            console.log("cc")
             if(!$("#bo_sch").hasClass("on")){
                 e.preventDefault();
                 $("#bo_sch").addClass("on")
@@ -433,32 +453,59 @@ function select_copy(sw) {
         boardMo()
     })
 
-    const fundingContent = document.querySelector(".funding_content")
-    // const nowAmount = $(".now_amount em").html()
-    // const fundingAmount = $(".target_amount em").html()
-    const projectList = $(".project_list > li");
-    //.toLocaleString('ko-KR')
-    // console.log(fundingAmount)
-    if(fundingContent){
-        for(let i = 0; i<projectList.length; i++){
-            console.log(i)
-            // projectList.eq(i).find(".now_amount").text();
-            let nowAmount = document.querySelectorAll(".now_amount em");
-            let fundingAmount = document.querySelectorAll(".target_amount em");
-            console.log(Number(nowAmount[i].innerText))
-            let fundingPersentResult = (Number(nowAmount[i].innerText) / Number(fundingAmount[i].innerText)) * 100;
-            projectList.eq(i).find(".funding_content .persent em").html(fundingPersentResult);
-            projectList.eq(i).find(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
+    const invest = document.querySelector("#investment");
+    //투자하기 페이지만
+    // if(invest){
+        //펀딩금액, 퍼센트 설정
+        const fundingContent = document.querySelector(".funding_content")
+        const projectListLi = $(".project_list > li");
+        if(fundingContent){
+            for(let i = 0; i<projectListLi.length; i++){
+                let nowAmount = document.querySelectorAll(".now_amount em");
+                let fundingAmount = document.querySelectorAll(".target_amount em");
+                let fundingPersentResult = (Number(nowAmount[i].innerText) / Number(fundingAmount[i].innerText)) * 100;
+                projectListLi.eq(i).find(".funding_content .persent em").html(fundingPersentResult);
+                projectListLi.eq(i).find(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
 
-            nowAmount[i].innerHTML = Number(nowAmount[i].innerText).toLocaleString('ko-KR')
-            fundingAmount[i].innerHTML = Number(fundingAmount[i].innerText).toLocaleString('ko-KR')
+                nowAmount[i].innerHTML = Number(nowAmount[i].innerText).toLocaleString('ko-KR')
+                fundingAmount[i].innerHTML = Number(fundingAmount[i].innerText).toLocaleString('ko-KR')
+            }
         }
-        // const fundingPersentResult = (Number(nowAmount) / Number(fundingAmount)) * 100;
-        // $(".funding_content .persent em").html(fundingPersentResult);
-        // $(".funding_state_bar .gauge").css({width : `${fundingPersentResult}%`})
-    }
+        
+        const investTabLi = document.querySelectorAll(".invest_tab li");
+        const projectList = document.querySelector(".project_list");
+        const projectListList = document.querySelectorAll(".project_list > li");
+        const tabHandle = (num) => {
+            let eleLength = 0;
+            projectListList.forEach((item, i, ele) => {
+                item.style.display = "flex"
+                let listTotal = document.querySelector("#bo_list_total em");
+                if(num === 0){
+                    item.style.display = "flex"
+                    listTotal.innerHTML = projectListList.length;
+                    
+                }else if(!item.classList.contains(`tabTag_${num}`)){
+                    item.style.display = "none"
+                }
+                if(item.classList.contains(`tabTag_${num}`)){
+                    eleLength++;
+                    listTotal.innerHTML = eleLength;
+                }
+            })
+        }
 
-    console.log()
+        // investTabLi.forEach((item) => {
+        //     item.addEventListener("click", (e)=>{
+        //         for(let i = 0; i < investTabLi.length; i++){
+        //             investTabLi[i].classList.remove("on")
+        //         }
+        //         e.target.classList.add("on")
+        //     })
+        // })
+
+
+    // }
+
     
 </script>
 

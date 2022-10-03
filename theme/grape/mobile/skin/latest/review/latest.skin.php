@@ -97,7 +97,6 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
             })
             let detailEle = item.querySelector(".lt_detail p").innerHTML;
             item.querySelector(".lt_detail p").innerHTML = `${detailEle.substr(0, 35)}... `
-            // console.log(lt_detail.substr(0, 10))
         })
     }
 
