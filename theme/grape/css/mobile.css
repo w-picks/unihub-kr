@@ -1393,11 +1393,11 @@ ul {
 }
 
 /* 1:1문의하기 */
-#fwrite {
+.direct_inquiry {
   background: #f7f8fb;
   padding-bottom: 83px;
 }
-#fwrite h1 {
+.direct_inquiry h1 {
   width: 1020px;
   margin: auto;
   font-size: 20px;
@@ -1406,18 +1406,18 @@ ul {
   padding-bottom: 33px;
   color: #040810;
 }
-#fwrite ul {
+.direct_inquiry ul {
   width: 1020px;
   margin: auto;
   background: #fff;
   padding-top: 42px;
   padding-bottom: 46px;
 }
-#fwrite ul li {
+.direct_inquiry ul li {
   width: 435px;
   margin: auto;
 }
-#fwrite ul li label:not(.file_btn) {
+.direct_inquiry ul li label:not(.file_btn) {
   color: #202a3e;
   font-size: 14px !important;
   font-weight: 700;
@@ -1428,30 +1428,30 @@ ul {
   height: auto !important;
   line-height: normal !important;
 }
-#fwrite ul li input[type="text"],
-#fwrite ul li input[type="email"],
-#fwrite ul li textarea {
+.direct_inquiry ul li input[type="text"],
+.direct_inquiry ul li input[type="email"],
+.direct_inquiry ul li textarea {
   background: #f2f4f9;
   border: none;
   border-radius: 6px;
   width: 100%;
   margin-bottom: 25px;
 }
-#fwrite ul li input[type="text"],
-#fwrite ul li input[type="email"],
-#fwrite ul li textarea::placeholder {
+.direct_inquiry ul li input[type="text"],
+.direct_inquiry ul li input[type="email"],
+.direct_inquiry ul li textarea::placeholder {
   color: #8496ba;
   font-weight: 300;
 }
-#fwrite ul li textarea {
+.direct_inquiry ul li textarea {
   resize: none;
 }
-#fwrite ul li .file_wr {
+.direct_inquiry ul li .file_wr {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#fwrite ul li .file_wr label.file_btn {
+.direct_inquiry ul li .file_wr label.file_btn {
   width: 80px;
   height: 42px;
   border-radius: 6px;
@@ -1461,30 +1461,30 @@ ul {
   font-size: 12px;
   background: #506285;
 }
-#fwrite ul li .file_wr input {
+.direct_inquiry ul li .file_wr input {
   height: 42px;
   width: 340px;
   padding: 0 10px;
   box-sizing: border-box;
   margin: 0;
 }
-#fwrite ul li #file_upload {
+.direct_inquiry ul li #file_upload {
   width: 0px;
   height: 0px;
   margin: 0;
   padding: 0;
 }
-#fwrite ul li.all_chk_option {
+.direct_inquiry ul li.all_chk_option {
   margin-top: 27px;
 }
-#fwrite ul li input#all_chk {
+.direct_inquiry ul li input#all_chk {
   display: none;
 }
-#fwrite ul li label.all_chk_label {
+.direct_inquiry ul li label.all_chk_label {
   display: flex;
   align-items: center;
 }
-#fwrite ul li label.all_chk_label:before {
+.direct_inquiry ul li label.all_chk_label:before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -1493,29 +1493,29 @@ ul {
   cursor: pointer;
   margin-right: 8px;
 }
-#fwrite ul li input#all_chk:checked + label.all_chk_label:before {
+.direct_inquiry ul li input#all_chk:checked + label.all_chk_label:before {
   background-image: url("/img/check_checked.svg");
 }
-#fwrite ul li.all_chk_option div {
+.direct_inquiry ul li.all_chk_option div {
   color: #506285;
   font-size: 12px;
   margin-left: 27px;
   margin-top: 4px;
 }
-#fwrite ul li.all_chk_option div span {
+.direct_inquiry ul li.all_chk_option div span {
   font-weight: bold;
   margin-left: 17px;
 }
-#fwrite ul li.all_chk_option div span:first-of-type {
+.direct_inquiry ul li.all_chk_option div span:first-of-type {
   margin-left: 0;
 }
-#fwrite .write_div {
+.direct_inquiry .write_div {
   width: 1020px;
   margin: auto;
   text-align: center;
   margin-top: 28px;
 }
-#fwrite .write_div .btn_submit {
+.direct_inquiry .write_div .btn_submit {
   background: #2d72db;
   font-size: 18px;
   width: 294px;
@@ -2285,52 +2285,52 @@ ul {
     margin-top: 24px;
     width: 100%;
   }
-  #fwrite h1 {
+  .direct_inquiry h1 {
     width: 100%;
     padding-top: 44px;
     padding-bottom: 32px;
     font-size: 18px;
   }
-  #fwrite ul {
+  .direct_inquiry ul {
     width: 100%;
     padding: 28px 20px 21px 20px;
     box-sizing: border-box;
   }
-  #fwrite ul li {
+  .direct_inquiry ul li {
     width: 100%;
   }
-  #fwrite ul li label:not(.file_btn) {
+  .direct_inquiry ul li label:not(.file_btn) {
     font-size: 12px !important;
     margin-bottom: 6px !important;
   }
-  #fwrite ul li input[type="text"],
-  #fwrite ul li input[type="email"] {
+  .direct_inquiry ul li input[type="text"],
+  .direct_inquiry ul li input[type="email"] {
     height: 42px;
     font-size: 14px;
   }
-  #fwrite ul li textarea {
+  .direct_inquiry ul li textarea {
     height: 120px;
   }
-  #fwrite ul li input[type="text"],
-  #fwrite ul li input[type="email"],
-  #fwrite ul li textarea::placeholder {
+  .direct_inquiry ul li input[type="text"],
+  .direct_inquiry ul li input[type="email"],
+  .direct_inquiry ul li textarea::placeholder {
     font-size: 14px;
   }
-  #fwrite ul li .file_wr input {
+  .direct_inquiry ul li .file_wr input {
     width: 100%;
   }
-  #fwrite ul li .file_wr label.file_btn {
+  .direct_inquiry ul li .file_wr label.file_btn {
     margin-left: 14px;
     flex-shrink: 0;
   }
-  #fwrite ul li.all_chk_option div {
+  .direct_inquiry ul li.all_chk_option div {
     word-break: keep-all;
   }
-  #fwrite .write_div {
+  .direct_inquiry .write_div {
     width: 100%;
     margin-top: 34px;
   }
-  #fwrite .write_div .btn_submit {
+  .direct_inquiry .write_div .btn_submit {
     height: 58px;
     width: 100%;
     font-size: 18px;

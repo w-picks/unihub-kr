@@ -22,8 +22,8 @@ if (G5_IS_MOBILE) {
 <!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
 </div> -->
-
-<h1 id="bo_v_title"><?php echo $board['bo_subject'] ?></h1>
+<!-- $is_admin -->
+ <h1 id="bo_v_title"><?php echo $board['bo_subject'] ?></h1>
 
 <article id="bo_v">
     <header>
@@ -181,8 +181,8 @@ if (G5_IS_MOBILE) {
 
     <?php if ($prev_href || $next_href) { ?>
     <ul class="bo_v_nb">
-        <?php if ($prev_href) { ?><li class="bo_v_prev"><a href="<?php echo $prev_href ?>"><i class="fa fa-chevron-up" aria-hidden="true"></i> <span class="sound_only">이전글</span><?php echo $prev_wr_subject;?></a></li><?php } ?>
-        <?php if ($next_href) { ?><li class="bo_v_next"><a href="<?php echo $next_href ?>"><i class="fa fa-chevron-down" aria-hidden="true"></i> <span class="sound_only">다음글</span><?php echo $next_wr_subject;?></a></li><?php } ?>
+        <?php if ($prev_href) { ?><li class="bo_v_prev"><a href="<?php echo $prev_href ?>"><div><span>이전글</span><i class="fa fa-chevron-up" aria-hidden="true"></i></div><p><?php echo $prev_wr_subject;?></p></a></li><?php } ?>
+        <?php if ($next_href) { ?><li class="bo_v_next"><a href="<?php echo $next_href ?>"><div><span>다음글</span><i class="fa fa-chevron-down" aria-hidden="true"></i></div><p><?php echo $next_wr_subject;?></p></a></li><?php } ?>
 
     </ul>
     <?php } ?>
@@ -197,12 +197,17 @@ if (G5_IS_MOBILE) {
             <?php if ($search_href) { ?><li><a href="<?php echo $search_href ?>" class="btn_b01 btn_m">검색</a></li><?php } ?>
 
         </ul>
-        <div class="bo_v_right"> 
-            <a href="<?php echo $list_href ?>" class="btn_b01 btn_m">목록</a>
+        <?php if(!$is_admin){ ?>
+            <a href="<?php echo $list_href ?>" class="btn_b01 btn_m guest">목록으로</a>
+            <?php } else { ?>
+                <div class="bo_v_right"> 
+                <a href="<?php echo $list_href ?>" class="btn_b01 btn_m">목록</a>
+            
             <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01 btn_m">답변</a><?php } ?>
             <?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn_b02 btn_m">글쓰기</a><?php } ?>
 
         </div>
+        <?php } ?>
     </div>
 
   
