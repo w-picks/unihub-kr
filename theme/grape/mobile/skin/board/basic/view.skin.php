@@ -192,14 +192,14 @@ if (G5_IS_MOBILE) {
         <ul class="bo_v_left">
             <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn_m">수정</a></li><?php } ?>
             <?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn_m" onclick="del(this.href); return false;"> 삭제</a></li><?php } ?>
-            <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;"> 복사</a></li><?php } ?>
-            <?php if ($move_href) { ?><li><a href="<?php echo $move_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;">이동</a></li><?php } ?>
+            <!-- <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;"> 복사</a></li><?php } ?> -->
+            <!-- <?php if ($move_href) { ?><li><a href="<?php echo $move_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;">이동</a></li><?php } ?> -->
             <?php if ($search_href) { ?><li><a href="<?php echo $search_href ?>" class="btn_b01 btn_m">검색</a></li><?php } ?>
 
         </ul>
         <div class="bo_v_right"> 
             <a href="<?php echo $list_href ?>" class="btn_b01 btn_m">목록</a>
-            <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01 btn_m">답변</a><?php } ?>
+            <!-- <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01 btn_m">답변</a><?php } ?> -->
             <?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn_b02 btn_m">글쓰기</a><?php } ?>
 
         </div>
@@ -326,14 +326,14 @@ if (G5_IS_MOBILE) {
         <ul class="bo_v_left">
             <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01 btn_m">수정</a></li><?php } ?>
             <?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn_b01 btn_m" onclick="del(this.href); return false;"> 삭제</a></li><?php } ?>
-            <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;"> 복사</a></li><?php } ?>
-            <?php if ($move_href) { ?><li><a href="<?php echo $move_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;">이동</a></li><?php } ?>
+            <!-- <?php if ($copy_href) { ?><li><a href="<?php echo $copy_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;"> 복사</a></li><?php } ?> -->
+            <!-- <?php if ($move_href) { ?><li><a href="<?php echo $move_href ?>" class="btn_b01 btn_m" onclick="board_move(this.href); return false;">이동</a></li><?php } ?> -->
             <?php if ($search_href) { ?><li><a href="<?php echo $search_href ?>" class="btn_b01 btn_m">검색</a></li><?php } ?>
 
         </ul>
         <div class="bo_v_right"> 
             <a href="<?php echo $list_href ?>" class="btn_b01 btn_m">목록</a>
-            <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01 btn_m">답변</a><?php } ?>
+            <!-- <?php if ($reply_href) { ?><a href="<?php echo $reply_href ?>" class="btn_b01 btn_m">답변</a><?php } ?> -->
             <?php if ($write_href) { ?><a href="<?php echo $write_href ?>" class="btn_b02 btn_m">글쓰기</a><?php } ?>
 
         </div>
