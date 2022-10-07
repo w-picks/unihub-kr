@@ -66,7 +66,7 @@ if( count($faq_master_list) ){
                     continue;
             ?>
             <li>
-            <a href="#none" onclick="return faq_open(this);">
+            <a href="#none" onclick="return faq_open(this);" class="on">
             <h3>Q. <?php echo conv_content($v['fa_subject'], 1); ?></h3>
                 <img src="<?php echo G5_IMG_URL ?>/ico_faq_arrow.svg"></a>
                 <div class="con_inner">
@@ -110,6 +110,7 @@ echo '<div id="faq_thtml">'.conv_content($fm['fm_mobile_tail_html'], 1).'</div>'
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 <script>
 $(function() {
+    $(".con_inner").hide();
     $(".closer_btn").on("click", function() {
         $(this).closest(".con_inner").slideToggle();
     });
@@ -119,12 +120,13 @@ function faq_open(el)
 {
     var $con = $(el).closest("li").find(".con_inner");
 
-    
 
     if($con.is(":visible")) {
         $con.slideUp();
         $(el).addClass("on");
+        console.log(true)
     } else {
+        console.log(false)
         $(el).removeClass("on");
 
         $("#faq_con .con_inner:visible").css("display", "none");

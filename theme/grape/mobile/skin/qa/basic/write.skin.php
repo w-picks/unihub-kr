@@ -4,8 +4,8 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 ?>
-
-<section id="bo_w">
+<section id="bo_w" class="direct_inquiry">
+    
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>">
@@ -47,7 +47,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
             </li> -->
             <?php } ?>
 
-            
 
             <!-- 
                 ideahub 1:1문의하기
@@ -198,6 +197,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
         $(".file_wr input[type='text']").val(fileval);
     })
 
-    </script>
+    </script
 </section>
 <!-- } 게시물 작성/수정 끝 -->

@@ -43,20 +43,28 @@ if (G5_IS_MOBILE) {
 ?>
     <div class="invest_tab_wrap">
         <ul class="invest_tab" >
-            <li class="on" onclick="tabHandle(0)">전체</li>
-            <li onclick="tabHandle(2)">펀딩 중 프로젝트</li>
-            <li onclick="tabHandle(1)">오픈 예정 프로젝트</li>
-            <li onclick="tabHandle(3)">종료된 프로젝트</li>
+            <li class="on" onclick="tabHandle(0, this)">전체</li>
+            <li onclick="tabHandle(2, this)">펀딩 중 프로젝트</li>
+            <li onclick="tabHandle(1, this)">오픈 예정 프로젝트</li>
+            <li onclick="tabHandle(3, this)">종료된 프로젝트</li>
+        </ul>
+    </div>
+<?php } ?>
+
+<?php if($board['bo_table'] == "my_investment") {?>
+    <div class="my_invest_tab_wrap">
+        <ul class="my_invest_tab">
+            <li class="on" onclick="myTabHandle(0, this)">공지</li>
+            <li onclick="myTabHandle(1, this)">투자한 프로젝트</li>
         </ul>
     </div>
 <?php } ?>
 
 
 
-
-
 <?php if($board['bo_table']) { ?>
 <div id="bo_list">
+    <?php if($board['bo_table'] != "my_investment") { ?>
     <article class="invest_article">
     <fieldset id="bo_sch">
         <legend>게시물 검색</legend>
@@ -93,6 +101,7 @@ if (G5_IS_MOBILE) {
 </span>
 </div>
 </article>
+<?php } ?>
 
     <form name="fboardlist" id="fboardlist" action="<?php echo G5_BBS_URL; ?>/board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
@@ -116,7 +125,6 @@ if (G5_IS_MOBILE) {
             for ($i=0; $i<count($list); $i++) {
                 // 투자하기 리스트 ideahub
                 if($_GET['bo_table'] == 'investment') {
-                    // var_dump($list[$i])
                     ?>
                     <?php
                         $success_tag = $list[$i]['wr_3'] < $list[$i]['wr_4'];
@@ -263,8 +271,8 @@ if (G5_IS_MOBILE) {
                     </div> -->
                 </div>
             </li> 
+            <!-- // 투자하기 리스트 ideahub end -->
             <?php } else { ?>
-                <!-- // 투자하기 리스트 ideahub end -->
                     <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
                     <?php
@@ -284,8 +292,8 @@ if (G5_IS_MOBILE) {
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
                             <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php }else{ ?>
-                                <span class="number">0</span>
-                                <?php } ?> 
+                                <span class="number"><?php echo $list[$i]['num'] ?></span>
+                                <?php }?> 
                                 <p>
                             <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
                             <?php echo $list[$i]['subject'] ?>
@@ -475,7 +483,8 @@ function select_copy(sw) {
         const investTabLi = document.querySelectorAll(".invest_tab li");
         const projectList = document.querySelector(".project_list");
         const projectListList = document.querySelectorAll(".project_list > li");
-        const tabHandle = (num) => {
+        const tabHandle = (num, el) => {
+            console.log(el)
             let eleLength = 0;
             projectListList.forEach((item, i, ele) => {
                 item.style.display = "flex"
@@ -492,19 +501,23 @@ function select_copy(sw) {
                     listTotal.innerHTML = eleLength;
                 }
             })
+
+            investTabLi.forEach(item=>{
+                { item == el ? item.classList.add("on") : item.classList.remove("on") }
+            })
+            
         }
 
-        // investTabLi.forEach((item) => {
-        //     item.addEventListener("click", (e)=>{
-        //         for(let i = 0; i < investTabLi.length; i++){
-        //             investTabLi[i].classList.remove("on")
-        //         }
-        //         e.target.classList.add("on")
-        //     })
-        // })
+        const myTabHandle = (num, el) => {
+            console.log(num)
+            if(num == 0){
+                $("#bo_list").hide();
+            }else{
+                $("#bo_list").show();
 
+            }
+        }
 
-    // }
 
     
 </script>
