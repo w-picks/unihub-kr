@@ -181,7 +181,8 @@ if (G5_IS_MOBILE) {
             <select name='wr_1' id="myInvestmentSelect" required itemname="대상">
                 <option value=''>선택하세요</option>
                 <?php for ($i = 0; $row = sql_fetch_array($result); $i++) { ?>
-                    <option value='<?php echo $row['mb_id'] ?>' <?php if($row['mb_id'] == $write['wr_1']) echo " selected"; ?>><?php echo $row['mb_id']." / ".$row['mb_nick']." / ".$row['mb_email'] ?></option>    
+                    <!-- <option value='<?php echo $row['mb_id'] ?>' <?php if($row['mb_id'] == $write['wr_1']) echo " selected"; ?>><?php echo $row['mb_id']." / ".$row['mb_nick']." / ".$row['mb_email'] ?></option>     -->
+                    <option value='<?php echo $row['mb_email'] ?>'><?php echo $row['mb_id'] ?></option>    
                 <?php } ?>
             </select>
             <!-- <script>
@@ -193,7 +194,7 @@ if (G5_IS_MOBILE) {
                     $email = $row2['mb_email'];
                 ?>
             </script> -->
-            <input type="text" name="wr_2" value="<?php echo $email ?>" >
+            <input type="text" name="wr_2" value="" id="email_input_val">
         <?php } ?>
 
         <div class="write_div">
@@ -361,4 +362,9 @@ function fwrite_submit(f)
 
     return true;
 }
+
+$("#myInvestmentSelect").on("change",(e)=>{
+    console.log(e.target.value)
+    $("#email_input_val").val(e.target.value)
+})
 </script>
