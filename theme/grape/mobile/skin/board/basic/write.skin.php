@@ -169,7 +169,8 @@ if (G5_IS_MOBILE) {
 
         <!-- 
             2022.08.23 ideahub
-            선택한 대상에게만 보이는 마이페이지 게시판 -> select box option 출력
+            - 선택한 대상에게만 보이는 마이페이지 게시판 -> select box option 출력
+            - 이메일 추가 작업
         -->
         <?php 
             $sql = "SELECT mb_no, mb_id, mb_name, mb_nick, mb_level, mb_email FROM g5_member WHERE mb_level = 3 AND mb_memo NOT LIKE '%삭제함%'";
@@ -181,20 +182,10 @@ if (G5_IS_MOBILE) {
             <select name='wr_1' id="myInvestmentSelect" required itemname="대상">
                 <option value=''>선택하세요</option>
                 <?php for ($i = 0; $row = sql_fetch_array($result); $i++) { ?>
-                    <!-- <option value='<?php echo $row['mb_id'] ?>' <?php if($row['mb_id'] == $write['wr_1']) echo " selected"; ?>><?php echo $row['mb_id']." / ".$row['mb_nick']." / ".$row['mb_email'] ?></option>     -->
-                    <option data-id='<?php echo $row['mb_email'] ?>' value='<?php echo $row['mb_id'] ?>'><?php echo $row['mb_id'] ?></option>    
+                    <option data-id='<?php echo $row['mb_email'] ?>' value='<?php echo $row['mb_id'] ?>'><?php echo $row['mb_id']." / ".$row['mb_nick'] ?></option>    
                 <?php }?>
             </select>
-            <!-- <script>
-                document.cookie = "myInvestmentSelect = " + document.getElementById("myInvestmentSelect").value;
-                <?php 
-                    $name = $_COOKIE['myInvestmentSelect']; 
-                    $sql2 = " select * from g5_member where mb_id = {$name} ";
-                    $row2 = sql_fetch($sql2);
-                    $email = $row2['mb_email'];
-                ?>
-            </script> -->
-            <input type="text" name="wr_2" value="" id="email_input_val">
+            <input type="hidden" name="wr_2" value="" id="email_input_val">
         <?php } ?>
 
         <div class="write_div">
