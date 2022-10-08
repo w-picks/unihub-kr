@@ -8,7 +8,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 <div id="main_wrapper">
     <section id="main_vid">
         <article>
-            <h2 class="scroll-trans">세계 최초의<br>특허 투자 플랫폼</h2>
+            <h2 class="scroll-trans">aaa세계 최초의<br>특허 투자 플랫폼</h2>
             <p class="scroll-trans">누구나 기술에 투자할 수 있는 기회,<br>아이디어허브를 통해 특허권에 투자하세요.</p>
         </article>
     </section>
