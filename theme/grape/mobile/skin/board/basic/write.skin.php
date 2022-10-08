@@ -182,8 +182,8 @@ if (G5_IS_MOBILE) {
                 <option value=''>선택하세요</option>
                 <?php for ($i = 0; $row = sql_fetch_array($result); $i++) { ?>
                     <!-- <option value='<?php echo $row['mb_id'] ?>' <?php if($row['mb_id'] == $write['wr_1']) echo " selected"; ?>><?php echo $row['mb_id']." / ".$row['mb_nick']." / ".$row['mb_email'] ?></option>     -->
-                    <option value='<?php echo $row['mb_email'] ?>'><?php echo $row['mb_id'] ?></option>    
-                <?php } ?>
+                    <option data-id='<?php echo $row['mb_email'] ?>' value='<?php echo $row['mb_id'] ?>'><?php echo $row['mb_id'] ?></option>    
+                <?php }?>
             </select>
             <!-- <script>
                 document.cookie = "myInvestmentSelect = " + document.getElementById("myInvestmentSelect").value;
@@ -364,7 +364,8 @@ function fwrite_submit(f)
 }
 
 $("#myInvestmentSelect").on("change",(e)=>{
-    console.log(e.target.value)
-    $("#email_input_val").val(e.target.value)
+    const emailDate = $("#myInvestmentSelect").find("option:selected").data("id");
+
+    $("#email_input_val").val(emailDate);
 })
 </script>
