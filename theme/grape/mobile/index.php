@@ -8,159 +8,119 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 <div id="main_wrapper">
     <section id="main_vid">
         <article>
-            <h2 class="scroll-trans">aaa세계 최초의<br>특허 투자 플랫폼</h2>
-            <p class="scroll-trans">누구나 기술에 투자할 수 있는 기회,<br>아이디어허브를 통해 특허권에 투자하세요.</p>
+            <h2 class="scroll-trans"><span>R&D를 선도하는</span><br>
+                국내대학의 해외 특허 활용,<br>
+                UNIHUB가 함께합니다.</h2>
+            <button class="scroll-trans uni_btn">UNIHUB 참여하기</button>
         </article>
     </section>
-    <section id="section1">
+    <section id="business">
+        <span class="uni_span scroll-trans">UNIHUB BUSINESS</span>
         <article>
-            <h2 class="scroll-trans">아이디어허브는<br><span>IP 수익화 플랫폼</span><br>입니다.</h2>
-            <p class="scroll-trans scroll-trans-delay-300">특허를 발굴하고 개인/기관 투자를 통해<br>특허에서 발생되는 수익을 공유하는 플랫폼.<br>아이디어허브를 통해 글로벌 수익화를 실현하세요.</p>
+            <h2 class="scroll-trans">유니허브 비즈니스 <span class="underline">한눈에 보기</span></h2>
+            <p class="scroll-trans scroll-trans-delay-300">참여대학의 해외특허를 필요로 하는 <b>글로벌 기술수요자들을 발굴</b>하여, 기술 사용의 대가로 합리적인 금액을 지불하게 합니다.<br>
+            해외특허 활용을 통해 창출한 수익은 참여 대학의 <b>지속적인 R&D에 활용</b>됩니다.</p> 
+            <ul class="thum_list">
+                <li class="scroll-trans scroll-trans-delay-300">
+                    <div class="img"></div>
+                    <p>계약 체결</p>
+                </li>
+                <li class="scroll-trans scroll-trans-delay-400">
+                    <div class="img"></div>
+                    <p>적용 기술/마켓 및<br>수익화 대상특허 분석</p>
+                </li>
+                <li class="scroll-trans scroll-trans-delay-500">
+                    <div class="img"></div>
+                    <p>라이센싱 활동</p>
+                </li>
+                <li class="scroll-trans scroll-trans-delay-600">
+                    <div class="img"></div>
+                    <p>로열티 산출 및 배분</p>
+                </li>
+            </ul>
+            <div class="business_system scroll-trans">
+                <img src="<?php echo G5_IMG_URL ?>/business_system.png">
+            </div>
         </article>
     </section>
 
     <!-- 모집중인 프로젝트 -->
     
-    <section id="section2">
-        <div class="project_slide_content swiper">
-            <div class="swiper-wrapper">
-            <?php
-            $sql = " select * from g5_write_investment where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";        
-            $result = sql_query($sql);
-            for ($i=0; $row = sql_fetch_array($result); $i++) {
-                // var_dump($row)
-            ?>
-                <div class="swiper-slide slide_<?php echo $i+1 ?>">
-                    <p class="slide-name">모집중인 프로젝트</p>
-                    <h3><?php echo $row['wr_subject'] ?></h3>
-                    <p class="caption"><?php echo $row['wr_6'] ?></p>
-                    <ul>
-                        <li>
-                            <p>예상수익률</p>
-                            <div><b>연 <?php echo $row['wr_5'] ?></b><br>이상</div>
-                        </li>
-                        <li>
-                            <p>모집금액</p>
-                            <div><b><?php echo ceil($row['wr_4']/100000000) ?></b>억원</div>
-                        </li>
-                        <li>
-                            <p>모집기간</p>
-                            <div><b><?php echo date('m.d', strtotime($row['wr_2'])) ?></b><br class="mo">까지</div>
-                        </li>
-                    </ul>
-                    <button class="default_btn" onclick="location.href='<?php echo G5_BBS_URL ?>/board.php?bo_table=investment&wr_id=<?php echo $row['wr_id'] ?>'"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
-                    <span></span>
-                    </button>
-                </div>
-                <?php
-                }
-                ?>
-                <!-- <div class="swiper-slide slide_2">
-                    <p class="slide-name">모집중인 프로젝트</p>
-                    <h3>Streaming Project</h3>
-                    <p class="caption">음성,영상,애니메이션 등을 실시간 재생하는 기술 관련 특허</p>
-                    <ul>
-                        <li>
-                            <p>예상수익률</p>
-                            <div><b>연 30%</b><br>이상</div>
-                        </li>
-                        <li>
-                            <p>모집금액</p>
-                            <div><b>3</b>억원</div>
-                        </li>
-                        <li>
-                            <p>모집기간</p>
-                            <div><b>12.31</b><br class="mo">까지</div>
-                        </li>
-                    </ul>
-                    <button class="default_btn"><div>투자하기<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
-                    <span></span>
-                    </button>
-                </div> -->
-            </div>
-        </div>
-        <div class="project_slide_bg swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide slide_1">
-                    <div class="slide_content_bg"></div>
-                </div>
-                <div class="swiper-slide slide_2">
-                    <div class="slide_content_bg"></div>
-                </div>
-            </div>
-            <div class="swiper-button-prev swiper-btn"></div>
-            <div class="swiper-button-next swiper-btn"></div>
-            <div class="swiper-pagination"></div>
-        </div>
+    <section id="partners">
+        <article>
+        <span class="uni_span scroll-trans">UNIHUB PARTNERS</span>
+        <h2 class="scroll-trans">유니허브와 <span class="underline">함께 하고 있습니다.</span></h2>
+        <p class="scroll-trans">N개의 국내 대학들이 2022년부터<br>UNIHUB의 해외특허 활용 비즈니스에 참여하고 있습니다.</p>
+        <ul class="scroll-trans">
+            <li>
+                <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png">
+                <p>한양대학교</p>
+            </li>
+            <li>
+                <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
+                <p>성균관대학교</p>
+            </li>
+            <li>
+                <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee.png">
+                <p>경희대학교</p>
+            </li>
+            <li>
+                <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png">
+                <p>대구경북과학기술원</p>
+            </li>
+            <li>
+                <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png">
+                <p>아주대학교</p>
+            </li>
+            <li>
+                <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
+                <p>포항공과대학교</p>
+            </li>
+        </ul>
+        <button class="uni_btn purple scroll-trans">참여하기</button>
+        <article>
     </section>
     
 
-    <section id="section3" class="invest_status">
-        <article class="txt_box scroll-trans">
-            <p>아이디어허브 투자자이신가요?</p>
-            <h2>나의 투자 현황을<br>알아보세요!</h2> 
-            <button class="default_btn blue"><div>나의 투자 레포트<svg width="19" height="7" viewBox="0 0 19 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6H17L12.678 1" stroke="white" stroke-width="1.5"/></svg></div>
-            <span></span>
-            </button>
-        </article>
-        <article class="img_container scroll-trans scroll-trans-delay-300">
-            <div class="left">
-                <div class="img_box sm">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-                <div class="img_box lg">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-                <div class="img_box sm">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-                <div class="img_box lg">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-            </div>
-            <div class="right">
-                <div class="img_box lg">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-                <div class="img_box sm">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-                <div class="img_box lg">
-                    <p class="project_name">프로젝트 이름</p>
-                </div>
-            </div>
-        </article>
-    </section>
-    <section id="section4" class="invest_banner">
-        <h2 class="scroll-trans">지식재산권의 시대,<br>IP를 활용하고 IP에 투자하세요</h2>
-        <div class="img scroll-trans">
-            <img src="<?php echo G5_IMG_URL ?>/invest_banner_in.png" class="pc">
-            <img src="<?php echo G5_IMG_URL ?>/invest_banner_in_mo.png" class="mo">
-        </div>
-    </section>
-    <section id="section5" class="funding_review">
-        <div class="txt_animation">
-            <div class="txt_ani_1"><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span></div>
-            <div class="txt_ani_2"><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span><span>IDEAHUB</span></div>
-        </div>
+    <section id="investment_report">
         <article>
-            <span class="scroll-trans">IDEAHUB</span>
-            <h2 class="scroll-trans">지금까지 펀딩에<br>성공한 프로젝트는?</h2>
-            <ul>
-                <li>
-                    <em>프로젝트명</em>
-                    <p><b>IoT Licensing</b></p>
-                </li>
-                <li>
-                    <em>총 투자모집 금액</em>
-                    <p><b>2</b>억 <b>1400</b>만</p>
-                </li>
-                <li>
-                    <em>수익률</em>
-                    <p><b>49.67</b>%</p>
-                </li>
-            </ul>
+            <div class="scroll-trans">
+                <img src="<?php echo G5_IMG_URL ?>/report_main.png">
+            </div>
+            <div class="scroll-trans scroll-trans-delay-300">
+                <span class="uni_span">INVESTMENT REPORT</span>
+                <h2>참여대학 수익화현황</h2>
+                <p>유니허브 비즈니스에 참여하고 있는 대학들은,<br>해외특허 수익화현황을 분기별로 REPORT로 받아보실 수 있습니다.</p>
+                <button class="uni_btn">수익화 현황 REPORT</button>
+            </div>
         </article>
+    </section>
+    <section id="news">
+        <span class="uni_span scroll-trans">UNIHUB NEWS</span>
+        <h2 class="scroll-trans">유니허브의<br><b><span class="underline">새로운 소식</span>을 만나보세요.</b></h2>
+        <ul class="news_table scroll-trans">
+            <li>
+                <a href="">
+                    <h3>펀더풀, 전시 ‘하리보 골드베렌 100주년' 온라인 공모</h3>
+                    <p>기업공개(IPO)에 도전하는 혁신기업 업종이 갈수록 다양해지고 있다. 특허관리부터 가상현실(VR)·증강현실(AR), 공유경제 등 다양한 사업모델을 갖춘 기업이 속속 도전장을 던지고 있다.</p>
+                    <p class="date">2022-08</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>펀더풀, 전시 ‘하리보 골드베렌 100주년' 온라인 공모</h3>
+                    <p>기업공개(IPO)에 도전하는 혁신기업 업종이 갈수록 다양해지고 있다. 특허관리부터 가상현실(VR)·증강현실(AR), 공유경제 등 다양한 사업모델을 갖춘 기업이 속속 도전장을 던지고 있다.</p>
+                    <p class="date">2022-08</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>펀더풀, 전시 ‘하리보 골드베렌 100주년' 온라인 공모</h3>
+                    <p>기업공개(IPO)에 도전하는 혁신기업 업종이 갈수록 다양해지고 있다. 특허관리부터 가상현실(VR)·증강현실(AR), 공유경제 등 다양한 사업모델을 갖춘 기업이 속속 도전장을 던지고 있다.</p>
+                    <p class="date">2022-08</p>
+                </a>
+            </li>
+        </ul>
     </section>
 </div>
 
@@ -169,13 +129,13 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
 // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
 // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-echo latest('theme/review', 'broadcast', 5, 20);
+// echo latest('theme/review', 'broadcast', 5, 20);
 ?>
 
-<section id="section7" class="kakao_plus_banner">
+<!-- <section id="section7" class="kakao_plus_banner">
 <img src="<?php echo G5_IMG_URL ?>/kakao_plus_banner.png" class="pc">
 <img src="<?php echo G5_IMG_URL ?>/kakao_plus_banner_mo.png" class="mo">
-</section>
+</section> -->
 
 <script>
     const swiperContent = new Swiper('.project_slide_content', {});

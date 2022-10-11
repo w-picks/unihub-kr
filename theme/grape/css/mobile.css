@@ -173,7 +173,7 @@ ul {
 #hd {
   text-align: center;
   width: 100%;
-  background: #fff;
+  background: #ddd;
   position: fixed;
   top: 0;
   left: 0;
@@ -210,7 +210,7 @@ ul {
 }
 #hd_wrapper {
   margin: 0 auto;
-  max-width: 1150px;
+  max-width: 1100px;
   position: relative;
 }
 #hd_wrapper > article {
@@ -222,7 +222,8 @@ ul {
 #logo {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #logo a {
   display: block;
@@ -257,8 +258,6 @@ ul {
 }
 
 #gnb {
-  display: block;
-  margin-left: 264px;
 }
 #gnb:after {
   display: block;
@@ -305,6 +304,7 @@ ul {
   margin: 7px 0;
   font-size: 15px;
   font-weight: 600;
+  color: #fff;
 }
 .gnb_2dul {
   display: none;
@@ -373,13 +373,13 @@ ul {
   align-items: center;
 }
 #hd_btn .ol a {
-  color: #8496ba;
+  color: #fff;
   font-size: 13px;
   padding: 0 8px;
 }
 #hd_btn .ol .contact_us {
-  color: #4d93ff;
-  border: 1px solid #4d93ff;
+  color: #fff;
+  border: 1px solid #fff;
   border-radius: 100px;
   width: 73px;
   height: 30px;
@@ -544,6 +544,9 @@ ul {
 .scroll-trans-delay-500 {
   transition-delay: 0.5s;
 }
+.scroll-trans-delay-600 {
+  transition-delay: 0.6s;
+}
 .scroll-trans.on {
   opacity: 1;
   transform: translateY(0px);
@@ -595,525 +598,287 @@ ul {
 }
 #main_vid article {
   position: absolute;
-  width: 846px;
+  width: 880px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: right;
   color: #fff;
 }
 #main_vid article h2 {
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 700;
+}
+#main_vid article span {
+  font-size: 30px;
+  font-weight: normal;
 }
 #main_vid article p {
   font-size: 20px;
   margin-top: 15px;
   line-height: 24px;
 }
-
-/* section1 */
-#section1 {
-  padding: 175px 0;
-  width: 920px;
-  margin: auto;
-}
-#section1 article {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#section1 article h2 {
-  font-size: 45px;
-  font-weight: bold;
-  line-height: 64px;
-  color: #040810;
-}
-#section1 article h2 span {
-  border-bottom: 4px solid #040810;
-}
-#section1 article p {
-  font-size: 18px;
-  line-height: 30px;
-  color: #202a3e;
-}
-
-/* section2 - 모집중인 프로젝트*/
-#section2 {
-  height: 918px;
-  position: relative;
-}
-.project_slide_content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  overflow: hidden;
-  text-align: center;
-  color: #fff;
-  width: 750px;
-}
-.project_slide_content .swiper-slide {
-}
-.project_slide_content .slide-name {
-  font-size: 20px;
-  margin-bottom: 29px;
-}
-.project_slide_content h3 {
-  font-size: 45px;
-  margin-bottom: 12px;
-}
-.project_slide_content .caption {
-  font-size: 18px;
-  margin-bottom: 51px;
-  font-weight: 100;
-}
-.project_slide_content ul {
-  width: 693px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-}
-.project_slide_content ul li {
-  width: 210px;
-  height: 206px;
-  padding: 41px 0;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 20px rgba(60, 44, 160, 0.5);
-  background: #f0f5ff;
-  border-radius: 32px;
-}
-.project_slide_content .slide_2 ul li {
-  box-shadow: 0px 4px 20px rgba(34, 108, 113, 0.5);
-}
-.project_slide_content .slide_2 .default_btn:hover > div {
-  color: #53abac;
-}
-.project_slide_content .slide_2 .default_btn:hover > div svg path {
-  stroke: #53abac;
-}
-.project_slide_content ul li p {
-  color: #202a3e;
-  font-size: 20px;
-}
-.project_slide_content ul li div {
-  margin-top: 29px;
-  font-size: 25px;
-  color: #1e1e1e;
-}
-.project_slide_content ul li div b {
-  font-size: 40px;
-  color: #2d72db;
-}
-.project_slide_content .slide_2 ul li div b {
-  color: #2b9ca4;
-}
-.project_slide_content button {
-  margin-top: 54px;
-}
-.project_slide_bg {
-}
-.project_slide_bg .swiper-slide {
-  height: 918px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.project_slide_bg .slide_1 {
-  background: url(/img/project_sec_bg.png) no-repeat center / cover;
-}
-.project_slide_bg .slide_content_bg {
-  width: 1252px;
-  height: 717px;
-  border-radius: 52px;
-}
-.project_slide_bg .slide_1 .slide_content_bg {
-  background: radial-gradient(92.01% 456.46% at 0% 50%, rgba(45, 114, 219, 0.95) 12.98%, rgba(141, 129, 232, 0.7) 100%);
-}
-.project_slide_bg .slide_2 .slide_content_bg {
-  background: radial-gradient(92.01% 456.46% at 0% 50%, rgba(46, 169, 176, 0.8) 12.98%, rgba(110, 218, 147, 0.7) 100%);
-}
-.project_slide_bg .swiper-btn {
-  width: 62px;
-  height: 62px;
-  background-size: 60px 60px;
-}
-.project_slide_bg .swiper-btn.swiper-button-prev {
-  background-image: url(/img/swiper-arrow.png);
-  transform: rotate(180deg);
-  left: calc(50% - 570px);
-}
-.project_slide_bg .swiper-btn.swiper-button-next {
-  background-image: url(/img/swiper-arrow.png);
-  right: auto;
-  left: calc(50% + 510px);
-}
-.project_slide_bg.swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.project_slide_bg .swiper-pagination-bullet {
-  width: 6px;
-  height: 6px;
-  background: #fff;
-  opacity: 1;
-}
-.project_slide_bg .swiper-pagination-bullet-active {
-  width: 12px;
-  height: 12px;
-  background: transparent;
-  border: 1px solid #fff;
-}
-
-/* section3 투자현황 */
-#section3.invest_status {
-  height: 943px;
-  background: url("/img/invest_status_bg.png") no-repeat center / cover;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-.invest_status .txt_box {
-  padding-top: 125px;
-  margin-right: 196px;
-}
-.invest_status .txt_box p {
-  font-size: 20px;
-  color: #506285;
-  margin-bottom: 29px;
-}
-.invest_status .txt_box h2 {
-  font-size: 45px;
-  color: #040810;
-  margin-bottom: 66px;
-}
-
-.invest_status .img_container {
-  display: flex;
-  width: calc((287px * 2) + 21px);
-  justify-content: space-between;
-  margin-left: 196px;
-  margin-top: -50px;
-}
-.invest_status .img_container > div.left {
-  margin-top: 110px;
-}
-.invest_status .img_container > div .img_box {
-  width: 287px;
-  border-radius: 26px;
-  background: #ddd;
-  position: relative;
-  margin-bottom: 20px;
-}
-.invest_status .img_container > div .img_box.sm {
-  height: 222px;
-}
-.invest_status .img_container > div .img_box.lg {
-  height: 333px;
-}
-.invest_status .img_container > div .img_box .project_name {
-  position: absolute;
+.uni_btn {
   font-size: 16px;
-  left: 21px;
-  bottom: 23px;
+  font-weight: 700;
+  padding: 20px 44px 20px 25px;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  background: url(/img/ico_more_unihub.svg) no-repeat right 25px center;
   color: #fff;
 }
-
-/* section4 배너 */
-#section4.invest_banner {
-  background: url("/img/invest_banner_bg.png") no-repeat center / cover;
-  height: 929px;
-  overflow: hidden;
-  text-align: center;
-  padding-top: 108px;
-  box-sizing: border-box;
+.uni_btn.purple {
+  color: #521d8c;
+  border-color: #521d8c;
+  background-image: url(/img/ico_more_unihub2.svg);
 }
-#section4.invest_banner h2 {
-  font-size: 40px;
-  color: #fff;
-  margin-bottom: 44px;
+h2 {
+  font-size: 48px;
+  font-weight: 600;
 }
-#section4.invest_banner .img {
+h2 span.underline {
+  font-weight: 800;
   position: relative;
   z-index: 1;
-  margin: auto;
-  width: max-content;
 }
-#section4.invest_banner .img img {
-}
-#section4.invest_banner .img:after {
+h2 span.underline:after {
   content: "";
   display: block;
-  width: 3000px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 22px;
+  background: #d3a5ff;
   position: absolute;
-  top: 296px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 0;
+  bottom: 0;
   z-index: -1;
 }
-
-/* section5 지금까지 펀딩에 */
-#section5.funding_review {
-  padding-bottom: 90px;
-  width: 100%;
-  overflow: hidden;
+.uni_span {
+  font-weight: 800;
+  font-size: 14px;
+  color: #5e1e8d;
 }
-.funding_review .txt_animation {
-  width: 100%;
+#main_vid button {
+  margin-top: 79px;
+}
+#business {
+  width: 1100px;
+  margin: auto;
+  padding-top: 135px;
+  padding-bottom: 74px;
+  color: #040810;
   position: relative;
 }
-.funding_review .txt_animation > div {
+#business:before {
+  content: "";
+  display: block;
   position: absolute;
-  width: 2950px;
-  white-space: nowrap;
-  overflow: hidden;
-  left: 0;
+  left: calc(50% + 650px);
+  top: 70px;
+  width: 506px;
+  height: 506px;
+  /* transform: rotate(-35deg); */
+  background: url(/img/business_bg_ani.svg) no-repeat;
+  animation: busAni1 linear 4s infinite;
 }
-.funding_review .txt_animation .txt_ani_1 {
-  animation: txtAni1 30s linear infinite;
-}
-@keyframes txtAni1 {
+@keyframes busAni1 {
   0% {
-    left: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
   }
   100% {
-    left: -2950px;
+    transform: rotate(360deg);
   }
 }
-.funding_review .txt_animation .txt_ani_2 {
-  left: 2950px;
-  animation: txtAni2 30s linear infinite;
+#business:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -646px;
+  bottom: 0;
+  width: 506px;
+  height: 506px;
+  background: url(/img/business_bg_ani.svg) no-repeat;
+  animation: busAni1 linear 3s infinite;
 }
-@keyframes txtAni2 {
+@keyframes busAni2 {
   0% {
-    left: 2950px;
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
   }
   100% {
-    left: 0;
+    transform: rotate(360deg);
   }
 }
-.funding_review .txt_animation span {
-  color: #f0f5ff;
-  font-size: 120px;
-  font-weight: bold;
-  display: inline-block;
-  margin-right: 70px;
+#business h2 {
+  margin-top: 12px;
 }
-.funding_review article {
-  width: 980px;
+#business article {
   text-align: center;
-  margin: auto;
-  margin-top: 190px;
 }
-.funding_review article span {
-  font-size: 15px;
-  color: #040810;
+#business article > p {
+  font-size: 16px;
+  margin-top: 28px;
+  margin-bottom: 94px;
 }
-.funding_review article h2 {
-  font-size: 40px;
-  color: #040810;
-  margin-top: 29px;
-  margin-bottom: 48px;
+#business .uni_span {
+  text-align: center;
+  display: block;
 }
-.funding_review article ul {
-  width: 100%;
+#business .thum_list {
   display: flex;
   justify-content: space-between;
 }
-.funding_review article ul li {
-  width: 307px;
-  height: 379px;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  background: url("/img/funding_1.png") no-repeat center / cover;
-  color: #fff;
-  text-align: center;
+#business .thum_list li {
+  width: 258px;
 }
-.funding_review article ul li:nth-of-type(1) {
+#business .thum_list li .img {
+  width: 100%;
+  height: 195px;
+  background: #ddd;
 }
-.funding_review article ul li:nth-of-type(2) {
-  background-image: url("/img/funding_2.png");
+#business .thum_list li p {
+  font-size: 17px;
+  margin-top: 12px;
 }
-.funding_review article ul li:nth-of-type(3) {
-  background-image: url("/img/funding_2.png");
+#business .business_system {
+  width: 1030px;
+  margin: auto;
+  margin-top: 108px;
 }
-.funding_review article ul li em {
-  font-style: normal;
-  display: block;
-  font-size: 20px;
-  margin-bottom: 37px;
+#business .business_system img {
+  width: 100%;
 }
-.funding_review article ul li p {
-  font-size: 25px;
+#partners {
+  padding-top: 122px;
+  padding-bottom: 102px;
+  background: rgba(230, 235, 245, 0.4);
 }
-.funding_review article ul li p b {
-  font-size: 50px;
+#partners h2 {
+  margin-top: 20px;
+  margin-bottom: 33px;
 }
-.funding_review article ul li:nth-of-type(1) p b {
-  font-size: 35px;
-}
-
-/* 언론기사 */
-.lt_review {
-  background: rgba(240, 245, 255, 0.5);
-  padding-top: 107px;
-  padding-bottom: 100px;
-}
-.lt_review article {
-  width: 1140px;
+#partners article {
+  width: 1100px;
   margin: auto;
 }
-.lt_review .title_wrap {
-  margin-bottom: 70px;
+#partners article > p {
+  font-size: 16px;
+  margin-bottom: 80px;
+}
+#partners ul {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  width: 1120px;
+  margin-left: -10px;
 }
-.lt_review .title_wrap h2 {
-  font-size: 40px;
-  color: #040810;
-}
-.lt_review .title_wrap button {
-  height: max-content;
-}
-.lt_review .lt_rv_wr {
-}
-.lt_review .lt_rv_wr ul {
-}
-.lt_review .lt_rv_wr ul li {
-  padding: 26px 23px 26px 30px;
-  border-bottom: 1px solid #c1cbe0;
-  display: flex;
-}
-.lt_review .lt_rv_wr ul li:last-of-type {
-  border-bottom: none;
-}
-
-.lt_review .lt_rv_wr ul li .lt_wr {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .tag {
-  display: block;
-  font-size: 16px;
-  color: #2d72db;
-  font-weight: 700;
-  width: max-content;
-  min-width: 148px;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content {
-  width: 822px;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit {
-  display: flex;
-  align-items: center;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit .lt_date {
-  display: none;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit > div {
-  width: 100%;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit strong {
-  font-size: 20px;
-  font-weight: normal;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content .content_tit button {
-  margin-left: 22px;
-  width: 34px;
-  height: 34px;
-  box-sizing: border-box;
-  color: #669eff;
-  border: 1px solid #669eff;
-  background: none;
-  border-radius: 100%;
-  line-height: 32px;
-  font-size: 20px;
-  font-weight: 100;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .content .lt_detail {
-  width: 730px;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  transition: all 0.3s;
-  font-size: 20px;
-  color: #506285;
-}
-.lt_review .lt_rv_wr ul li.on .lt_wr .content .lt_detail {
-  margin-top: 18px;
-  height: 50px;
-  overflow: auto;
-  visibility: visible;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .lt_date {
-  font-size: 16px;
-  color: #506285;
-  width: 72px;
-  display: block;
-  flex-shrink: 0;
-  text-align: right;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .more {
-  font-size: 16px;
-  flex-shrink: 0;
-  color: #2d72db;
-  font-weight: 700;
-  width: 72px;
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .more svg {
-  width: 11px;
-}
-.lt_review .lt_rv_wr ul li .lt_wr .more svg path {
-  stroke: #2d72db;
-}
-.lt_review .lt_rv_wr ul li:hover {
-  background: #e6eeff;
-}
-.lt_review .lt_rv_wr ul li:hover .lt_wr .lt_date {
-  display: none;
-}
-.lt_review .lt_rv_wr ul li:hover .lt_wr .more {
-  display: flex;
-}
-
-/* 카카오톡 배너 */
-#section7.kakao_plus_banner {
-  text-align: center;
-  background: #ffdb5d;
-  height: 78px;
+#partners ul li {
   position: relative;
 }
-#section7.kakao_plus_banner img {
+#partners ul li p {
   position: absolute;
+  bottom: 38px;
+  width: 100%;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
-  width: 671px;
+  color: #506285;
+  font-size: 14px;
 }
-
+#partners button {
+  display: block;
+  margin: auto;
+  margin-top: 80px;
+}
+#investment_report {
+  padding-top: 158px;
+  padding-bottom: 146px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(90deg, #5923ad 0%, #7a25b0 100%);
+  position: relative;
+}
+#investment_report:before {
+  content: "";
+  background: url(/img/report_bg.png) no-repeat center bottom;
+  position: absolute;
+  width: 694px;
+  height: 100%;
+  left: calc(50% + 300px);
+  bottom: -84px;
+}
+#investment_report article {
+  width: 860px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#investment_report article > div {
+}
+#investment_report .uni_span {
+  margin-top: 22px;
+  color: #c894f9;
+  font-weight: 600;
+}
+#investment_report h2 {
+  margin-top: 43px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+#investment_report p {
+  color: #fff;
+  line-height: 23px;
+  margin-bottom: 40px;
+}
+#news {
+  width: 1100px;
+  margin: auto;
+  padding-top: 112px;
+  padding-bottom: 100px;
+}
+#news h2 {
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+.news_table {
+  display: flex;
+  justify-content: space-between;
+}
+.news_table li {
+  width: 310px;
+}
+.news_table li a {
+  display: block;
+  border-top: 1px solid #040810;
+  padding-top: 40px;
+}
+.news_table li a h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.news_table li a p {
+  font-size: 15px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+.news_table li a p.date {
+  font-size: 14px;
+  margin-top: 0;
+  color: #9b9da0;
+}
+.news_table li:hover a {
+  border-color: #5e1e8d;
+  background: url(/img/news_arrow.svg) no-repeat right 0 bottom 0;
+}
 /* 하단 레이아웃 */
 #ft {
-  padding-top: 62px;
-  padding-bottom: 86px;
-  background: #202a3e;
+  padding: 46px 0;
+  background: #3b3e43;
 }
 .ft_wr {
-  width: 798px;
+  width: 930px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -1124,21 +889,21 @@ ul {
 .ft_wr .footer_logo img {
 }
 .ft_wr .footer_menu {
-  width: 498px;
+  width: 360px;
   display: flex;
   justify-content: space-between;
 }
 .ft_wr .footer_menu > li {
   border-right: 1px solid #353e51;
-  padding-right: 48px;
+  padding-right: 60px;
 }
 .ft_wr .footer_menu > li:last-of-type {
   border: none;
 }
 .ft_wr .footer_menu > li h6 {
-  color: #b6bdcb;
+  color: #cdcfd2;
   font-size: 18px;
-  margin-bottom: 24px;
+  margin-bottom: 15px;
 }
 .ft_wr .footer_menu > li ul {
 }
@@ -1146,9 +911,10 @@ ul {
 }
 .ft_wr .footer_menu > li ul li a {
   font-size: 14px;
-  color: #6f7b94;
+  color: #a9abad;
   display: block;
-  line-height: 30px;
+  line-height: 22px;
+  width: max-content;
 }
 
 /* 회사소개 */
