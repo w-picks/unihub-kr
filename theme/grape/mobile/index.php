@@ -8,10 +8,10 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 <div id="main_wrapper">
     <section id="main_vid">
         <article>
-            <h2 class="scroll-trans"><span>R&D를 선도하는</span><br>
+            <h2 class=""><span>R&D를 선도하는</span><br>
                 국내대학의 해외 특허 활용,<br>
                 UNIHUB가 함께합니다.</h2>
-            <button class="scroll-trans uni_btn">UNIHUB 참여하기</button>
+            <button class="uni_btn">UNIHUB 참여하기</button>
         </article>
     </section>
     <section id="business">
@@ -20,27 +20,38 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <h2 class="scroll-trans">유니허브 비즈니스 <span class="underline">한눈에 보기</span></h2>
             <p class="scroll-trans scroll-trans-delay-300">참여대학의 해외특허를 필요로 하는 <b>글로벌 기술수요자들을 발굴</b>하여, 기술 사용의 대가로 합리적인 금액을 지불하게 합니다.<br>
             해외특허 활용을 통해 창출한 수익은 참여 대학의 <b>지속적인 R&D에 활용</b>됩니다.</p> 
-            <ul class="thum_list">
-                <li class="scroll-trans scroll-trans-delay-300">
-                    <div class="img"></div>
-                    <p>계약 체결</p>
-                </li>
-                <li class="scroll-trans scroll-trans-delay-400">
-                    <div class="img"></div>
-                    <p>적용 기술/마켓 및<br>수익화 대상특허 분석</p>
-                </li>
-                <li class="scroll-trans scroll-trans-delay-500">
-                    <div class="img"></div>
-                    <p>라이센싱 활동</p>
-                </li>
-                <li class="scroll-trans scroll-trans-delay-600">
-                    <div class="img"></div>
-                    <p>로열티 산출 및 배분</p>
-                </li>
-            </ul>
             <div class="business_system scroll-trans">
                 <img src="<?php echo G5_IMG_URL ?>/business_system.png">
             </div>
+            
+            <ul class="thum_list">
+                <li class="scroll-trans scroll-trans-delay-300">
+                    <img src="<?php echo G5_IMG_URL ?>/business_step_1.png">
+                    <span class="step_num">01</span>
+                    <p>계약 체결</p>
+                </li>
+                <li class="step_arrow scroll-trans scroll-trans-delay-300">
+                </li>
+                <li class="scroll-trans scroll-trans-delay-400">
+                <img src="<?php echo G5_IMG_URL ?>/business_step_2.png">
+                <span class="step_num">02</span>
+                    <p>적용 기술/마켓 및<br>수익화 대상특허 분석</p>
+                </li>
+                <li class="step_arrow scroll-trans scroll-trans-delay-400"></li>
+                <li class="scroll-trans scroll-trans-delay-500">
+                    <img src="<?php echo G5_IMG_URL ?>/business_step_3.png">
+                    <span class="step_num">03</span>
+                    <p>라이센싱 활동</p>
+                </li>
+                <li class="step_arrow scroll-trans scroll-trans-delay-500"></li>
+                <li class="scroll-trans scroll-trans-delay-600">
+                    <img src="<?php echo G5_IMG_URL ?>/business_step_4.png">
+                    <span class="step_num">04</span>
+                    <p>로열티 산출 및 배분</p>
+                </li>
+            </ul>
+            
+            
         </article>
     </section>
 
@@ -51,33 +62,33 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
         <span class="uni_span scroll-trans">UNIHUB PARTNERS</span>
         <h2 class="scroll-trans">유니허브와 <span class="underline">함께 하고 있습니다.</span></h2>
         <p class="scroll-trans">N개의 국내 대학들이 2022년부터<br>UNIHUB의 해외특허 활용 비즈니스에 참여하고 있습니다.</p>
-        <ul class="scroll-trans">
-            <li>
+        <ul>
+            <li class="scroll-trans scroll-trans-delay-300">
                 <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png">
                 <p>한양대학교</p>
             </li>
-            <li>
+            <li class="scroll-trans">
                 <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
                 <p>성균관대학교</p>
             </li>
-            <li>
+            <li class="scroll-trans scroll-trans-delay-500">
                 <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee.png">
                 <p>경희대학교</p>
             </li>
-            <li>
+            <li class="scroll-trans scroll-trans-delay-600">
                 <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png">
                 <p>대구경북과학기술원</p>
             </li>
-            <li>
+            <li class="scroll-trans scroll-trans-delay-400">
                 <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png">
                 <p>아주대학교</p>
             </li>
-            <li>
+            <li class="scroll-trans scroll-trans-delay-700">
                 <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
                 <p>포항공과대학교</p>
             </li>
         </ul>
-        <button class="uni_btn purple scroll-trans">참여하기</button>
+        <button class="uni_btn color1 scroll-trans">참여하기</button>
         <article>
     </section>
     

@@ -23,7 +23,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
                     <ul>
                         <li><a href="/">About</a></li>
                         <li><a href="/">C.I</a></li>
-                        <li><a href="/">아이디어허브팁</a></li>
+                        <li><a href="/">유니허브팁</a></li>
                         <li><a href="/">파트너&투자자</a></li>
                     </ul>
                 </li>

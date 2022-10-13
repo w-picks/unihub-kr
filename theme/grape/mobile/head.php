@@ -62,7 +62,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
             </div>
             <div id="logo">
-                <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/idh_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+                <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/unihub_logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
             </div>
         <div id="hd_btn">
             <button type="button" class="hd_menu_btn"><span class="menu-icon"></span><span class="sound_only">전체메뉴</span></button>
