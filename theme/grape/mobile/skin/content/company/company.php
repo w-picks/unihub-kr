@@ -19,7 +19,7 @@
                     <p>UNIHUB는 참여 대학들이
                     보유하고 있는 해외특허가
                     <b>다양한 시장에서
-                    활용될 수 있도록 지원</b>합니다.</p>
+                    활용될 수 있도록 지원</b>합니다. </p>
                     <img src="<?php echo G5_IMG_URL ?>/mission3_1.png">
                 </li>
                 <li class="scroll-trans scroll-trans-delay-400">
