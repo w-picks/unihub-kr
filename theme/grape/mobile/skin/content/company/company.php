@@ -1,4 +1,4 @@
-<section id="detail_main">
+<section id="detail_main" class="company_main">
     <h1>유니허브 소개</h1>
 </section>
 <section id="intro_info">

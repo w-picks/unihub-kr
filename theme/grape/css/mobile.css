@@ -988,6 +988,12 @@ h2 span.underline:after {
   justify-content: center;
   align-items: center;
 }
+#detail_main.company_main {
+  background: url(/img/unihub_info_intro_bg.png) no-repeat center / cover;
+}
+#detail_main.portfolio_main {
+  background: url(/img/portfolio_bg.png) no-repeat center / cover;
+}
 #detail_main h1 {
   font-size: 45px;
   font-weight: 700;
@@ -1013,6 +1019,9 @@ h2 span.underline:after {
   position: relative;
   margin-bottom: 23px;
   font-weight: 600;
+}
+#intro_info.portfolio_intro h2 {
+  font-size: 40px;
 }
 #intro_info h2:before {
   content: "";
@@ -1252,6 +1261,139 @@ h2 span.underline:after {
   text-align: center;
   width: 175px;
   height: 180px;
+}
+
+/* 포트폴리오 */
+#university {
+  background: #f5f7fb;
+  padding: 138px 0;
+}
+#university article {
+  width: 1100px;
+  margin: auto;
+  display: flex;
+}
+#university article h2 {
+}
+#university article .txt {
+  width: 330px;
+  flex-shrink: 0;
+}
+#university article .txt p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 48px;
+}
+#university .swiper_container {
+  width: calc(100% - 330px);
+  overflow: hidden;
+}
+.university-swiper .swiper-slide {
+  position: relative;
+  text-align: center;
+}
+.university-swiper .swiper-slide img {
+  width: 100%;
+}
+.university-swiper .swiper-slide p {
+  position: absolute;
+  bottom: 38px;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #506285;
+  font-size: 14px;
+}
+.university-swiper.swiper-container-horizontal > .swiper-scrollbar {
+  position: static;
+  margin: auto;
+  margin-top: 26px;
+}
+.university-swiper.swiper-container-horizontal > .swiper-scrollbar {
+  height: 1px;
+  background: #c1cbe0;
+}
+.university-swiper.swiper-container-horizontal > .swiper-scrollbar .swiper-scrollbar-drag {
+  height: 2px;
+  background: #61a0be;
+  top: -0.5px;
+}
+#portfolio {
+  width: 1100px;
+  margin: auto;
+  margin-top: 130px;
+  text-align: center;
+  margin-bottom: 76px;
+}
+#portfolio p {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 50px;
+}
+#portfolio .portfolio_arrow {
+  position: relative;
+  top: -24px;
+  z-index: 3;
+}
+#portfolio .portfolio_con_1 {
+  background: #e1e6f0;
+  padding: 77px 0;
+}
+#portfolio .portfolio_con_2 {
+  padding-top: 102px;
+  padding-bottom: 40px;
+  background: #f5f7fb;
+  margin-top: -58px;
+  position: relative;
+}
+#portfolio .portfolio_con_2 ul {
+  text-align: left;
+  position: absolute;
+  top: 130px;
+}
+#portfolio .portfolio_con_2 ul.tm_left {
+  left: calc(50% - 350px);
+}
+#portfolio .portfolio_con_2 ul.tm_right {
+  left: calc(50% + 210px);
+}
+#portfolio .portfolio_con_2 ul li {
+  font-size: 14px;
+  color: #005193;
+  position: relative;
+  line-height: 24.22px;
+  margin-bottom: 8px;
+  padding-left: 13px;
+}
+#portfolio .portfolio_con_2 ul li::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #005193;
+  left: 0;
+  top: calc(50% - 1.5px);
+}
+#portfolio .portfolio_con_2 p.tm {
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  width: max-content;
+  margin: auto;
+  margin-top: 30px;
+}
+#portfolio .portfolio_con_2 p.tm::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 9px;
+  width: 100%;
+  background: #a6d8ef;
+  z-index: -1;
 }
 
 /* 1:1문의하기 */
