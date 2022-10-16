@@ -112,6 +112,7 @@ if (G5_IS_MOBILE) {
 
         <?php if(isset($view['link'][1]) && $view['link'][1]) { ?>
         <!-- 관련링크 시작 { -->
+            <?php var_dump($view) ?>
         <section id="bo_v_link">
             <h2>관련링크</h2>
             <ul>

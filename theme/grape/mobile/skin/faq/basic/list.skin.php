@@ -36,22 +36,39 @@ if( count($faq_master_list) ){
 </nav> -->
 <?php } ?>
 
+<section id="detail_main" class="faq">
+    <h1>문의하기</h1>
+</section>
 <div id="faq_wrapper">
-
-<div class="faq_tit">
+<!-- <div class="faq_tit">
 <h1><?php echo $category_msg.$v['fm_subject'];?></h1>
 <a href="<?php echo G5_BBS_URL ?>/qawrite.php" class="direct_btn">1:1 문의<img src="<?php echo G5_IMG_URL ?>/ico_direct_faq.svg"></a>
-</div>
+</div> -->
+<ul class="faq_tab detail_tab">
+    <li class="on">자주 묻는 질문</li>
+    <li class=""><a href="<?php echo G5_BBS_URL ?>/qawrite.php">1:1 문의</a></li>
+</ul>
 
 
 <div id="faq_wrap" class="faq_<?php echo $fm_id; ?>">
  
-    <div id="faq_sch">
+    <div id="bo_sch">
         <form name="faq_search_form" method="get">
+        <select name="sfl" id="sfl">
+            <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
+            <option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
+            <option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
+            <!-- <option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
+            <option value="mb_id,0"<?php echo get_selected($sfl, 'mb_id,0'); ?>>회원아이디(코)</option>
+            <option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>글쓴이</option>
+            <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option> -->
+        </select>
         <input type="hidden" name="fm_id" value="<?php echo $fm_id;?>">
         <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-        <input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="frm_input" size="15" maxlength="15" placeholder="궁금한 점을 입력하세요!">
-        <button type="submit" value="검색" class="btn_submit"><img src="<?php echo G5_IMG_URL ?>/ico_search.svg"><span class="sound_only">검색</span></button>
+        <div class="input_wrap">
+        <input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="frm_input sch_input" size="15" maxlength="15" placeholder="검색어를 입력해주세요.">
+        <button type="submit" value="검색" class="btn_submit sch_btn"><img src="<?php echo G5_IMG_URL ?>/ico_search.svg"><span class="sound_only">검색</span></button>
+    </div>
         </form>
     </div>
    <?php // FAQ 내용

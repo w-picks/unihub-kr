@@ -20,10 +20,12 @@ if (G5_IS_MOBILE) {
 } 
 ?>
 
-<?php if($board['bo_table'] != 'investment') { ?>
+<?php if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") { ?>
     <div id="notice_news">
-<?php }else { ?>
+<?php }else if($board['bo_table'] == "investment"){  ?>
     <div id="investment">
+<?php } else if ($board['bo_table'] == "my_investment"){?>
+    <div id="my_investment">
 <?php } ?>
 <!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
@@ -59,6 +61,34 @@ if (G5_IS_MOBILE) {
         </ul>
     </div>
 <?php } ?>
+
+
+<?php
+    
+?>
+
+<?php  ?>
+
+<?php
+$menu_datas = get_menu_db(1, true);
+$i = 0;
+if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") { 
+    ?>
+    <section id="detail_main" class="news_main">
+        <h1>새소식</h1>
+    </section>
+    <ul class="news_tab detail_tab">
+        <?php if($board['bo_table'] == "notice") { ?>
+        <li class="on"><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+        <li class=""><a href="/bbs/board.php?bo_table=broadcast">보도자료</a></li>
+        <?php } else { ?>
+            <li class=""><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+            <li class="on"><a href="/bbs/board.php?bo_table=broadcast">보도자료</a></li>
+        <?php } ?>
+    </ul>
+<?php } ?>
+
+
 
 
 
@@ -273,6 +303,7 @@ if (G5_IS_MOBILE) {
             </li> 
             <!-- // 투자하기 리스트 ideahub end -->
             <?php } else { ?>
+                
                     <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
                     <?php
@@ -312,7 +343,7 @@ if (G5_IS_MOBILE) {
                     </div>
                     <div class="bo_info">
                         <!-- <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?> -->
-                        <span class="bo_date"><?php echo $list[$i]['datetime2'] ?></span>
+                        <span class="bo_date"><?php echo $list[$i]['datetime'] ?></span>
                         <div class="views">
                         <img src="<?php echo G5_IMG_URL ?>/ico_view.svg">
                         <span>조회수</span>
@@ -352,13 +383,12 @@ if (G5_IS_MOBILE) {
     <?php } ?>
     </form>
     </div>
-    
+   
 
     <!-- 게시판 목록 시작 -->
 </div>
 <?php } else { ?>
     <!-- 투자하기 게시판 -->
-    
     
 
 <?php } ?>

@@ -5,7 +5,13 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 ?>
 <section id="bo_w" class="direct_inquiry">
-    
+<section id="detail_main" class="faq">
+    <h1>문의하기</h1>
+</section>
+<ul class="faq_tab detail_tab">
+    <li class=""><a href="<?php echo G5_BBS_URL ?>/faq.php">자주 묻는 질문</a></li>
+    <li class="on">1:1 문의</li>
+</ul>
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>">
@@ -54,12 +60,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
              -->
              <li>
                 <label for="qa_1" class="sound_only">이름</label>
-                <input type="text" name="qa_1" value="<?php echo get_text($write['qa_1']); ?>" id="qa_1" required class="frm_input required" maxlength="100" placeholder="이름">
+                <input type="text" name="qa_1" value="<?php echo get_text($write['qa_1']); ?>" id="qa_1" required class="frm_input required" maxlength="100" placeholder="이름을 입력하세요.">
             </li>
             <?php if ($is_email) { ?>
             <li>
                 <label for="qa_email" class="sound_only">이메일</label>
-                <input type="email" name="qa_email" value="" id="qa_email" <?php echo $req_email; ?> class="<?php echo $req_email.' '; ?>frm_input full_input email required" maxlength="100" placeholder="이메일" required>
+                <input type="email" name="qa_email" value="" id="qa_email" <?php echo $req_email; ?> class="<?php echo $req_email.' '; ?>frm_input full_input email required" maxlength="100" placeholder="이메일을 입력하세요. (문의에 대한 답변을 이메일로)" required>
                 <!-- <input type="checkbox" name="qa_email_recv" value="1" id="qa_email_recv" <?php if($write['qa_email_recv']) echo 'checked="checked"'; ?>> -->
                 <!-- <label for="qa_email_recv">답변받기</label> -->
             </li>
@@ -67,8 +73,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 
             <?php if ($is_hp) { ?>
             <li>
-                <label for="qa_hp" class="sound_only">휴대폰</label>
-                <input type="text" name="qa_hp" value="<?php echo get_text($write['qa_hp']); ?>" id="qa_hp" <?php echo $req_hp; ?> class="<?php echo $req_hp.' '; ?>frm_input full_input required" size="30" placeholder="휴대폰" required>
+                <label for="qa_hp" class="sound_only">휴대폰 번호</label>
+                <input type="text" name="qa_hp" value="<?php echo get_text($write['qa_hp']); ?>" id="qa_hp" <?php echo $req_hp; ?> class="<?php echo $req_hp.' '; ?>frm_input full_input required" size="30" placeholder="휴대폰 번호를 입력하세요. (숫자만)" required>
                 <?php if($qaconfig['qa_use_sms']) { ?>
                 <input type="checkbox" name="qa_sms_recv" value="1" <?php if($write['qa_sms_recv']) echo 'checked="checked"'; ?>> 답변등록 SMS알림 수신
                 <?php } ?>
@@ -77,11 +83,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 
             <li>
                 <label for="qa_subject" class="sound_only">제목</label>
-                <input type="text" name="qa_subject" value="<?php echo get_text($write['qa_subject']); ?>" id="qa_subject" required class="frm_input required" maxlength="255" placeholder="제목">
+                <input type="text" name="qa_subject" value="<?php echo get_text($write['qa_subject']); ?>" id="qa_subject" required class="frm_input required" maxlength="255" placeholder="제목을 입력하세요. (최대 30자 이내)">
             </li>
 
-            <li>
-               <label for="qa_content" class="sound_only">내용</label>
+            <li class="qa_content_li">
+               <label for="qa_content" class="sound_only">문의 내용</label>
                 <!-- <div class="wr_content">
                     <?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?>
                 </div> -->
@@ -89,9 +95,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
             </li>
 
             <li class="bo_w_flie">
-                <label>파일 첨부하기(선택)(최대 10MB)</label>
+                <label>파일 첨부하기</label>
                 <div class="file_wr">
-                    <input type="text" value="파일없음"  readonly/>
+                    <input type="text"  readonly placeholder="최대 10MB"/>
                     <!-- <span class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i><span class="sound_only">파일 #1</span></span> -->
                     <label for="file_upload" class="file_btn">파일 업로드</label>
                     <input type="file" name="bf_file[1]" title="파일첨부 1 :  용량 <?php echo $upload_max_filesize; ?> 이하만 업로드 가능" class="frm_file" id="file_upload">

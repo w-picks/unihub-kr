@@ -105,7 +105,7 @@ pre {
   font-size: 1.1em;
 }
 a {
-  color: #000;
+  color: inherit;
   text-decoration: none;
 }
 ul,
@@ -178,7 +178,7 @@ ul {
   z-index: 99;
   height: 59px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  background: none;
+  background: #ddd;
   transition: 0.3s all ease-in-out;
   -webkit-transition: 0.3s all ease-in-out;
   -moz-transition: 0.3s all ease-in-out;
@@ -1396,90 +1396,211 @@ h2 span.underline:after {
   z-index: -1;
 }
 
-/* 1:1문의하기 */
-.direct_inquiry {
-  background: #f7f8fb;
-  padding-bottom: 83px;
-}
-.direct_inquiry h1 {
-  width: 1020px;
-  margin: auto;
-  font-size: 20px;
-  text-align: center;
-  padding-top: 76px;
-  padding-bottom: 33px;
-  color: #040810;
-}
-.direct_inquiry ul {
-  width: 1020px;
-  margin: auto;
-  background: #fff;
-  padding-top: 42px;
-  padding-bottom: 46px;
-}
-.direct_inquiry ul li {
-  width: 435px;
+/* faq */
+#bo_sch {
+  width: 1140px;
   margin: auto;
 }
-.direct_inquiry ul li label:not(.file_btn) {
+#bo_sch form {
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 82px;
+  width: max-content;
+  border-bottom: 1px solid #040810;
+}
+#bo_sch select {
+  background: url("/img/news_select_arrow.svg") no-repeat right 19px center;
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding-left: 20px;
+  padding-right: 43px;
+  height: 50px;
+  font-size: 16px;
+}
+#bo_sch .input_wrap {
+  width: max-content;
+  display: inline-block;
+  vertical-align: top;
+}
+#bo_sch .sch_input {
+  width: 300px;
+  height: 50px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border: none;
+  padding-left: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+  vertical-align: top;
+  background: none;
+  box-shadow: none;
+}
+#bo_sch .sch_input:focus {
+  outline: 0;
+}
+#bo_sch .sch_input::placeholder {
+  color: #8496ba;
+}
+#bo_sch .sch_btn {
+  height: 50px;
+  /* width:50px; */
+  padding-right: 20px;
+  padding-left: 20px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border: none;
+  vertical-align: top;
+  background: none;
+}
+.detail_tab {
+  display: flex;
+  width: 1100px;
+  margin: auto;
+  margin-top: 56px;
+}
+.detail_tab li {
+  width: 50%;
+  border: 1px solid #c1cbe0;
   color: #202a3e;
-  font-size: 14px !important;
-  font-weight: 700;
-  margin-bottom: 3px !important;
+  font-size: 20px;
+  font-weight: 500;
+  box-sizing: border-box;
+  height: 60px;
+  line-height: 58px;
+  text-align: center;
+  cursor: pointer;
+}
+.detail_tab li a {
+  display: block;
+  color: inherit;
+}
+.detail_tab li:first-of-type {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.detail_tab li:last-of-type {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.detail_tab li.on {
+  background: #005193;
+  border-color: #005193;
+  color: #fff;
+}
+
+/* 1:1문의 */
+
+.direct_inquiry {
+  color: #202a3e;
+}
+.direct_inquiry #fwrite h1 {
+  text-align: center;
+  margin-top: 78px;
+  margin-bottom: 50px;
+  font-size: 23px;
+  font-weight: 500;
+}
+.direct_inquiry .form_01 {
+  width: 570px;
+  margin: auto;
+}
+.direct_inquiry .form_01 li {
+  margin: 0;
+  display: flex;
+  height: 47px;
+  align-items: center;
+  border-top: 1px solid #c1cbe0;
+}
+.direct_inquiry .form_01 li.qa_content_li {
+  height: 175px;
+}
+.direct_inquiry .form_01 li.qa_content_li textarea {
+  height: 163px;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  resize: none;
+  border: 1px solid #c1cbe0;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.direct_inquiry .form_01 li.qa_content_li textarea::placeholder {
+  color: #8496ba;
+}
+#bo_w .sound_only {
   display: block;
   position: static;
-  width: 100% !important;
-  height: auto !important;
-  line-height: normal !important;
 }
-.direct_inquiry ul li input[type="text"],
-.direct_inquiry ul li input[type="email"],
-.direct_inquiry ul li textarea {
+.direct_inquiry .form_01 li:not(.all_chk_option) label {
+  width: 121px !important;
   background: #f2f4f9;
-  border: none;
-  border-radius: 6px;
-  width: 100%;
-  margin-bottom: 25px;
+  height: 100% !important;
+  font-size: 15px !important;
+  line-height: 47px !important;
+  flex-shrink: 0;
+  padding-left: 20px !important;
+  box-sizing: border-box;
 }
-.direct_inquiry ul li input[type="text"],
-.direct_inquiry ul li input[type="email"],
-.direct_inquiry ul li textarea::placeholder {
+#bo_w.direct_inquiry .form_01 li input {
+  width: calc(100% - 20px);
+  height: 33px;
+  margin-left: 10px;
+  border: 1px solid #c1cbe0;
+  border-radius: 3px;
+  box-shadow: none;
+}
+#bo_w.direct_inquiry .form_01 li input::placeholder {
   color: #8496ba;
-  font-weight: 300;
 }
-.direct_inquiry ul li textarea {
-  resize: none;
+#bo_w.direct_inquiry .bo_w_flie input[type="file"] {
+  display: none;
 }
-.direct_inquiry ul li .file_wr {
+.bo_w_flie .file_wr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
-.direct_inquiry ul li .file_wr label.file_btn {
-  width: 80px;
-  height: 42px;
-  border-radius: 6px;
-  color: #fff;
-  line-height: 42px;
-  text-align: center;
-  font-size: 12px;
-  background: #506285;
-}
-.direct_inquiry ul li .file_wr input {
-  height: 42px;
-  width: 340px;
-  padding: 0 10px;
+#bo_w.direct_inquiry .form_01 .bo_w_flie .file_wr input[type="text"] {
+  width: 363px;
+  height: 33px;
+  padding-left: 10px;
   box-sizing: border-box;
-  margin: 0;
 }
-.direct_inquiry ul li #file_upload {
-  width: 0px;
-  height: 0px;
-  margin: 0;
-  padding: 0;
+#bo_w.direct_inquiry .form_01 .bo_w_flie .file_wr label {
+  width: 71px !important;
+  height: 33px !important;
+  background: #c1cbe0;
+  border-radius: 3px;
+  color: #506285;
+  font-size: 12px !important;
+  padding: 0 !important;
+  text-align: center;
+  line-height: 33px !important;
+  cursor: pointer;
 }
+/* #bo_w.direct_inquiry ul li label.all_chk_label {
+  display: flex;
+  align-items: center;
+}
+#bo_w.direct_inquiry .form_01 li.all_chk_option input[type="checkbox"] {
+  display: none;
+}
+#bo_w.direct_inquiry ul li label.all_chk_label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("/img/check_default.svg") no-repeat 0 0 / cover;
+  cursor: pointer;
+  margin-right: 8px;
+} */
 .direct_inquiry ul li.all_chk_option {
-  margin-top: 27px;
+  padding-top: 27px;
+  display: block;
+  height: auto;
 }
 .direct_inquiry ul li input#all_chk {
   display: none;
@@ -1487,6 +1608,8 @@ h2 span.underline:after {
 .direct_inquiry ul li label.all_chk_label {
   display: flex;
   align-items: center;
+  font-size: 14px;
+  font-weight: 700;
 }
 .direct_inquiry ul li label.all_chk_label:before {
   content: "";
@@ -1514,20 +1637,19 @@ h2 span.underline:after {
   margin-left: 0;
 }
 .direct_inquiry .write_div {
-  width: 1020px;
-  margin: auto;
   text-align: center;
-  margin-top: 28px;
+  margin: 63px 0;
 }
-.direct_inquiry .write_div .btn_submit {
-  background: #2d72db;
-  font-size: 18px;
-  width: 294px;
-  height: 46px;
-  border-radius: 7px;
-  color: #fff;
+.direct_inquiry .write_div button {
+  border: 1px solid #8496ba;
+  width: 90px;
+  height: 37px;
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+  border-radius: 3px;
+  color: #202a3e;
 }
-
 @media (min-width: 970px) {
   .btn_menu_op {
     display: none;
