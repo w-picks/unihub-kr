@@ -153,6 +153,7 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
         <ul class="project_list">
             <?php
             for ($i=0; $i<count($list); $i++) {
+
                 // 투자하기 리스트 ideahub
                 if($_GET['bo_table'] == 'investment') {
                     ?>
@@ -302,8 +303,10 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                 </div>
             </li> 
             <!-- // 투자하기 리스트 ideahub end -->
-            <?php } else { ?>
-                
+            <?php } else { 
+                if ($list[$i]['file'][0]['file']) { ?>
+                    <a href="<?php echo $list[$i]['file'][0]['href']; ?>">[다운로드]</a>
+            <?php } ?>
                     <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
                     <?php
