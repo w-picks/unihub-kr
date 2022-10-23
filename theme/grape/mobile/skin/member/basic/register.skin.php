@@ -4,8 +4,11 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
-
+<section id="detail_main" class="join">
+            <h1>로그인/회원가입</h1>
+        </section>
 <div class="mbskin">
+    <h1>회원가입</h1>
 
     <?php
     // 소셜로그인 사용시 소셜로그인 버튼
@@ -18,8 +21,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         <h2>회원가입약관</h2>
         <textarea readonly><?php echo get_text($config['cf_stipulation']) ?></textarea>
         <fieldset class="fregister_agree bo_chk li_chk">
-            <input type="checkbox" name="agree" value="1" id="agree11">
-            <label for="agree11"><span class="chk_img"></span> 회원가입약관의 내용에 동의합니다.</label>
+            <input type="checkbox" name="agree" value="1" id="agree11" class="all_chk">
+            <label for="agree11" class="all_chk_label"><!-- <span class="chk_img"></span> -->회원가입약관의 내용에 동의합니다.</label>
         </fieldset>
     </section>
 
@@ -56,14 +59,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
             </table>
         </div>
         <fieldset class="fregister_agree bo_chk li_chk">
-            <input type="checkbox" name="agree2" value="1" id="agree21">
-            <label for="agree21"><span class="chk_img"></span> 개인정보처리방침안내의 내용에 동의합니다.</label>
+            <input type="checkbox" name="agree2" value="1" id="agree21" class="all_chk">
+            <label for="agree21" class="all_chk_label"><!-- <span class="chk_img"></span>  -->개인정보처리방침안내의 내용에 동의합니다.</label>
        </fieldset>
     </section>
  
     <div class="chk_all all_chk">
-        <input type="checkbox" name="chk_all" id="chk_all">
-        <label for="chk_all"><span class="chk_img"></span> 전체동의</label>
+        <input type="checkbox" name="chk_all" id="chk_all" class="all_chk">
+        <label for="chk_all" class="all_chk_label">
+            <!-- <span class="chk_img"></span> -->
+            전체동의</label>
     </div>
 
     <div class="btn_wr">

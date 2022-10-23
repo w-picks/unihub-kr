@@ -45,7 +45,7 @@
   position: relative;
   font-weight: normal;
   white-space: nowrap;
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
+
   transition: 0.3s all ease-in-out;
   -webkit-transition: 0.3s all ease-in-out;
   -moz-transition: 0.3s all ease-in-out;
@@ -57,14 +57,6 @@
   visibility: hidden;
   clear: both;
   content: "";
-}
-#ol_after_private li a:hover {
-  color: #5166d8;
-  background: #fafafa;
-}
-#ol_after_private li a:active {
-  background: #eaecf7;
-  color: #5166d8;
 }
 
 #ol_after_private li strong {

@@ -19,18 +19,26 @@ if (G5_IS_MOBILE) {
 
 } 
 ?>
-
 <?php if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") { ?>
     <div id="notice_news">
 <?php }else if($board['bo_table'] == "investment"){  ?>
     <div id="investment">
 <?php } else if ($board['bo_table'] == "my_investment"){?>
     <div id="my_investment">
+    <section id="detail_main" class="my_page">
+        <h1>마이페이지</h1>
+    </section>
+    <div class="my_invest_tab_wrap">
+        <ul class="my_invest_tab detail_tab">
+            <li class="on"><a href="/bbs/board.php?bo_table=my_investment">특허 수익화 현황</a></li>
+            <li><a href="/bbs/member_confirm.php?url=register_form.php">내 정보관리</a></li>
+        </ul>
+    </div>
 <?php } ?>
 <!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
 </div> -->
-<h1><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></h1>
+<!-- <h1><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></h1> -->
 <?php if ($is_category) { ?>
 <nav id="bo_cate">
     <h2><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']) ?> 카테고리</h2>
@@ -54,12 +62,7 @@ if (G5_IS_MOBILE) {
 <?php } ?>
 
 <?php if($board['bo_table'] == "my_investment") {?>
-    <div class="my_invest_tab_wrap">
-        <ul class="my_invest_tab">
-            <li class="on" onclick="myTabHandle(0, this)">공지</li>
-            <li onclick="myTabHandle(1, this)">투자한 프로젝트</li>
-        </ul>
-    </div>
+    
 <?php } ?>
 
 
@@ -236,6 +239,7 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                         <?php
                         } 
                         ?>
+                        
                         <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
                             <?php echo $list[$i]['icon_reply']; ?>
                             <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php } ?> 
@@ -322,40 +326,79 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                             <input type="checkbox" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
                         </span>
                         <?php } ?>
+    <?php if($board['bo_table'] == "my_investment") { ?>
+        <div href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
+            <?php echo $list[$i]['icon_reply']; ?>
+            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php }else{ ?>
+                <span class="number"><?php echo $list[$i]['num'] ?></span>
+                <?php }?> 
+                <p>
+            <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
+            <?php echo $list[$i]['subject'] ?>
+            <?php
+            // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
 
-                        <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
-                            <?php echo $list[$i]['icon_reply']; ?>
-                            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php }else{ ?>
-                                <span class="number"><?php echo $list[$i]['num'] ?></span>
-                                <?php }?> 
-                                <p>
-                            <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
-                            <?php echo $list[$i]['subject'] ?>
-                            <?php
-                            // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
+            // if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
+            // if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
+            // if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+            // if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
 
-                            if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
-                            if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
-                            if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
-                            if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
+            ?>
+            </p>
+        </div>
 
-                            ?>
-                            </p>
-                        </a>
+        
+        
+    <?php } else { ?>
+        <a href="<?php echo $list[$i]['href'] ?>" class="bo_subject">
+            <?php echo $list[$i]['icon_reply']; ?>
+            <?php if ($list[$i]['is_notice']) { ?><strong class="notice_icon number"><img src="<?php echo G5_IMG_URL ?>/ico_announce.svg"></strong><?php }else{ ?>
+                <span class="number"><?php echo $list[$i]['num'] ?></span>
+                <?php }?> 
+                <p>
+            <?php if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'] ?>
+            <?php echo $list[$i]['subject'] ?>
+            <?php
+            // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
+
+            if (isset($list[$i]['icon_new'])) echo $list[$i]['icon_new'];
+            if (isset($list[$i]['icon_hot'])) echo $list[$i]['icon_hot'];
+            if (isset($list[$i]['icon_file'])) echo $list[$i]['icon_file'];
+            if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
+
+            ?>
+            </p>
+        </a>
+                        <?php } ?>
+                            
 
                     </div>
                     <div class="bo_info">
                         <!-- <span class="sound_only">작성자</span><?php echo $list[$i]['name'] ?> -->
                         <span class="bo_date"><?php echo $list[$i]['datetime'] ?></span>
-                        <div class="views">
-                        <img src="<?php echo G5_IMG_URL ?>/ico_view.svg">
-                        <span>조회수</span>
-                        </div>
+                        <?php if($board['bo_table'] == "my_investment"){ ?>
+                            <div class="views">
+                                <img src="<?php echo G5_IMG_URL ?>/my_investment_more_ico.svg" class="on">
+                                <img src="<?php echo G5_IMG_URL ?>/my_investment_more_ico_off.svg" class="off">
+                            </div>
+                            <?php } else { ?>
+                                <div class="views">
+                                    <!-- <img src="<?php echo G5_IMG_URL ?>/ico_view.svg"> -->
+                                    <span>조회수</span>
+                                </div>
+                                <?php } ?>
                         <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
                         <?php if ($list[$i]['wr_good']) { ?><i class="fa fa-thumbs-o-up"></i> <?php echo $list[$i]['wr_good'] ?> <?php } ?>
                         <?php if ($list[$i]['wr_nogood']) { ?><i class="fa fa-thumbs-o-down"></i> <?php echo $list[$i]['wr_nogood'] ?> <?php } ?>
                     
                     </div>
+<?php if($board['bo_table'] == "my_investment"){ ?>
+                    <div class="download">
+            <a href="">수익화현황 리포트 Download
+            <img src="<?php echo G5_IMG_URL ?>/download_ico.svg">
+            </a>
+        </div>
+        <?php }?>
                     
                 </li>
             <?php }} ?>
@@ -550,6 +593,17 @@ function select_copy(sw) {
 
             }
         }
+
+        const myInvestment = document.querySelector("#my_investment");
+        if(myInvestment){
+            //특허 수익화 현황
+        $(".project_list li").on("click", function(){
+            $(this).find(".download").slideDown();
+            $(this).siblings().find(".download").slideUp();
+            $(this).find(".views").addClass("on");
+            $(this).siblings().find(".views").removeClass("on");
+        })
+    }
 
 
     

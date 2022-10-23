@@ -127,3 +127,6 @@
 <section id="contact_us">
     <div>Contact us !</div>
 </section>
+
+<script defer src="<?php echo G5_JS_URL ?>/index_map.js"></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALgx-VXp6qO4fZ2Z5WCCLy1HtkMibDVOE&callback=initMap"></script>

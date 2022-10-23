@@ -23,6 +23,9 @@ if (G5_IS_MOBILE) {
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
 </div> -->
 <!-- $is_admin -->
+<section id="detail_main" class="news_main">
+    <h1>새소식</h1>
+</section>
  <h1 id="bo_v_title"><?php echo $board['bo_subject'] ?></h1>
 
 <article id="bo_v">
@@ -182,8 +185,8 @@ if (G5_IS_MOBILE) {
 
     <?php if ($prev_href || $next_href) { ?>
     <ul class="bo_v_nb">
-        <?php if ($prev_href) { ?><li class="bo_v_prev"><a href="<?php echo $prev_href ?>"><div><span>이전글</span><i class="fa fa-chevron-up" aria-hidden="true"></i></div><p><?php echo $prev_wr_subject;?></p></a></li><?php } ?>
-        <?php if ($next_href) { ?><li class="bo_v_next"><a href="<?php echo $next_href ?>"><div><span>다음글</span><i class="fa fa-chevron-down" aria-hidden="true"></i></div><p><?php echo $next_wr_subject;?></p></a></li><?php } ?>
+        <?php if ($prev_href) { ?><li class="bo_v_prev"><a href="<?php echo $prev_href ?>"><div><i class="fa fa-chevron-up" aria-hidden="true"></i><span>이전글</span></div><p><?php echo $prev_wr_subject;?></p></a></li><?php } ?>
+        <?php if ($next_href) { ?><li class="bo_v_next"><a href="<?php echo $next_href ?>"><div><i class="fa fa-chevron-down" aria-hidden="true"></i><span>다음글</span></div><p><?php echo $next_wr_subject;?></p></a></li><?php } ?>
 
     </ul>
     <?php } ?>
@@ -199,7 +202,7 @@ if (G5_IS_MOBILE) {
 
         </ul>
         <?php if(!$is_admin){ ?>
-            <a href="<?php echo $list_href ?>" class="btn_b01 btn_m guest">목록으로</a>
+            <a href="<?php echo $list_href ?>" class="uni_btn color1">목록으로</a>
             <?php } else { ?>
                 <div class="bo_v_right"> 
                 <a href="<?php echo $list_href ?>" class="btn_b01 btn_m">목록</a>

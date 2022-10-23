@@ -63,14 +63,6 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
         <h2 class="scroll-trans">유니허브와 <span class="underline">함께 하고 있습니다.</span></h2>
         <p class="scroll-trans">N개의 국내 대학들이 2022년부터<br>UNIHUB의 해외특허 활용 비즈니스에 참여하고 있습니다.</p>
         <ul>
-            <li class="scroll-trans scroll-trans-delay-300">
-                <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png">
-                <p>한양대학교</p>
-            </li>
-            <li class="scroll-trans">
-                <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
-                <p>성균관대학교</p>
-            </li>
             <li class="scroll-trans scroll-trans-delay-500">
                 <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee.png">
                 <p>경희대학교</p>
@@ -79,6 +71,10 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png">
                 <p>대구경북과학기술원</p>
             </li>
+            <li class="scroll-trans">
+                <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
+                <p>성균관대학교</p>
+            </li>
             <li class="scroll-trans scroll-trans-delay-400">
                 <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png">
                 <p>아주대학교</p>
@@ -86,6 +82,10 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <li class="scroll-trans scroll-trans-delay-700">
                 <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
                 <p>포항공과대학교</p>
+            </li>
+            <li class="scroll-trans scroll-trans-delay-300">
+                <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png">
+                <p>한양대학교</p>
             </li>
         </ul>
         <button class="uni_btn color1 scroll-trans">참여하기</button>
@@ -149,20 +149,20 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 </section> -->
 
 <script>
-    const swiperContent = new Swiper('.project_slide_content', {});
-    const swiperBg = new Swiper('.project_slide_bg', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        effect : "fade"
-    });
+    // const swiperContent = new Swiper('.project_slide_content', {});
+    // const swiperBg = new Swiper('.project_slide_bg', {
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //     },
+    //     effect : "fade"
+    // });
 
-    swiperContent.controller.control = swiperBg
-    swiperBg.controller.control = swiperContent;
+    // swiperContent.controller.control = swiperBg
+    // swiperBg.controller.control = swiperContent;
 
     //button effect
     $('.default_btn').on('mouseover',function(e){

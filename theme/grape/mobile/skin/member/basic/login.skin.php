@@ -4,33 +4,47 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
-
+<section id="detail_main" class="join">
+            <h1>로그인/회원가입</h1>
+        </section>
+        <div class="my_invest_tab_wrap">
+            <ul class="my_invest_tab detail_tab">
+                <li class="on"><a href="/bbs/login.php">로그인</a></li>
+                <li><a href="/bbs/register.php">회원가입</a></li>
+            </ul>
+        </div>
 <div id="mb_login" class="mbskin">
+    
     <h1><?php echo $g5['title'] ?></h1>
 
     <form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post" id="flogin">
     <input type="hidden" name="url" value="<?php echo $login_url ?>">
 
     <div id="login_frm">
+        <div class="input_wrap">
         <label for="login_id" class="sound_only">아이디<strong class="sound_only"> 필수</strong></label>
         <input type="text" name="mb_id" id="login_id" placeholder="아이디(필수)" required class="frm_input required" maxLength="20">
+</div>
+<div class="input_wrap">
         <label for="login_pw" class="sound_only">비밀번호<strong class="sound_only"> 필수</strong></label>
         <input type="password" name="mb_password" id="login_pw" placeholder="비밀번호(필수)" required class="frm_input required" maxLength="20">
-        <div class="bo_chk li_chk">
-            <input type="checkbox" name="auto_login" id="login_auto_login">
-            <label for="login_auto_login"><span class="chk_img"></span> 자동로그인</label>
-        </div>
-       <input type="submit" value="로그인" class="btn_submit btn">
     </div>
     <section class="mb_login_join">
         <h2>회원로그인 안내</h2>
         <div>
-            <a href="./register.php" class="login_join">회원 가입</a>
+            <!-- <a href="./register.php" class="login_join">회원 가입</a> -->
             <a href="<?php echo G5_BBS_URL ?>/password_lost.php" target="_blank" id="login_password_lost">회원정보찾기</a>
         </div>
     </section>
+        <div class="bo_chk li_chk">
+            <input type="checkbox" name="auto_login" id="login_auto_login" class="all_chk">
+            <label for="login_auto_login" class=" all_chk_label"><span class="chk_img"></span> 자동로그인</label>
+        </div>
+       <input type="submit" value="로그인" class="btn_submit btn">
+    </div>
 
-
+    <!-- <input type="checkbox" id="all_chk">
+                <label for="all_chk" class="all_chk_label">개인정보 수집 이용에 동의</label> -->
     <?php
     // 소셜로그인 사용시 소셜로그인 버튼
     @include_once(get_social_skin_path().'/social_login.skin.php');

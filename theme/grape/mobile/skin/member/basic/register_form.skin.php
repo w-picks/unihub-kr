@@ -9,6 +9,28 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
 ?>
 
 <div class="register">
+<!-- w == u : 내정보관리 / w == "" 회원가입 -->
+    <?php if($w == "u"){ ?>
+    <section id="detail_main" class="my_page">
+        <h1>마이페이지</h1>
+    </section>
+    <div class="my_invest_tab_wrap">
+        <ul class="my_invest_tab detail_tab">
+            <li><a href="/bbs/board.php?bo_table=my_investment">특허 수익화 현황</a></li>
+            <li class="on"><a href="/bbs/member_confirm.php?url=register_form.php">내 정보관리</a></li>
+        </ul>
+    </div>
+    <?php } else { ?>
+        <section id="detail_main" class="join">
+            <h1>로그인/회원가입</h1>
+        </section>
+        <div class="my_invest_tab_wrap">
+            <ul class="my_invest_tab detail_tab">
+                <li><a href="/bbs/login.php">로그인</a></li>
+                <li class="on"><a href="/bbs/register.php">회원가입</a></li>
+            </ul>
+        </div>
+    <?php } ?>
     <form name="fregisterform" id="fregisterform" action="<?php echo $register_action_url ?>" onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="url" value="<?php echo $urlencode ?>">
@@ -26,18 +48,18 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
         <h2>사이트 이용정보 입력</h2>
         <ul>
             <li>
-                <label for="reg_mb_id" class="sound_only">아이디 (필수)</label>
+                <label for="reg_mb_id" class="sound_only">아이디</label>
                 <input type="text" name="mb_id" value="<?php echo $member['mb_id'] ?>" id="reg_mb_id" class="frm_input full_input <?php echo $required ?> <?php echo $readonly ?>" minlength="3" maxlength="20" <?php echo $required ?> <?php echo $readonly ?> placeholder="아이디 (필수)">
                 <span id="msg_mb_id"></span>
-                <span class="frm_info">영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력하세요.</span>
+                <!-- <span class="frm_info">영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력하세요.</span> -->
             </li>
             <li class="password">
                 <label for="reg_mb_password" class="sound_only">비밀번호 (필수)</label>
-                <input type="password" name="mb_password" id="reg_mb_password" class="frm_input full_input <?php echo $required ?>" minlength="3" maxlength="20" <?php echo $required ?> placeholder="비밀번호 (필수)">
+                <input type="password" name="mb_password" id="reg_mb_password" class="frm_input full_input <?php echo $required ?> required" minlength="3" maxlength="20" <?php echo $required ?> placeholder="비밀번호 (필수)" required>
             </li>
             <li>
                 <label for="reg_mb_password_re" class="sound_only">비밀번호확인 (필수)</label>
-                <input type="password" name="mb_password_re" id="reg_mb_password_re" class="frm_input full_input <?php echo $required ?>" minlength="3" maxlength="20" <?php echo $required ?>  placeholder="비밀번호확인 (필수)">
+                <input type="password" name="mb_password_re" id="reg_mb_password_re" class="frm_input full_input <?php echo $required ?> required" minlength="3" maxlength="20" <?php echo $required ?>  placeholder="비밀번호확인 (필수)" required>
             </li>
         </ul>
     </div>
@@ -45,7 +67,7 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
     <div class="form_01">
         <h2>개인정보 입력</h2>
         <ul>
-            <li>
+            <li style="display:none">
                 <?php 
                 $desc_name = '';
                 $desc_phone = '';
@@ -88,7 +110,7 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
             <?php } ?>
             </li>
             <li class="rgs_name_li">
-                <label for="reg_mb_name" class="sound_only">이름 (필수)<?php echo $desc_name ?></label>
+                <label for="reg_mb_name" class="sound_only">이름<?php echo $desc_name ?></label>
                 <input type="text" id="reg_mb_name" name="mb_name" value="<?php echo get_text($member['mb_name']) ?>" <?php echo $required ?> <?php echo $name_readonly; ?> class="frm_input full_input <?php echo $required ?> <?php echo $name_readonly ?>" placeholder="이름 (필수)<?php echo $desc_name ?>">
 
             </li>
@@ -158,7 +180,19 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
         </ul>
     </div>
 
-    <div class="form_01">  
+    <?php if($w == ""){  ?>
+    <div class="all_chk_option">
+                <input type="checkbox" id="all_chk">
+                <label for="all_chk" class="all_chk_label">개인정보 수집 이용에 동의</label>
+                <div>
+                <span>목적 문의</span> : 답변<span>제공 항목</span> : 이름,이메일 및 휴대폰번호<span>보유기간</span> : 제출 후 30일
+                </div>
+            </div>
+
+            <?php } ?>
+
+
+    <div class="form_01" style="display:none">  
         <h2>기타 개인설정</h2>
         <ul>
             <?php if ($config['cf_use_signature']) { ?>
