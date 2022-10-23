@@ -309,7 +309,6 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
             <!-- // 투자하기 리스트 ideahub end -->
             <?php } else { 
                 if ($list[$i]['file'][0]['file']) { ?>
-                    <a href="<?php echo $list[$i]['file'][0]['href']; ?>">[다운로드]</a>
             <?php } ?>
                     <li class="<?php if ($list[$i]['is_notice']) echo "bo_notice"; ?>  <?php if ($is_category && $list[$i]['ca_name']) { ?>li_cate<?php } ?>">
                 
@@ -384,7 +383,7 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                             <?php } else { ?>
                                 <div class="views">
                                     <!-- <img src="<?php echo G5_IMG_URL ?>/ico_view.svg"> -->
-                                    <span>조회수</span>
+                                    <span><?php echo $list[$i]['wr_hit'] ?></span>
                                 </div>
                                 <?php } ?>
                         <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span> <i class="fa fa-commenting-o" aria-hidden="true"></i> <?php echo $list[$i]['comment_cnt']; ?> <?php } ?>
@@ -393,12 +392,15 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                     
                     </div>
 <?php if($board['bo_table'] == "my_investment"){ ?>
+    <?php if ($list[$i]['file'][0]['file']) { ?>
                     <div class="download">
-            <a href="">수익화현황 리포트 Download
+            <a href="<?php echo $list[$i]['file'][0]['href'] ?>">수익화현황 리포트 Download
             <img src="<?php echo G5_IMG_URL ?>/download_ico.svg">
             </a>
         </div>
-        <?php }?>
+        <?php } else { ?>
+            <div class="download"><a href="">리포트 없음</a></div>
+        <?php }}?>
                     
                 </li>
             <?php }} ?>
