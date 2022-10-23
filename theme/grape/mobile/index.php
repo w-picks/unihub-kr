@@ -106,7 +106,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             </div>
         </article>
     </section>
-    <section id="news">
+    <!-- <section id="news">
         <span class="uni_span scroll-trans">UNIHUB NEWS</span>
         <h2 class="scroll-trans">유니허브의<br><b><span class="underline">새로운 소식</span>을 만나보세요.</b></h2>
         <ul class="news_table scroll-trans">
@@ -132,7 +132,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 </a>
             </li>
         </ul>
-    </section>
+    </section> -->
 </div>
 
 <!-- 보도자료 -->

@@ -934,10 +934,14 @@ h2 span.underline:after {
 }
 .news_table {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .news_table li {
   width: 310px;
+  margin-right: 84px;
+}
+.news_table li:last-of-type {
+  margin-right: 0;
 }
 .news_table li a {
   display: block;
@@ -967,17 +971,21 @@ h2 span.underline:after {
 .news_table li a h3 {
   font-size: 20px;
   font-weight: 600;
+  min-height: 48px;
 }
 .news_table li a p {
   font-size: 15px;
   margin-top: 18px;
   margin-bottom: 8px;
   line-height: 24px;
+  min-height: 96px;
 }
 .news_table li a p.date {
   font-size: 14px;
   margin-top: 0;
   color: #9b9da0;
+  height: auto;
+  min-height: auto;
 }
 .news_table li:hover a {
   background: url(/img/news_arrow2.svg) no-repeat right 0 bottom 0;
