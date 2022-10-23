@@ -9,30 +9,30 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     <div class="ft_menu">
     <ul>
         <li>
-            <a href="/">유니허브 소개</a>
+            <a href="/bbs/content.php?co_id=company">유니허브 소개</a>
         </li>
         <li>
-            <a href="/">포트폴리오</a>
+            <a href="/bbs/content.php?co_id=about_subsidiary">포트폴리오</a>
         </li>
         <li>
-            <a href="/">새소식</a>
+            <a href="/bbs/board.php?bo_table=notice">새소식</a>
             <ul class="in_ft_menu">
                 <li>
-                    <a href="/">공지사항</a>
+                    <a href="/bbs/board.php?bo_table=notice">공지사항</a>
                 </li>
                 <li>
-                    <a href="/">보도자료</a>
+                    <a href="/bbs/board.php?bo_table=broadcast">보도자료</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="/">문의하기</a>
+            <a href="/bbs/faq.php">문의하기</a>
             <ul class="in_ft_menu">
                 <li>
-                    <a href="/">자주묻는질문</a>
+                    <a href="/bbs/faq.php">자주묻는질문</a>
                 </li>
                 <li>
-                    <a href="/">1:1 문의</a>
+                    <a href="/bbs/qawrite.php">1:1 문의</a>
                 </li>
             </ul>
         </li>

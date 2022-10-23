@@ -1,55 +1,32 @@
+<link rel="stylesheet" href="/theme/grape/css/mobile.css" />
+<link rel="stylesheet" href="/theme/grape/mobile/skin/outlogin/basic/style.css" />
+<link rel="stylesheet" href="/js/swiper/swiper.min.css" />
+<link rel="stylesheet" href="/eng/css/common.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/main_common.js"></script>
+
 <header id="hd" class="top">
-    <h1 id="hd_h1">그누보드5</h1>
 
-    <div class="to_content"><a href="#container">본문 바로가기</a></div>
-
-    
-<!-- 팝업레이어 시작 { -->
-<div id="hd_pop">
-    <h2>팝업레이어 알림</h2>
-
-<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
-
-<script>
-$(function() {
-    $(".hd_pops_reject").click(function() {
-        var id = $(this).attr('class').split(' ');
-        var ck_name = id[1];
-        var exp_time = parseInt(id[2]);
-        $("#"+id[1]).css("display", "none");
-        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
-    });
-    $('.hd_pops_close').click(function() {
-        var idb = $(this).attr('class').split(' ');
-        $('#'+idb[1]).css('display','none');
-    });
-});
-</script>
-<!-- } 팝업레이어 끝 -->
- 
-
-    <div id="hd_wrapper">
+<div id="hd_wrapper">
             
             <div id="gnb">
                 <ul id="gnb_1dul">
                                     <li class="gnb_1dli">
-                        <a href="/bbs/content.php?co_id=company" target="_self" class="gnb_1da">회사소개</a>
+                        <a href="/eng/about" target="_self" class="gnb_1da">About</a>
                                             </li>
                                     <li class="gnb_1dli">
-                        <a href="/bbs/content.php?co_id=about_subsidiary" target="_self" class="gnb_1da">포트폴리오</a>
+                        <a href="/eng/portfolio" target="_self" class="gnb_1da">Portfolio</a>
                                             </li>
                                     <li class="gnb_1dli">
-                        <a href="/bbs/board.php?bo_table=notice" target="_self" class="gnb_1da">새소식</a>
-                        <button type="button" class="btn_gnb_op" style="display:none;">하위분류</button><ul class="gnb_2dul">
-                            <li class="gnb_2dli"><a href="/bbs/board.php?bo_table=notice" target="_self" class="gnb_2da"><span></span>공지사항</a></li>
-                                                    <li class="gnb_2dli"><a href="/bbs/board.php?bo_table=broadcast" target="_self" class="gnb_2da"><span></span>보도자료</a></li>
-                        </ul>
+                        <a href="/eng/news" target="_self" class="gnb_1da">News</a>
+                        
                     </li>
                                 </ul>
 
             </div>
             <div id="logo">
-                <a href="http://localhost:3030"><img src="http://localhost:3030/img/unihub_logo.png" alt="그누보드5" class="default_logo"><img src="http://localhost:3030/img/unihub_logo_b.png" alt="그누보드5" class="hover_logo"></a>
+                <a href="http://localhost:3030/eng"><div class="logo_div"></div></a>
             </div>
         <div id="hd_btn">
             <button type="button" class="hd_menu_btn" style="display: none;"><span class="menu-icon"></span><span class="sound_only">전체메뉴</span></button>
@@ -64,7 +41,7 @@ $(function() {
         </li>
         <li>
             <a href="http://localhost:3030/bbs/point.php" target="_blank"  class="win_point">포인트
-                <strong>0</strong>
+                <strong>100</strong>
             </a>
         </li>
         <li><a href="http://localhost:3030/bbs/scrap.php" target="_blank"  class="win_scrap">스크랩</a> </li> -->
@@ -72,7 +49,7 @@ $(function() {
         <!-- ideahub 나의 투자 -->
         <li><a href="http://localhost:3030/bbs/board.php?bo_table=my_investment" title="나의 투자">나의 투자</a></li>
         <li><a href="http://localhost:3030/bbs/logout.php">로그아웃</a> </li>
-        <li></li>
+        <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li>
     </ul>
     <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='http://localhost:3030/bbs/faq.php'">문의하기</button>
 </div>
@@ -137,7 +114,7 @@ $(document).mouseup(function (e){
         
 
      
-        <script>
+      <script>
         $(function () {
             //폰트 크기 조정 위치 지정
             var font_resize_class = get_cookie("ck_font_resize_add_class");
@@ -188,68 +165,7 @@ $(document).mouseup(function (e){
 
 
         });
-        </script>
-        
-    </div>
 
-    <div id="al_menu">
-        <div class="bg"></div>
-        <div class="menu_wr">
-            <ul id="menu">
-                            <li class="menu_li">
-                    <!-- <h2><a href="/bbs/content.php?co_id=company" target="_self" class="menu_a">회사소개</a></h2> -->
-                    <h2>회사소개</h2>
-                                    </li>
-                            <li class="menu_li">
-                    <!-- <h2><a href="/bbs/content.php?co_id=about_subsidiary" target="_self" class="menu_a">포트폴리오</a></h2> -->
-                    <h2>포트폴리오</h2>
-                                    </li>
-                            <li class="menu_li">
-                    <!-- <h2><a href="/bbs/board.php?bo_table=notice" target="_self" class="menu_a">새소식</a></h2> -->
-                    <h2>새소식</h2>
-                    <button type="button" class="btn_menu_op"><span class="sound_only">하위분류</span><i class="fa fa-chevron-down"></i></button><ul class="sub_menu">
-                        <li class="sb_menu_li"><a href="/bbs/board.php?bo_table=notice" target="_self" class="sb_menu_a"><span></span>공지사항</a></li>
-                                            <li class="sb_menu_li"><a href="/bbs/board.php?bo_table=broadcast" target="_self" class="sb_menu_a"><span></span>보도자료</a></li>
-                    </ul>
-                </li>
-                        </ul>
-            <button type="button" class="btn_close"><span class="sound_only">닫기</span></button>
-            <div class="ol">
-              
-    <a href="http://localhost:3030/bbs/logout.php" class="btn_s logout">로그아웃</a>
-      
-</div>
-        </div>
-        <script>
-        $(".menu_li h2").click(function(){
-            $(this).siblings(".sub_menu").slideToggle(300);
-            $(this).siblings(".btn_menu_op").toggleClass("on")
-        });
-        $("#al_menu .btn_close").click(function(){
-            $("#al_menu").hide();
-            $(".hd_menu_btn").show();
-        });
-        $(".hd_menu_btn").click(function(){
-            $("#al_menu").show();
-            $(this).hide();
-        });
-
-        if(window.innerWidth > 969){
-            $(".hd_menu_btn").hide();
-        }else{
-            $(".hd_menu_btn").show();
-
-        }
-        
-        $(window).on("resize", () => {
-            if(window.innerWidth > 969){
-                $(".hd_menu_btn").hide();
-            }else{
-                $(".hd_menu_btn").show();
-            }
-        })
-
-        
         $("header").on("mouseenter", function(){
             if(window.innerWidth > 969){
                 $(this).addClass("on");
@@ -270,5 +186,6 @@ $(document).mouseup(function (e){
             }
         })
         </script>
+        
     </div>
 </header>

@@ -1,0 +1,15 @@
+#main_vid article {
+  transform: translate(-50%, -40%);
+}
+#hd.on .gnb_1da {
+  font-weight: 600;
+}
+#mission3 ul li:nth-child(3) img {
+  margin-top: 43px;
+}
+.swiper-wrapper {
+  height: auto;
+}
+#map_container .map_content > div:last-of-type {
+  padding-left: 45px;
+}

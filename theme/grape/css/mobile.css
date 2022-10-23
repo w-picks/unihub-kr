@@ -188,8 +188,15 @@ ul {
   display: none;
   transition: all 0.3s;
 }
-#hd .default_logo {
+
+#hd .logo_div {
   transition: all 0.3s;
+  width: 113px;
+  height: 30px;
+  background: url(/img/unihub_logo_bl.png) no-repeat center;
+}
+#hd.on .logo_div {
+  background-image: url(/img/unihub_logo_wt.png);
 }
 #hd.on {
   background: #fff;
@@ -277,11 +284,12 @@ ul {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 #logo a {
   display: block;
-  padding: 7px;
+  /* padding: 7px; */
 
   transition: 0.3s all ease-in-out;
   -webkit-transition: 0.3s all ease-in-out;
