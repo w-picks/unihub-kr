@@ -19,20 +19,20 @@
                         <a href="/eng/portfolio" target="_self" class="gnb_1da">Portfolio</a>
                                             </li>
                                     <li class="gnb_1dli">
-                        <a href="/eng/news" target="_self" class="gnb_1da">News</a>
+                        <a href="/bbs/board.php?bo_table=broadcast_eng" target="_self" class="gnb_1da">News</a>
                         
                     </li>
                                 </ul>
 
             </div>
             <div id="logo">
-                <a href="http://localhost:3030/eng"><div class="logo_div"></div></a>
+                <a href="<?php G5_URL ?>/eng"><div class="logo_div"></div></a>
             </div>
         <div id="hd_btn">
             <button type="button" class="hd_menu_btn" style="display: none;"><span class="menu-icon"></span><span class="sound_only">전체메뉴</span></button>
             <!-- <button type="button" class="hd_sch_btn"><span class="search-icon"></span><span class="sound_only">검색열기</span></button> -->
             <div class="ol">
-    <button type="button" class="prf_btn">마이페이지</button>  
+    <!-- <button type="button" class="prf_btn">마이페이지</button>   -->
      <ul id="ol_after_private">
         <!-- <li>
             <a href="http://localhost:3030/bbs/memo.php" target="_blank" class="win_memo">쪽지
@@ -45,11 +45,11 @@
             </a>
         </li>
         <li><a href="http://localhost:3030/bbs/scrap.php" target="_blank"  class="win_scrap">스크랩</a> </li> -->
-        <li><a href="http://localhost:3030/bbs/member_confirm.php?url=register_form.php" title="정보수정">정보수정</a></li>
+        <!-- <li><a href="http://localhost:3030/bbs/member_confirm.php?url=register_form.php" title="정보수정">정보수정</a></li> -->
         <!-- ideahub 나의 투자 -->
-        <li><a href="http://localhost:3030/bbs/board.php?bo_table=my_investment" title="나의 투자">나의 투자</a></li>
-        <li><a href="http://localhost:3030/bbs/logout.php">로그아웃</a> </li>
-        <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li>
+        <!-- <li><a href="http://localhost:3030/bbs/board.php?bo_table=my_investment" title="나의 투자">나의 투자</a></li> -->
+        <!-- <li><a href="http://localhost:3030/bbs/logout.php">로그아웃</a> </li> -->
+        <!-- <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li> -->
     </ul>
     <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='http://localhost:3030/bbs/faq.php'">문의하기</button>
 </div>

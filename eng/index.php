@@ -108,9 +108,28 @@ include 'inc/header.php'
             </div>
         </article>
     </section>
+    <?php
+        $mysql_HOST = '127.0.0.1';
+        $mysql_DATABASE = 'unihub';
+        $mysql_USERNAME = 'root';
+        $mysql_PASSWORD = '1111';
+
+        $connect = new mysqli($mysql_HOST, $mysql_USERNAME, $mysql_PASSWORD, $mysql_DATABASE);
+        $sql = " select * from g5_write_broadcast_eng where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";   
+        $connect->set_charset("utf8mb4");
+        $result = mysqli_query($connect, $sql);
+        for ($i=0; $row = mysqli_fetch_array($result); $i++) {
+            echo $row['wr_subject']; // 제목
+            echo $row['wr_content']; // 내용
+            echo $row['wr_1']; // 신문사 tag
+            echo $row['wr_2']; // 신문사 url
+        }
+    ?>
+    
 </div>
 <?php 
 include 'inc/footer.php'
 ?>  
 </body>
 </html>
+
