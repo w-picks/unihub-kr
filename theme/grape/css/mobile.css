@@ -193,10 +193,10 @@ ul {
   transition: all 0.3s;
   width: 113px;
   height: 30px;
-  background: url(/img/unihub_logo_bl.png) no-repeat center;
+  background: url(/img/unihub_logo_blx2.png) no-repeat center / contain;
 }
 #hd.on .logo_div {
-  background-image: url(/img/unihub_logo_wt.png);
+  background-image: url(/img/unihub_logo_wtx2.png);
 }
 #hd.on {
   background: #fff;
@@ -875,6 +875,10 @@ h2 span.underline:after {
 }
 #partners ul li {
   position: relative;
+  width: 360px;
+}
+#partners ul li img {
+  width: 100%;
 }
 #partners ul li p {
   position: absolute;
@@ -1180,14 +1184,17 @@ h2 span.underline:after {
 #mission3 ul li:nth-child(1) img {
   margin-top: 101px;
   margin-right: 10px;
+  width: 140px;
 }
 #mission3 ul li:nth-child(2) img {
   margin-top: 75px;
   margin-right: 12px;
+  width: 134px;
 }
 #mission3 ul li:nth-child(3) img {
   margin-top: 76px;
   margin-right: 18px;
+  width: 125px;
 }
 #unihub_ci {
   width: 1100px;
@@ -1213,7 +1220,14 @@ h2 span.underline:after {
   width: 100%;
   height: 350px;
 }
-#unihub_ci .ci_img img {
+#unihub_ci .ci_img img:nth-child(1) {
+  width: 292px;
+}
+#unihub_ci .ci_img img:nth-child(2) {
+  width: 204px;
+}
+#unihub_ci .ci_img img:nth-child(3) {
+  width: 312px;
 }
 #unihub_ci .ci_detail {
 }
@@ -1350,8 +1364,9 @@ h2 span.underline:after {
   justify-content: center;
   align-items: flex-end;
 }
-#contact_us div {
+#contact_us div a {
   background: #005193;
+  display: block;
   color: #fff;
   font-size: 18px;
   padding-top: 71px;
@@ -1437,12 +1452,18 @@ h2 span.underline:after {
   background: #e1e6f0;
   padding: 77px 0;
 }
+#portfolio .portfolio_con_1 img {
+  width: 477px;
+}
 #portfolio .portfolio_con_2 {
   padding-top: 102px;
   padding-bottom: 40px;
   background: #f5f7fb;
   margin-top: -58px;
   position: relative;
+}
+#portfolio .portfolio_con_2 img {
+  width: 326px;
 }
 #portfolio .portfolio_con_2 ul {
   text-align: left;

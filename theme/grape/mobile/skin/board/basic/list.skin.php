@@ -91,6 +91,12 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
     </ul>
 <?php } ?>
 
+<?php if($board['bo_table'] == "broadcast_eng") { ?>
+    <section id="detail_main" class="news_main">
+        <h1>News</h1>
+    </section>
+    <?php } ?>
+
 
 
 

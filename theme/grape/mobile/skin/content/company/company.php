@@ -10,7 +10,7 @@
     <article>
         <div>
             <h2 class="detail_h2 scroll-trans">유니허브의<br>
-            <span class="underline">Mission 3</span></h2>
+            <span class="underline">Mission</span></h2>
         </div>
         <div>
             <ul>
@@ -87,7 +87,7 @@
                         <p><span>SPOT</span>PANTONE® SOLID COATED 877 C</p>
                         <p><span>PROCESS</span>C45 / M34 / Y34 / K0</p>
                         <p><span>RGB WEB</span>R138 / G141 / B143</p>
-                        <p><span>HEX</span>#28A8D8F</p>
+                        <p><span>HEX</span>#005193</p>
                     </div>
                 </div>
             </li>
@@ -125,7 +125,7 @@
     </article>
 </section>
 <section id="contact_us">
-    <div>Contact us !</div>
+    <div><a href="#">Contact us !</a></div>
 </section>
 
 <script defer src="<?php echo G5_JS_URL ?>/index_map.js"></script>

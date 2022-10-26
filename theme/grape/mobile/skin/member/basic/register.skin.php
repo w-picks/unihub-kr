@@ -7,6 +7,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 <section id="detail_main" class="join">
             <h1>로그인/회원가입</h1>
         </section>
+        <div class="my_invest_tab_wrap">
+            <ul class="my_invest_tab detail_tab">
+                <li><a href="/bbs/login.php">로그인</a></li>
+                <li class="on"><a href="/bbs/register.php">회원가입</a></li>
+            </ul>
+        </div>
 <div class="mbskin">
     <h1>회원가입</h1>
 

@@ -8,7 +8,7 @@
             <a href="/eng/portfolio">Portfolio</a>
         </li>
         <li>
-            <a href="/">새소식</a>
+            <a href="/">News</a>
         </li>
         <li>
             <a href="/">문의하기</a>

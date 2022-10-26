@@ -21,7 +21,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <p class="scroll-trans scroll-trans-delay-300">참여대학의 해외특허를 필요로 하는 <b>글로벌 기술수요자들을 발굴</b>하여, 기술 사용의 대가로 합리적인 금액을 지불하게 합니다.<br>
             해외특허 활용을 통해 창출한 수익은 참여 대학의 <b>지속적인 R&D에 활용</b>됩니다.</p> 
             <div class="business_system scroll-trans">
-                <img src="<?php echo G5_IMG_URL ?>/business_system.png">
+                <img src="<?php echo G5_IMG_URL ?>/business_system_1.png">
             </div>
             
             <ul class="thum_list">

@@ -87,7 +87,7 @@ Company's process of purchasing and monetizing technologies, and distributing re
                         <p><span>SPOT</span>PANTONE® SOLID COATED 877 C</p>
                         <p><span>PROCESS</span>C45 / M34 / Y34 / K0</p>
                         <p><span>RGB WEB</span>R138 / G141 / B143</p>
-                        <p><span>HEX</span>#28A8D8F</p>
+                        <p><span>HEX</span>#005193</p>
                     </div>
                 </div>
             </li>
@@ -125,7 +125,7 @@ Company's process of purchasing and monetizing technologies, and distributing re
     </article>
 </section>
 <section id="contact_us">
-    <div>Contact us !</div>
+    <div><a href="#">Contact us !</a></div>
 </section>
 <?php include '../inc/footer.php' ?>
 
