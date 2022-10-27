@@ -113,10 +113,10 @@ include 'inc/header.php'
     <h2 class="scroll-trans">Recent <b><span class="underline">News</span></b></h2>
     <ul class="news_table scroll-trans">
     <?php
-        $mysql_HOST = '127.0.0.1';
-        $mysql_DATABASE = 'unihub';
-        $mysql_USERNAME = 'root';
-        $mysql_PASSWORD = '11111111';
+        $mysql_HOST = 'localhost';
+        $mysql_DATABASE = 'unihubinc';
+        $mysql_USERNAME = 'unihubinc';
+        $mysql_PASSWORD = 'Unihub1018';
 
         $connect = new mysqli($mysql_HOST, $mysql_USERNAME, $mysql_PASSWORD, $mysql_DATABASE);
         $sql = " select * from g5_write_broadcast_eng where wr_is_comment = 0 order by wr_num desc limit 0, 3 ";   
