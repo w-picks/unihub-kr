@@ -51,7 +51,7 @@
         <!-- <li><a href="http://localhost:3030/bbs/logout.php">로그아웃</a> </li> -->
         <!-- <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li> -->
     </ul>
-    <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='http://localhost:3030/bbs/faq.php'">문의하기</button>
+    <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='<?php G5_URL ?>/bbs/faq.php'">문의하기</button>
 </div>
 
 <script>
