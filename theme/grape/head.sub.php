@@ -47,9 +47,16 @@ if (G5_IS_MOBILE) {
     echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">'.PHP_EOL;
 }
 
+
 if($config['cf_add_meta'])
-    echo $config['cf_add_meta'].PHP_EOL;
+echo $config['cf_add_meta'].PHP_EOL;
 ?>
+<?php echo '
+<meta property="og:title" content="UNIHUB">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/img/favi/unihub_thumnail.png">
+<meta property="og:description" content="unihub">
+' ?>
 <title><?php echo $g5_head_title; ?></title>
 <link rel="stylesheet" href="<?php echo run_replace('head_css_url', G5_THEME_CSS_URL.'/'.(G5_IS_MOBILE ? 'mobile' : 'default').'.css?ver='.G5_CSS_VER, G5_THEME_URL); ?>">
 <!--[if lte IE 8]>

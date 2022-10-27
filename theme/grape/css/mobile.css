@@ -3921,3 +3921,15 @@ textarea.required {
   text-indent: -999px;
   overflow: hidden;
 }
+.my_invest_tit_edit {
+  width: 80%;
+  float: left;
+}
+
+.form_01 select#myInvestmentSelect {
+  width: 19%;
+  display: inline-block;
+  margin: 5px 0;
+  margin-top: 6px;
+  border: 1px solid #d0d4df;
+}

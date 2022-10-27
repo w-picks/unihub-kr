@@ -15,9 +15,9 @@ if (G5_IS_MOBILE) {
 } 
 ?>
 
-<div id="nav">
+<!-- <div id="nav">
     <div class="nav_wr"><a href="<?php echo G5_URL ?>"><i class="fa fa-home"></i> </a><span><?php echo ($board['bo_mobile_subject'] ? $board['bo_mobile_subject'] : $board['bo_subject']); ?></span></div>
-</div>
+</div> -->
 
 <section id="bo_w">
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
@@ -111,7 +111,11 @@ if (G5_IS_MOBILE) {
         </div>
         <?php } ?>
 
-        <div class="bo_w_tit write_div">
+        <?php if($board['bo_table'] == 'my_investment') { ?>
+            <div class="bo_w_tit write_div my_invest_tit_edit">
+            <?php } else { ?>
+                <div class="bo_w_tit write_div">
+            <?php } ?>
             <label for="wr_subject" class="sound_only">제목<strong>필수</strong></label>
             <input type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required class="frm_input full_input required" placeholder="제목">
         </div>
@@ -359,4 +363,10 @@ $("#myInvestmentSelect").on("change",(e)=>{
 
     $("#email_input_val").val(emailDate);
 })
+
+$("header").off("mouseenter")
+$("header").off("mouseleave")
+$("header").addClass("on")
+$(window).off("scroll");
+$("body").css({paddingTop : "60px"})
 </script>
