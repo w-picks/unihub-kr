@@ -75,18 +75,18 @@ include 'inc/header.php'
                 <img src="/img/partner_deagu.png">
                 <p>대구경북과학기술원</p>
             </li>
-            <li class="scroll-trans">
+            <!-- <li class="scroll-trans">
                 <img src="/img/partner_sungkyun.png">
                 <p>성균관대학교</p>
-            </li>
+            </li> -->
             <li class="scroll-trans scroll-trans-delay-400">
                 <img src="/img/partner_ajou.png">
                 <p>아주대학교</p>
             </li>
-            <li class="scroll-trans scroll-trans-delay-700">
+            <!-- <li class="scroll-trans scroll-trans-delay-700">
                 <img src="/img/partner_pohang.png">
                 <p>포항공과대학교</p>
-            </li>
+            </li> -->
             <li class="scroll-trans scroll-trans-delay-300">
                 <img src="/img/partner_hanyang.png">
                 <p>한양대학교</p>

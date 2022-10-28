@@ -249,22 +249,36 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
         
         $("header").on("mouseenter", function(){
-            if(window.innerWidth > 969){
+            if(window.innerWidth > 1100){
                 $(this).addClass("on");
             }
         })
         $("header").on("mouseleave",function(){
             let scr = $(window).scrollTop();
-            if(window.innerWidth > 969 && scr <= 10){
+            if(window.innerWidth > 1100 && scr <= 10){
                 $(this).removeClass("on");
             }
         })
         $(window).on("scroll",function(){
             let scr = $(this).scrollTop();
-            if(scr > 10){
+            if(window.innerWidth > 1100){
+                if(scr > 10){
+                    $("header").addClass("on");
+                }else{
+                    $("header").removeClass("on");
+                }
+            }
+        })
+
+        if(window.innerWidth <= 1100){
+            $("header").addClass("on");
+        }
+        $(window).on("resize",()=>{
+            if(window.innerWidth <= 1100){
                 $("header").addClass("on");
             }else{
                 $("header").removeClass("on");
+                
             }
         })
         </script>

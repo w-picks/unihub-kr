@@ -22,17 +22,17 @@
                     <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png">
                     <p>대구경북과학기술원</p>
                     </div>
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                     <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
                     <p>성균관대학교</p>
-                    </div>
+                    </div> -->
                     <div class="swiper-slide">
                     <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png">
                     <p>아주대학교</p>
                     </div>
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                     <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
-                    <p>포항공과대학교</p></div>
+                    <p>포항공과대학교</p></div> -->
                     <div class="swiper-slide">
                         <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png">
                         <p>한양대학교</p>
