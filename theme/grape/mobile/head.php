@@ -180,7 +180,11 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             ?>
                 <li class="menu_li">
                     <!-- <h2><a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="menu_a"><?php echo $row['me_name'] ?></a></h2> -->
-                    <h2><?php echo $row['me_name'] ?></h2>
+                    <?php if(!$row['sub']){?>
+                        <h2 onclick="window.location.href='<?php echo $row['ori_me_link'] ?>'"><?php echo $row['me_name'] ?></h2>
+                        <?php } else { ?>
+                            <h2><?php echo $row['me_name'] ?></h2>
+                        <?php } ?>
                     <?php
                     $k = 0;
                     foreach( (array) $row['sub'] as $row2 ){

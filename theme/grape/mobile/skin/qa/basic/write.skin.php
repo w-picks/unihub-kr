@@ -120,7 +120,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
                 <input type="checkbox" id="all_chk"/>
                 <label for="all_chk" class="all_chk_label">개인정보 수집 이용에 동의</label>
                 <div>
-                <span>목적 문의</span> : 답변<span>제공 항목</span> : 이름,이메일 및 휴대폰번호<span>보유기간</span> : 제출 후 30일
+                <span>목적 문의</span> : 답변<span>제공 항목</span> : 이름,이메일 및 휴대폰번호<br class="br_mo"><span>보유기간</span> : 제출 후 30일
                 </div>
             </li>
 

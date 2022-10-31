@@ -133,29 +133,35 @@ $(function() {
     });
 });
 
+$("#faq_con ol li > a").on("click", function(){
+    $(this).toggleClass("on").parent().siblings().find("a").addClass("on")
+    $(this).siblings(".con_inner").slideToggle().parent().siblings().find(".con_inner").slideUp();
+})
+
 function faq_open(el)
 {
-    var $con = $(el).closest("li").find(".con_inner");
+    // var $con = $(el).closest("li").find(".con_inner");
 
 
-    if($con.is(":visible")) {
-        $con.slideUp();
-        $(el).addClass("on");
-        console.log(true)
-    } else {
-        console.log(false)
-        $(el).removeClass("on");
+    // if($con.is(":visible")) {
+    //     $con.slideUp();
+    //     $(el).addClass("on");
+    //     console.log(true)
+    //     // $("#faq_con li a img").css({transform:"rotate(180deg)"})
+    //     console.log(el)
+    // } else {
+    //     console.log(false)
+    //     $(el).removeClass("on");
+    //     $("#faq_con .con_inner:visible").slideUp();
 
-        $("#faq_con .con_inner:visible").css("display", "none");
+    //     $con.slideDown(
+    //         function() {
+    //             // 이미지 리사이즈
+    //             $con.viewimageresize2();
+    //         }
+    //     );
+    // }
 
-        $con.slideDown(
-            function() {
-                // 이미지 리사이즈
-                $con.viewimageresize2();
-            }
-        );
-    }
-
-    return false;
+    // return false;
 }
 </script>

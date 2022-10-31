@@ -2,7 +2,7 @@
     <h1>유니허브 소개</h1>
 </section>
 <section id="intro_info">
-    <h2 class="detail_h2 scroll-trans">대학의 모든 특허, <span>유니허브</span>에서 만나다.</h2>
+    <h2 class="detail_h2 scroll-trans">대학의 모든 특허,<br class="br_mo"><span>유니허브</span>에서 만나다.</h2>
     <p class="scroll-trans">유니허브는 국가 R&D를 선도하는 국내 대학들이 보유하고 있는<br>
 <span>해외특허를 활용</span>하여 <span>수익을 창출</span>합니다.</p>
 </section>
@@ -42,7 +42,7 @@
     </article>
 </section>
 <section id="unihub_ci">
-    <h2 class="detail_h2 scroll-trans">유니허브의 <span class="underline">CI를 소개</span>합니다.</h2>
+    <h2 class="detail_h2 scroll-trans">유니허브의 <br class="br_mo"><span class="underline">CI를 소개</span>합니다.</h2>
     <div class="ci_img scroll-trans">
         <img src="<?php echo G5_IMG_URL ?>/unihub_ci_1.png">
         <img src="<?php echo G5_IMG_URL ?>/unihub_ci_2.png">
@@ -77,17 +77,17 @@
                 <div class="ci_content ci_color">
                     <div class="main_color">
                         <div class="color_chip">Main Color</div>
-                        <p><span>SPOT</span>PANTONE® SOLID COATED 877 C</p>
-                        <p><span>PROCESS</span>C45 / M34 / Y34 / K0</p>
-                        <p><span>RGB WEB</span>R138 / G141 / B143</p>
-                        <p><span>HEX</span>#28A8D8F</p>
+                        <p><span>SPOT</span>PANTONE® 639 C</p>
+                        <p><span>PROCESS</span>C77 / M30 / Y8 / K0</p>
+                        <p><span>RGB WEB</span>R27 / G143 / B197</p>
+                        <p><span>HEX</span>#1B8FC5</p>
                     </div>
                     <div class="sub_color">
                         <div class="color_chip">Sub Color</div>
-                        <p><span>SPOT</span>PANTONE® SOLID COATED 877 C</p>
-                        <p><span>PROCESS</span>C45 / M34 / Y34 / K0</p>
-                        <p><span>RGB WEB</span>R138 / G141 / B143</p>
-                        <p><span>HEX</span>#005193</p>
+                        <p><span>SPOT</span>PANTONE® 2935 C</p>
+                        <p><span>PROCESS</span>C100 / M70 / Y0 / K0</p>
+                        <p><span>RGB WEB</span>R0 / G78 / B162</p>
+                        <p><span>HEX</span>#004EA2</p>
                     </div>
                 </div>
             </li>

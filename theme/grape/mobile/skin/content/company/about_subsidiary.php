@@ -54,6 +54,7 @@
     </div>
     <div class="portfolio_con_2 scroll-trans">
         <img src="<?php echo G5_IMG_URL ?>/portfolio_2.png">
+        <p class="tm">Target market</p>
         <ul class="tm_left">
             <li class="scroll-trans">Communication</li>
             <li class="scroll-trans">Computer Related</li>
@@ -70,14 +71,28 @@
             <li class="scroll-trans">Forestry and Fishing</li>
             <li class="scroll-trans">Services</li>
         </ul>
-        <p class="tm">Target market</p>
+        
     </div>
+</section>
+<section id="pf_list_bn">
+    <article>
+        <h2>특허 List</h2>
+        <p>유니허브는 약 1900건의 특허 LIST를 보유하고 있습니다.</p>
+        <button class="uni_btn">특허리스트 바로가기</button>
+    </article>
 </section>
 
 <script>
+    let spaceB;
+    if(window.innerWidth > 1100){
+        spaceB = 29;
+    }else{
+        spaceB = 8;
+    }
+    
     var swiper = new Swiper(".university-swiper", {
         slidesPerView:4,
-        spaceBetween:29,
+        spaceBetween:spaceB,
         scrollbar: {
           el: ".swiper-scrollbar",
           hide: false
@@ -86,4 +101,8 @@
             invert: true,
         },
     })
+
+    if(window.innerWidth < 768){
+        swiper.destroy();
+    }
 </script>

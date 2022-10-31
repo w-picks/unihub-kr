@@ -149,3 +149,28 @@ white-space: nowrap;overflow-x: auto;
      vertical-align: top;
      background:none;
  }
+ @media(max-width:1100px){
+     #faq_wrap {
+          padding: 0;
+        }
+        #faq_con {
+          padding: 0 13px;
+          box-sizing: border-box;
+        }
+        #faq_con li a {
+          padding-left: 20px ;
+          padding-right: 14px ;
+          height: 55px;
+        }
+        #faq_con h3 {
+          font-size: 14px;
+        }
+        #faq_con .con_inner{
+          padding:0 37px 26px 37px;
+          font-size: 12px;
+          line-height: 15.84px;;
+        }
+        #bo_sch form{
+          margin-bottom:52px;
+        }
+ }
