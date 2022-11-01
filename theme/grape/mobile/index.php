@@ -11,7 +11,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <h2 class=""><span>R&D를 선도하는</span><br>
                 국내대학의 해외 특허 활용,<br>
                 UNIHUB가 함께합니다.</h2>
-            <button class="uni_btn">UNIHUB 참여하기</button>
+            <button class="uni_btn" onclick="window.location.href='/bbs/qawrite.php'">UNIHUB 참여하기</button>
         </article>
     </section>
     <section id="business">
@@ -99,7 +99,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             </li>
         </ul>
         </div>
-        <button class="uni_btn color1 scroll-trans">참여하기</button>
+        <button class="uni_btn color1 scroll-trans" onclick="window.location.href='/bbs/qawrite.php'">참여하기</button>
         <article>
     </section>
     
@@ -113,7 +113,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 <span class="uni_span">INVESTMENT REPORT</span>
                 <h2>참여대학 <br class="br_mo">수익화현황</h2>
                 <p>유니허브 비즈니스에 참여하고 있는 대학들은,<br>해외특허 수익화현황을 분기별로 REPORT로 받아보실 수 있습니다.</p>
-                <button class="uni_btn">수익화 현황 REPORT</button>
+                <button class="uni_btn" onclick="window.location.href='/bbs/board.php?bo_table=my_investment'">수익화 현황 REPORT</button>
             </div>
         </article>
     </section>
