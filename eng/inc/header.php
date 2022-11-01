@@ -70,10 +70,9 @@ $(document).mouseup(function (e){
 });
 
 const contactUs = () => {
-    window.location.href='/bbs/faq.php'
+    window.location.href='/bbs/qawrite.php'
     localStorage.setItem("lang", "en")
 }
-
 </script>
 
         </div>
