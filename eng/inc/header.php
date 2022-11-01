@@ -52,6 +52,8 @@
         <!-- <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li> -->
     </ul>
     <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='<?php G5_URL ?>/bbs/faq.php'">문의하기</button>
+    <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
+    <a href="/eng" style="height:10px; line-height:10px;">en</a>
 </div>
 
 <script>
