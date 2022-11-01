@@ -29,8 +29,13 @@ $g5['title'] = $fm['fm_subject'];
 
 $skin_file = $faq_skin_path.'/list.skin.php';
 
-echo ("<script>if(localStorage.getItem('lang') == 'en'){}</script>");
-include_once('./_head.php');
+$lang = "<script>document.write(localStorage.getItem('lang'));</script>";
+if($lang == 'kr') {
+    echo 'aaa';
+} else {
+    echo 'bbb';
+}
+include_once(G5_PATH.'/eng/inc/header.php'); //include_once('./_head.php');
 
 if(is_file($skin_file)) {
     $admin_href = '';

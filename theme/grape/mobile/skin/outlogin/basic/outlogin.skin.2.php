@@ -46,6 +46,5 @@ const contactUs = () => {
     window.location.href='<?php echo G5_BBS_URL ?>/faq.php'
     localStorage.setItem("lang", "kr")
 }
-
 </script>
 

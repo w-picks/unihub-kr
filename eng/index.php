@@ -17,7 +17,7 @@ include 'inc/header.php'
             UNIHUB provides one-stop licenses for worldwoid <br>portfolio of patents<br>
             owned by universities in Korea.
             </h2>
-            <button class="uni_btn" onclick="window.location.href='/bbs/qawrite.php'">Learn More</button>
+            <button class="uni_btn" onclick="contactUs()">Learn More</button>
         </article>
     </section>
     <section id="business">
@@ -93,7 +93,7 @@ include 'inc/header.php'
                 <p>한양대학교</p>
             </li>
         </ul>
-        <button class="uni_btn color1 scroll-trans" onclick="window.location.href='/bbs/qawrite.php'">Join Us</button>
+        <button class="uni_btn color1 scroll-trans" onclick="contactUs()">Join Us</button>
         <article>
     </section>
     <section id="investment_report">
@@ -143,6 +143,12 @@ include 'inc/header.php'
     </ul>
     </div>
 </div>
+<script>
+    const contactUs = () => {
+        window.location.href='/bbs/qawrite.php'
+        localStorage.setItem("lang", "en")
+    }
+</script>
 <?php 
 include 'inc/footer.php'
 ?>  
