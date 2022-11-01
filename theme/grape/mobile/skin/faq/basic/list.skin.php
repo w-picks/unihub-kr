@@ -172,5 +172,8 @@ if(localStorage.getItem("lang") == "en"){
     $("#detail_main.faq h1").html("Contact")
     $(".faq_tab li").eq(0).html("FAQs")
     $(".faq_tab li").eq(1).find("a").html("Q&A")
+    $(".empty_table").html("No FAQs registered.<br>To register a new FAQ, use the Manage FAQs menu.")
+    $(".frm_input.sch_input").attr("placeholder", "Please enter a search term.")
+    $("#sfl option").eq(0).html("title")
 }
 </script>

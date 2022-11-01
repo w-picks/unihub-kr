@@ -114,7 +114,11 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
         <input type="hidden" name="sop" value="and">
         <label for="sfl" class="sound_only">검색대상</label>
         <select name="sfl" id="sfl">
-            <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
+        <?php if($board['bo_table'] == "broadcast_eng") { ?>
+            <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>title</option>
+            <?php } else {?>
+                <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
+                <?php } ?>
             <option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
             <option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
             <!-- <option value="mb_id,1"<?php echo get_selected($sfl, 'mb_id,1'); ?>>회원아이디</option>
@@ -123,7 +127,11 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
             <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option> -->
         </select>
         <div class="input_wrap">
-        <input name="stx" value="<?php echo stripslashes($stx) ?>" placeholder="검색어를 입력해주세요." required id="stx" class="sch_input" size="15" maxlength="20">
+        <?php if($board['bo_table'] == "broadcast_eng") { ?>
+            <input name="stx" value="<?php echo stripslashes($stx) ?>" placeholder="Please enter a search term." required id="stx" class="sch_input" size="15" maxlength="20">
+            <?php } else {?>
+                <input name="stx" value="<?php echo stripslashes($stx) ?>" placeholder="검색어를 입력해주세요." required id="stx" class="sch_input" size="15" maxlength="20">
+            <?php } ?>
         <button type="submit" value="검색" class="sch_btn"><img src="<?php echo G5_IMG_URL ?>/ico_search.svg"></button>
         </div>
         </form>
@@ -156,7 +164,14 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
         <?php if ($is_checkbox) { ?>
         <div class="all_chk">
             <input type="checkbox" id="chkall" onclick="if (this.checked) all_checked(true); else all_checked(false);">
-            <label for="chkall"><span class="chk_img"></span> 전체선택</label>
+            
+            <label for="chkall"><span class="chk_img"></span>
+            <?php if($board['bo_table'] == "broadcast_eng") { ?>
+                select all
+                <?php } else { ?>
+                    전체선택
+                    <?php } ?> 
+        </label>
         </div>
         <?php } ?>
         <ul class="project_list">
@@ -421,7 +436,12 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
             <li><a href="<?php echo $list_href ?>" class="btn_b01 btn_m"> 목록</a></li>
             <?php } ?>
             <?php if ($is_checkbox) { ?>
-            <li><button type="submit" name="btn_submit" value="선택삭제" onclick="document.pressed=this.value" class="btn_m btn_b01">선택삭제</button></li>
+                <?php if($board['bo_table'] == "broadcast_eng") { ?>
+                    <li><button type="submit" name="btn_submit" value="선택삭제" onclick="document.pressed=this.value" class="btn_m btn_b01">delete</button></li>
+                    <?php } else { ?>
+                        <li><button type="submit" name="btn_submit" value="선택삭제" onclick="document.pressed=this.value" class="btn_m btn_b01">선택삭제</button></li>
+            <?php } ?>
+
             <!-- <li><button type="submit" name="btn_submit" value="선택복사" onclick="document.pressed=this.value" class="btn_m btn_b01">선택복사</button></li> -->
             <!-- <li><button type="submit" name="btn_submit" value="선택이동" onclick="document.pressed=this.value" class="btn_m btn_b01">선택이동</button></li> -->
             <?php } ?>
@@ -430,13 +450,21 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
         <ul class="btn_wr">
             <?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" class="btn_m btn_b01">RSS</a></li><?php } ?>
             <!-- <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn_admin" target="_blank"><i class="fa fa-cog"></i><span class="sound_only">관리자</span></a></li><?php } ?> -->
-            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_m btn_b02">글쓰기</a></li><?php } ?>
+            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_m btn_b02">
+                <?php if($board['bo_table'] == "broadcast_eng") { ?>
+                    write
+                <?php } else { ?>
+                    글쓰기
+                    <?php } ?>
+            </a></li><?php } ?>
         </ul>
         <?php } ?>
     </div>
     <?php } ?>
     </form>
     </div>
+
+    
    
 
     <!-- 게시판 목록 시작 -->

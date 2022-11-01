@@ -58,12 +58,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
                 ideahub 1:1문의하기
                 필드 추가
              -->
-             <li>
+             <li class="name_li">
                 <label for="qa_1" class="sound_only">이름</label>
                 <input type="text" name="qa_1" value="<?php echo get_text($write['qa_1']); ?>" id="qa_1" required class="frm_input required" maxlength="100" placeholder="이름을 입력하세요.">
             </li>
             <?php if ($is_email) { ?>
-            <li>
+            <li class="email_li">
                 <label for="qa_email" class="sound_only">이메일</label>
                 <input type="email" name="qa_email" value="" id="qa_email" <?php echo $req_email; ?> class="<?php echo $req_email.' '; ?>frm_input full_input email required" maxlength="100" placeholder="이메일을 입력하세요. (문의에 대한 답변을 이메일로)" required>
                 <!-- <input type="checkbox" name="qa_email_recv" value="1" id="qa_email_recv" <?php if($write['qa_email_recv']) echo 'checked="checked"'; ?>> -->
@@ -72,7 +72,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
             <?php } ?>
 
             <?php if ($is_hp) { ?>
-            <li>
+            <li class="hp_li">
                 <label for="qa_hp" class="sound_only">휴대폰 번호</label>
                 <input type="text" name="qa_hp" value="<?php echo get_text($write['qa_hp']); ?>" id="qa_hp" <?php echo $req_hp; ?> class="<?php echo $req_hp.' '; ?>frm_input full_input required" size="30" placeholder="휴대폰 번호를 입력하세요. (숫자만)" required>
                 <?php if($qaconfig['qa_use_sms']) { ?>
@@ -81,7 +81,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
             </li>
             <?php } ?>
 
-            <li>
+            <li class="subject_li">
                 <label for="qa_subject" class="sound_only">제목</label>
                 <input type="text" name="qa_subject" value="<?php echo get_text($write['qa_subject']); ?>" id="qa_subject" required class="frm_input required" maxlength="255" placeholder="제목을 입력하세요. (최대 30자 이내)">
             </li>
@@ -208,6 +208,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     $(".faq_tab li").eq(0).find("a").html("FAQs")
     $(".faq_tab li").eq(1).html("Q&A")
     $(".direct_inquiry #fwrite h1").html("If you leave any questions/comments,<br>I will reply to you via email as soon as possible")
+    $(".name_li label").html("Name")
+    $(".email_li label").html("Email")
+    $(".hp_li label").html("Phone")
+    $(".subject_li label").html("Title")
+    $(".qa_content_li label").html("Content")
+    $(".bo_w_flie label").html("Attachment")
+    $(".all_chk_option label").html("Agree to collect and use personal information")
+    $(".all_chk_option div").html("<span>Purpose inquiry</span> : Provide answers <span>Item</span> : Name, email, and mobile phone number <span>Holding period</span> : 30 days after submission")
+    $("#btn_submit").html("Submit")
+    
 }
 
     </script>
