@@ -17,7 +17,7 @@ include 'inc/header.php'
             UNIHUB provides one-stop licenses for worldwoid <br>portfolio of patents<br>
             owned by universities in Korea.
             </h2>
-            <button class="uni_btn">Learn More</button>
+            <button class="uni_btn" onclick="window.location.href='/bbs/qawrite.php'">Learn More</button>
         </article>
     </section>
     <section id="business">
@@ -92,7 +92,7 @@ include 'inc/header.php'
                 <p>한양대학교</p>
             </li>
         </ul>
-        <button class="uni_btn color1 scroll-trans">Join Us</button>
+        <button class="uni_btn color1 scroll-trans" onclick="window.location.href='/bbs/qawrite.php'">Join Us</button>
         <article>
     </section>
     <section id="investment_report">
@@ -104,7 +104,7 @@ include 'inc/header.php'
                 <span class="uni_span">Licensing Reports</span>
                 <h2>참여대학 수익화현황</h2>
                 <p>Universities participating in the UNIHUB<br> receive quarterly licensing reports.</p>
-                <button class="uni_btn">Licensing Reports</button>
+                <button class="uni_btn" onclick="window.location.href='/bbs/board.php?bo_table=my_investment'">Licensing Reports</button>
             </div>
         </article>
     </section>
