@@ -9,7 +9,7 @@
         <div class="txt">
         <h2 class="detail_h2 scroll-trans">유니허브에 <br><span class="underline">참여중인 대학</span></h2>
         <p class="scroll-trans">국내 대학 중 <b>미국특허 보유 건수 10위권 내외<br> 대학들</b>과 함께하고 있습니다.  </p>
-        <button class="uni_btn color1 scroll-trans">참여문의</button>
+        <button class="uni_btn color1 scroll-trans" onclick="window.location.href='/bbs/qawrite.php'">참여문의</button>
         </div>
         <div class="swiper_container scroll-trans">
             <div class="swiper university-swiper">
@@ -74,13 +74,13 @@
         
     </div>
 </section>
-<section id="pf_list_bn">
+<!-- <section id="pf_list_bn">
     <article>
         <h2>특허 List</h2>
         <p>유니허브는 약 1900건의 특허 LIST를 보유하고 있습니다.</p>
         <button class="uni_btn">특허리스트 바로가기</button>
     </article>
-</section>
+</section> -->
 
 <script>
     let spaceB;
