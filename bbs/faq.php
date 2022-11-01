@@ -29,6 +29,7 @@ $g5['title'] = $fm['fm_subject'];
 
 $skin_file = $faq_skin_path.'/list.skin.php';
 
+echo ("<script>if(localStorage.getItem('lang') == 'en'){}</script>");
 include_once('./_head.php');
 
 if(is_file($skin_file)) {

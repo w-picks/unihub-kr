@@ -3,6 +3,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/style.css">', 0);
+
 ?>
 
 <!-- FAQ 시작 { -->
@@ -163,5 +164,13 @@ function faq_open(el)
     // }
 
     // return false;
+}
+
+
+//영문
+if(localStorage.getItem("lang") == "en"){
+    $("#detail_main.faq h1").html("Contact")
+    $(".faq_tab li").eq(0).html("FAQs")
+    $(".faq_tab li").eq(1).find("a").html("Q&A")
 }
 </script>

@@ -203,6 +203,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
         $(".file_wr input[type='text']").val(fileval);
     })
 
-    </script
+    if(localStorage.getItem("lang") == "en"){
+    $("#detail_main.faq h1").html("Contact")
+    $(".faq_tab li").eq(0).find("a").html("FAQs")
+    $(".faq_tab li").eq(1).html("Q&A")
+    $(".direct_inquiry #fwrite h1").html("If you leave any questions/comments,<br>I will reply to you via email as soon as possible")
+}
+
+    </script>
 </section>
 <!-- } 게시물 작성/수정 끝 -->
