@@ -21,9 +21,10 @@ include 'inc/header.php'
         </article>
     </section>
     <section id="business">
-        <span class="uni_span scroll-trans">UNIHUB Business</span>
+        <!-- <span class="uni_span scroll-trans">UNIHUB Business</span> -->
         <article>
-            <h2 class="scroll-trans">유니허브 비즈니스 <span class="underline">한눈에 보기</span></h2>
+            <!-- <h2 class="scroll-trans">유니허브 비즈니스 <span class="underline">한눈에 보기</span></h2> -->
+            <h2 class="scroll-trans">UNIHUB Business</h2>
             <p class="scroll-trans scroll-trans-delay-300">UNIHUB was formed to provide a platform to encourage further use of innovations contributed to the pool by the participating universities.
 </p> 
             <div class="business_system scroll-trans">
@@ -101,8 +102,9 @@ include 'inc/header.php'
                 <img src="/img/report_main.png">
             </div>
             <div class="scroll-trans scroll-trans-delay-300">
-                <span class="uni_span">Licensing Reports</span>
-                <h2>참여대학 수익화현황</h2>
+                <!-- <span class="uni_span">Licensing Reports</span> -->
+                <!-- <h2>참여대학 수익화현황</h2> -->
+                <h2>Licensing Reports</h2>
                 <p>Universities participating in the UNIHUB<br> receive quarterly licensing reports.</p>
                 <button class="uni_btn" onclick="window.location.href='/bbs/board.php?bo_table=my_investment'">Licensing Reports</button>
             </div>
