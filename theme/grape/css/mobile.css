@@ -1401,6 +1401,7 @@ h2 span.underline:after {
     display: flex;
 }
 #university article h2 {
+    margin-bottom: 20px;
 }
 #university article .txt {
     width: 330px;
