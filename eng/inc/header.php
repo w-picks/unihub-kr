@@ -51,7 +51,7 @@
         <!-- <li><a href="http://localhost:3030/bbs/logout.php">로그아웃</a> </li> -->
         <!-- <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li> -->
     </ul>
-    <button class="contact_us" style="margin-left:16px;"  onclick="window.location.href='/bbs/qawrite.php'">Contact</button>
+    <button class="contact_us" style="margin-left:16px;"  onclick="contactUs()">Contact</button> <!-- qawrite -->
     <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
     <a href="/eng" style="height:10px; line-height:10px;">en</a>
 </div>
@@ -69,10 +69,11 @@ $(document).mouseup(function (e){
     container.hide();
 });
 
-// const contactUs = () => {
-//     window.location.href='/bbs/qawrite.php'
-//     localStorage.setItem("lang", "en")
-// }
+const contactUs = () => {
+    // window.location.href='/bbs/qawrite.php'
+    window.location.href='/bbs/faq.php?la=en'
+    localStorage.setItem("lang", "en")
+}
 </script>
 
         </div>
