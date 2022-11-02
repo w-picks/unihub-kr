@@ -11,7 +11,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <h2 class=""><span>R&D를 선도하는</span><br>
                 국내대학의 해외 특허 활용,<br>
                 UNIHUB가 함께합니다.</h2>
-            <button class="uni_btn" onclick="contactUs()">UNIHUB 참여하기</button>
+            <button class="uni_btn" onclick="window.location.href='<?php echo G5_BBS_URL ?>/qawrite.php'">UNIHUB 참여하기</button>
         </article>
     </section>
     <section id="business">
@@ -69,7 +69,27 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
         <p class="scroll-trans">N개의 국내 대학들이 2022년부터<br>UNIHUB의 해외특허 활용 비즈니스에 참여하고 있습니다.</p>
         <div class="partner_wrap">
         <ul>
-            <li class="scroll-trans scroll-trans-delay-500">
+        <li class="scroll-trans scroll-trans-delay-500">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty_mo.png" class="mo_img">
+                <p>대학 A</p>
+            </li>
+        <li class="scroll-trans scroll-trans-delay-400">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty_mo.png" class="mo_img">
+                <p>대학 B</p>
+            </li>
+        <li class="scroll-trans scroll-trans-delay-700">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty_mo.png" class="mo_img">
+                <p>대학 C</p>
+            </li>
+        <li class="scroll-trans scroll-trans-delay-600">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partnel_empty_mo.png" class="mo_img">
+                <p>대학 D</p>
+            </li>
+            <!-- <li class="scroll-trans scroll-trans-delay-500">
                 <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee_full.png" class="pc_img">
                 <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee.png" class="mo_img">
                 <p>경희대학교</p>
@@ -78,28 +98,28 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
                 <img src="<?php echo G5_IMG_URL ?>/partner_deagu_full.png" class="pc_img">
                 <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png" class="mo_img">
                 <p>대구경북과학기술원</p>
-            </li>
+            </li> -->
             <!-- <li class="scroll-trans">
                 <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
                 <p>성균관대학교</p>
             </li> -->
-            <li class="scroll-trans scroll-trans-delay-400">
+            <!-- <li class="scroll-trans scroll-trans-delay-400">
                 <img src="<?php echo G5_IMG_URL ?>/partner_ajou_full.png" class="pc_img">
                 <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png" class="mo_img">
                 <p>아주대학교</p>
-            </li>
+            </li> -->
             <!-- <li class="scroll-trans scroll-trans-delay-700">
                 <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
                 <p>포항공과대학교</p>
             </li> -->
-            <li class="scroll-trans scroll-trans-delay-300">
+            <!-- <li class="scroll-trans scroll-trans-delay-300">
                 <img src="<?php echo G5_IMG_URL ?>/partner_hanyang_full.png" class="pc_img">
                 <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png" class="mo_img">
                 <p>한양대학교</p>
-            </li>
+            </li> -->
         </ul>
         </div>
-        <button class="uni_btn color1 scroll-trans" onclick="contactUs()">참여하기</button>
+        <button class="uni_btn color1 scroll-trans" onclick="window.location.href='<?php echo G5_BBS_URL ?>/qawrite.php'">참여하기</button>
         <article>
     </section>
     

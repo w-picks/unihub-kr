@@ -18,12 +18,12 @@ set_session('ss_qa_write_token', $token);
 
 $g5['title'] = $qaconfig['qa_title'];
 
-$lang = "<script>document.write(localStorage.getItem('lang'));</script>";
-if($lang == 'kr') {
-    echo 'aaa';
-} else {
-    echo 'bbb';
-}
+// $lang = "<script>document.write(localStorage.getItem('lang'));</script>";
+// if($lang == 'kr') {
+//     echo 'aaa';
+// } else {
+//     echo 'bbb';
+// }
 include_once('./qahead.php');
 
 $skin_file = $qa_skin_path.'/write.skin.php';
