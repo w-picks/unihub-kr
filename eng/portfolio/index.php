@@ -10,7 +10,7 @@
         <div class="txt">
         <h2 class="detail_h2 scroll-trans"><span class="underline">Members of</span><br>UNIHUB</h2>
         <!-- <p class="scroll-trans">국내 대학 중 <b>미국특허 보유 건수 10위권 내외<br> 대학들</b>과 함께하고 있습니다.  </p> -->
-        <p class="scroll-trans">N of country’s leading research universities<br>are participating UNIHUB’s licensing program.</p>
+        <!-- <p class="scroll-trans">N of country’s leading research universities<br>are participating UNIHUB’s licensing program.</p> -->
         <button class="uni_btn color1 scroll-trans" onclick="window.location.href='/bbs/qawrite.php'">Join Us</button>
         </div>
         <div class="swiper_container scroll-trans">
