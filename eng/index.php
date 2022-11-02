@@ -65,33 +65,56 @@ include 'inc/header.php'
         <article>
         <span class="uni_span scroll-trans">UNIHUB PARTNERS</span>
         <h2 class="scroll-trans">UNIHUB <span class="underline">PARTNERS</span></h2>
-        <p class="scroll-trans">Six of country’s leading research <br>universities are participating UNIHUB’s licensing program. 
-</p>
+        <p class="scroll-trans">Six of country’s leading research <br>universities are participating UNIHUB’s licensing program.</p>
         <ul>
             <li class="scroll-trans scroll-trans-delay-500">
-                <img src="/img/partner_kyunghee.png">
+                <img src="/img/partnel_empty.png" class="pc_img">
+                <img src="/img/partnel_empty_mo.png" class="mo_img">
+                <p>University A</p>
+            </li>
+            <li class="scroll-trans scroll-trans-delay-400">
+                <img src="/img/partnel_empty.png" class="pc_img">
+                <img src="/img/partnel_empty_mo.png" class="mo_img">
+                <p>University B</p>
+            </li>
+            <li class="scroll-trans scroll-trans-delay-700">
+                <img src="/img/partnel_empty.png" class="pc_img">
+                <img src="/img/partnel_empty_mo.png" class="mo_img">
+                <p>University C</p>
+            </li>
+            <li class="scroll-trans scroll-trans-delay-600">
+                <img src="/img/partnel_empty.png" class="pc_img">
+                <img src="/img/partnel_empty_mo.png" class="mo_img">
+                <p>University D</p>
+            </li>
+            <!-- <li class="scroll-trans scroll-trans-delay-500">
+                <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee_full.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee.png" class="mo_img">
                 <p>경희대학교</p>
             </li>
             <li class="scroll-trans scroll-trans-delay-600">
-                <img src="/img/partner_deagu.png">
+                <img src="<?php echo G5_IMG_URL ?>/partner_deagu_full.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png" class="mo_img">
                 <p>대구경북과학기술원</p>
-            </li>
+            </li> -->
             <!-- <li class="scroll-trans">
-                <img src="/img/partner_sungkyun.png">
+                <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
                 <p>성균관대학교</p>
             </li> -->
-            <li class="scroll-trans scroll-trans-delay-400">
-                <img src="/img/partner_ajou.png">
+            <!-- <li class="scroll-trans scroll-trans-delay-400">
+                <img src="<?php echo G5_IMG_URL ?>/partner_ajou_full.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png" class="mo_img">
                 <p>아주대학교</p>
-            </li>
+            </li> -->
             <!-- <li class="scroll-trans scroll-trans-delay-700">
-                <img src="/img/partner_pohang.png">
+                <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
                 <p>포항공과대학교</p>
             </li> -->
-            <li class="scroll-trans scroll-trans-delay-300">
-                <img src="/img/partner_hanyang.png">
+            <!-- <li class="scroll-trans scroll-trans-delay-300">
+                <img src="<?php echo G5_IMG_URL ?>/partner_hanyang_full.png" class="pc_img">
+                <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png" class="mo_img">
                 <p>한양대학교</p>
-            </li>
+            </li> -->
         </ul>
         <button class="uni_btn color1 scroll-trans" onclick="window.location.href='/bbs/qawrite.php'">Join Us</button>
         <article>

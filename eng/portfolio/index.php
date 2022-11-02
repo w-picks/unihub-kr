@@ -17,28 +17,45 @@
             <div class="swiper university-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                    <img src="/img/partner_kyunghee.png">
+                    <img src="/img/partnel_empty_mo.png">
+                    <p>University A</p>
+                    </div>
+                    <div class="swiper-slide">
+                    <img src="/img/partnel_empty_mo.png">
+                    <p>University B</p>
+                    </div>
+                    <div class="swiper-slide">
+                    <img src="/img/partnel_empty_mo.png">
+                    <p>University C</p>
+                    </div>
+                    <div class="swiper-slide">
+                    <img src="/img/partnel_empty_mo.png">
+                    <p>University D</p>
+                    </div>
+                    
+                    <!-- <div class="swiper-slide">
+                    <img src="<?php echo G5_IMG_URL ?>/partner_kyunghee.png">
                     <p>경희대학교</p>
                     </div>
                     <div class="swiper-slide">
-                    <img src="/img/partner_deagu.png">
+                    <img src="<?php echo G5_IMG_URL ?>/partner_deagu.png">
                     <p>대구경북과학기술원</p>
-                    </div>
+                    </div> -->
                     <!-- <div class="swiper-slide">
-                    <img src="/img/partner_sungkyun.png">
+                    <img src="<?php echo G5_IMG_URL ?>/partner_sungkyun.png">
                     <p>성균관대학교</p>
                     </div> -->
-                    <div class="swiper-slide">
-                    <img src="/img/partner_ajou.png">
-                    <p>아주대학교</p>
-                    </div>
                     <!-- <div class="swiper-slide">
-                    <img src="/img/partner_pohang.png">
+                    <img src="<?php echo G5_IMG_URL ?>/partner_ajou.png">
+                    <p>아주대학교</p>
+                    </div> -->
+                    <!-- <div class="swiper-slide">
+                    <img src="<?php echo G5_IMG_URL ?>/partner_pohang.png">
                     <p>포항공과대학교</p></div> -->
-                    <div class="swiper-slide">
-                        <img src="/img/partner_hanyang.png">
+                    <!-- <div class="swiper-slide">
+                        <img src="<?php echo G5_IMG_URL ?>/partner_hanyang.png">
                         <p>한양대학교</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="swiper-scrollbar"></div>
             </div>
