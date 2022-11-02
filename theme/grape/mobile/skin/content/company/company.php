@@ -125,7 +125,7 @@
     </article>
 </section>
 <section id="contact_us">
-    <div><a href="#">Contact us !</a></div>
+    <div><a href="/bbs/qawrite.php">Contact us !</a></div>
 </section>
 
 <script defer src="<?php echo G5_JS_URL ?>/index_map.js"></script>

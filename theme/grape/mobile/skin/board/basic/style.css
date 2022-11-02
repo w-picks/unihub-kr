@@ -683,7 +683,7 @@ box-shadow: 1px 2px 8px #e2e4f1}
     padding:20px 25px;
 }
 .uni_btn.color1{
-    background-image: none;
+    /* background-image: none; */
 }
 #bo_v_top:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_v_top h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}

@@ -5,7 +5,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
 <section id="detail_main" class="join">
-            <ㄴh1>로그인/회원가입</ㄴh1>
+            <h1>로그인/회원가입</ㄴh1>
         </section>
         <div class="my_invest_tab_wrap">
             <ul class="my_invest_tab detail_tab">

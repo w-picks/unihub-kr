@@ -8,18 +8,18 @@
             <a href="/eng/portfolio">Portfolio</a>
         </li>
         <li>
-            <a href="/">News</a>
+            <a href="/bbs/board.php?bo_table=broadcast_eng">News</a>
         </li>
         <li>
-            <a href="/">문의하기</a>
-            <ul class="in_ft_menu">
+            <a href="/bbs/qawrite.php">Contact</a>
+            <!-- <ul class="in_ft_menu">
                 <li>
                     <a href="/">자주묻는질문</a>
                 </li>
                 <li>
                     <a href="/">1:1 문의</a>
                 </li>
-            </ul>
+            </ul> -->
         </li>
     </ul>
     </div>
@@ -42,3 +42,6 @@
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
 
 </div>
+
+</body>
+</html>

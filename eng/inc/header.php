@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 <link rel="stylesheet" href="/theme/grape/css/mobile.css" />
 <link rel="stylesheet" href="/theme/grape/mobile/skin/outlogin/basic/style.css" />
 <link rel="stylesheet" href="/js/swiper/swiper.min.css" />
@@ -55,6 +64,27 @@
     <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
     <a href="/eng" style="height:10px; line-height:10px;">en</a>
 </div>
+<div id="al_menu">
+        <div class="bg"></div>
+        <div class="menu_wr">
+            <ul id="menu">
+                <li class="menu_li">
+                   <h2 onclick="window.location.href='/eng/about'">About</h2>
+                </li>
+                <li class="menu_li">
+                   <h2 onclick="window.location.href='/eng/portfolio'">Portfolio</h2>
+                </li>
+                <li class="menu_li">
+                   <h2 onclick="window.location.href='/bbs/board.php?bo_table=broadcast_eng'">News</h2>
+                </li>
+                <li class="menu_li">
+                   <h2 onclick="window.location.href='/bbs/qawrite.php'">Contact</h2>
+                </li>
+            
+            </ul>
+            <button type="button" class="btn_close"><span class="sound_only">닫기</span></button>
+            
+  
 
 <script>
 
@@ -172,6 +202,29 @@ const contactUs = () => {
 
 
         });
+        $("#al_menu .btn_close").click(function(){
+            $("#al_menu").hide();
+            $(".hd_menu_btn").show();
+        });
+        $(".hd_menu_btn").click(function(){
+            $("#al_menu").show();
+            $(this).hide();
+        });
+
+        if(window.innerWidth > 969){
+            $(".hd_menu_btn").hide();
+        }else{
+            $(".hd_menu_btn").show();
+        }
+
+        $(window).on("resize", () => {
+            if(window.innerWidth > 969){
+                $(".hd_menu_btn").hide();
+            }else{
+                $(".hd_menu_btn").show();
+            }
+        })
+        
 
         $("header").on("mouseenter", function(){
             if(window.innerWidth > 969){
@@ -186,10 +239,24 @@ const contactUs = () => {
         })
         $(window).on("scroll",function(){
             let scr = $(this).scrollTop();
-            if(scr > 10){
+            if(window.innerWidth > 1100){
+                if(scr > 10){
+                    $("header").addClass("on");
+                }else{
+                    $("header").removeClass("on");
+                }
+            }
+        })
+
+        if(window.innerWidth <= 1100){
+            $("header").addClass("on");
+        }
+        $(window).on("resize",()=>{
+            if(window.innerWidth <= 1100){
                 $("header").addClass("on");
             }else{
                 $("header").removeClass("on");
+                
             }
         })
         </script>

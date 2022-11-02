@@ -171,6 +171,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <div id="al_menu">
         <div class="bg"></div>
         <div class="menu_wr">
+            <ul class="lang">
+                <li>
+                    <a href="/">kr</a>
+                </li>
+                <li>
+                    <a href="/eng">en</a>
+                </li>
+            </ul>
             <ul id="menu">
             <?php
             $menu_datas = get_menu_db(1, true);
@@ -244,6 +252,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 </div>
         </div>
         <script>
+
+            $(document).ready(function(){
         $(".menu_li h2").click(function(){
             $(this).siblings(".sub_menu").slideToggle(300);
             $(this).siblings(".btn_menu_op").toggleClass("on")
@@ -263,12 +273,21 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             $(".hd_menu_btn").show();
 
         }
-        
+        if(window.innerWidth <= 1100){
+            $("header").addClass("on");
+        }
+
         $(window).on("resize", () => {
-            if(window.innerWidth > 969){
-                $(".hd_menu_btn").hide();
+            // if(window.innerWidth > 969){
+            //     $(".hd_menu_btn").hide();
+            // }else{
+            //     $(".hd_menu_btn").show();
+            // }
+            if(window.innerWidth <= 1100){
+                $("header").addClass("on");
             }else{
-                $(".hd_menu_btn").show();
+                $("header").removeClass("on");
+                
             }
         })
 
@@ -284,7 +303,13 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 $(this).removeClass("on");
             }
         })
+        function setScreenSize() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setScreenSize()
         $(window).on("scroll",function(){
+            setScreenSize()
             let scr = $(this).scrollTop();
             if(window.innerWidth > 1100){
                 if(scr > 10){
@@ -295,17 +320,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             }
         })
 
-        if(window.innerWidth <= 1100){
-            $("header").addClass("on");
-        }
-        $(window).on("resize",()=>{
-            if(window.innerWidth <= 1100){
-                $("header").addClass("on");
-            }else{
-                $("header").removeClass("on");
-                
-            }
-        })
+        
+    })
         </script>
     </div>
 </header>

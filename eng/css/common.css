@@ -1,15 +1,25 @@
-#main_vid article {
-  transform: translate(-50%, -40%);
-}
 #hd.on .gnb_1da {
-  font-weight: 600;
+    font-weight: 600;
 }
 #mission3 ul li:nth-child(3) img {
-  margin-top: 43px;
+    margin-top: 43px;
 }
 .swiper-wrapper {
-  height: auto;
+    height: auto;
 }
 #map_container .map_content > div:last-of-type {
-  padding-left: 45px;
+    padding-left: 45px;
+}
+
+@media (max-width: 880px) {
+    #main_vid article {
+        width: calc(100% - 46px);
+    }
+}
+
+@media (max-width: 768px) {
+    #intro_info {
+        padding: 54px 20px;
+        box-sizing: border-box;
+    }
 }
