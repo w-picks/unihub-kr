@@ -251,6 +251,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     `)
 
     $("head link").eq(0).after('<link rel="stylesheet" href="/eng/css/common.css">');
+
+    $("#logo a").attr("href", "/eng")
 }
 
     </script>
