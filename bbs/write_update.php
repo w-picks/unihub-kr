@@ -700,14 +700,28 @@ if (!($w == 'u' || $w == 'cu') && $config['cf_email_use'] && $board['bo_use_emai
     $warr = array( ''=>'입력', 'u'=>'수정', 'r'=>'답변', 'c'=>'코멘트', 'cu'=>'코멘트 수정' );
     $str = $warr[$w];
 
-    $subject = '['.$config['cf_title'].'] '.$board['bo_subject'].' 게시판에 '.$str.'글이 올라왔습니다.';
+    /**
+     * unihub 나의투자 email 폼 수정
+     */
+    if($board['bo_table'] == 'my_investment'){
+        $subject = '[UNIHUB] 수익회현황 리포트';
+    } else {
+        $subject = '['.$config['cf_title'].'] '.$board['bo_subject'].' 게시판에 '.$str.'글이 올라왔습니다.';
+    }
 
     $link_url = get_pretty_url($bo_table, $wr_id, $qstr);
 
     include_once(G5_LIB_PATH.'/mailer.lib.php');
 
     ob_start();
-    include_once ('./write_update_mail.php');
+    /**
+     * unihub 나의투자 email 폼 분기처리
+     */
+    if ($board['bo_table'] == 'my_investment'){
+        include_once ('./write_update_mail2.php');
+    } else {
+        include_once ('./write_update_mail.php');
+    }
     $content = ob_get_contents();
     ob_end_clean();
 
@@ -724,6 +738,14 @@ if (!($w == 'u' || $w == 'cu') && $config['cf_email_use'] && $board['bo_use_emai
         if($w == '')
             $wr['wr_email'] = $wr_email;
 
+        $array_email[] = $wr['wr_email'];
+    }
+
+    /**
+     * unihub 나의투자 email 대상자에게 보내기 
+     */
+    if ($board['bo_table'] == 'my_investment'){
+        $wr['wr_email'] = get_email_address(trim($wr_2));
         $array_email[] = $wr['wr_email'];
     }
 

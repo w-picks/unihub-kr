@@ -190,6 +190,14 @@ if (G5_IS_MOBILE) {
                 <?php }?>
             </select>
             <input type="hidden" name="wr_2" value="" id="email_input_val">
+            <input type="hidden" name="wr_3" value="" id="company_input_val" itemname="대상회사명">
+            <input type="number" name="wr_4" value="<?php echo $wr_4 ?>" id="" placeholder="년도" itemname="공시년도">
+            <select name='wr_5' id="" required itemname="분기">
+                <option value='1분기' <?php if($wr_5 == "1분기") echo " selected"; ?> >1분기</option>    
+                <option value='2분기' <?php if($wr_5 == "2분기") echo " selected"; ?> >2분기</option>    
+                <option value='3분기' <?php if($wr_5 == "3분기") echo " selected"; ?> >3분기</option>    
+                <option value='4분기' <?php if($wr_5 == "4분기") echo " selected"; ?> >4분기</option>    
+            </select>
         <?php } ?>
 
         <div class="write_div">
