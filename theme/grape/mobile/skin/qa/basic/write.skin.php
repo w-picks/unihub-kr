@@ -9,8 +9,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <h1>문의하기</h1>
 </section>
 <ul class="faq_tab detail_tab">
-    <li class=""><a href="<?php echo G5_BBS_URL ?>/faq.php">자주 묻는 질문</a></li>
-    <li class="on">1:1 문의</li>
+    <li class=""><a href="<?php echo G5_BBS_URL ?>/faq.php?la=kr">자주 묻는 질문</a></li>
+    <li class="on"><a href="<?php echo G5_BBS_URL ?>/bbs/qawrite.php?la=kr">1:1 문의</a></li>
 </ul>
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
@@ -206,14 +206,22 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     if(localStorage.getItem("lang") == "en"){
     $("#detail_main.faq h1").html("Contact")
     $(".faq_tab li").eq(0).find("a").html("FAQs")
+    $(".faq_tab li").eq(0).find("a").attr('href', '<?php echo G5_BBS_URL ?>/faq.php?la=en')
     $(".faq_tab li").eq(1).html("Q&A")
+    $(".faq_tab li").eq(1).find("a").attr('href', '<?php echo G5_BBS_URL ?>/qawrite.php?la=en')
     $(".direct_inquiry #fwrite h1").html("If you leave any questions/comments,<br>I will reply to you via email as soon as possible")
     $(".name_li label").html("Name")
+    $(".name_li input").attr('placeholder','First and last name')
     $(".email_li label").html("Email")
+    $(".email_li input").attr('placeholder','')
     $(".hp_li label").html("Phone")
+    $(".hp_li input").attr('placeholder','')
     $(".subject_li label").html("Title")
+    $(".subject_li input").attr('placeholder','Up to 30 characters.')
     $(".qa_content_li label").html("Content")
+    $(".qa_content_li textarea").attr('placeholder','At least 10 characters.')
     $(".bo_w_flie label").html("Attachment")
+    $(".bo_w_flie input").attr('placeholder','Up to 10MB')
     $(".all_chk_option label").html("Agree to collect and use personal information")
     $(".all_chk_option div").html("<span>Purpose inquiry</span> : Provide answers <span>Item</span> : Name, email, and mobile phone number <span>Holding period</span> : 30 days after submission")
     $("#btn_submit").html("Submit")
