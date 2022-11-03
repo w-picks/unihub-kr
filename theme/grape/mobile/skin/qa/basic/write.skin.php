@@ -225,7 +225,32 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     $(".all_chk_option label").html("Agree to collect and use personal information")
     $(".all_chk_option div").html("<span>Purpose inquiry</span> : Provide answers <span>Item</span> : Name, email, and mobile phone number <span>Holding period</span> : 30 days after submission")
     $("#btn_submit").html("Submit")
-    
+    console.log("eee");
+    // $(".gnb_1dli").eq(0).html('<a href="/eng/about" target="_self" class="gnb_1da">About</a>')
+    $("#gnb").html(`
+                <ul id="gnb_1dul">
+                                    <li class="gnb_1dli">
+                        <a href="/eng/about" target="_self" class="gnb_1da">About</a>
+                                            </li>
+                                    <li class="gnb_1dli">
+                        <a href="/eng/portfolio" target="_self" class="gnb_1da">Portfolio</a>
+                                            </li>
+                                    <li class="gnb_1dli">
+                        <a href="/bbs/board.php?bo_table=broadcast_eng" target="_self" class="gnb_1da">News</a>
+                        
+                    </li>
+                                </ul>
+
+    `)
+
+    $("#hd_btn .ol").html(`
+    <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='/bbs/faq.php?la=en'">Contact</button> 
+    <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
+    <a href="/eng" style="height:10px; line-height:10px;">en</a>
+
+    `)
+
+    $("head link").eq(0).after('<link rel="stylesheet" href="/eng/css/common.css">');
 }
 
     </script>

@@ -680,7 +680,7 @@ box-shadow: 1px 2px 8px #e2e4f1}
     width:max-content;
     margin-top:90px;
     margin-bottom: 60px;
-    padding:20px 25px;
+    /* padding:20px 25px; */
 }
 .uni_btn.color1{
     /* background-image: none; */
