@@ -133,6 +133,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     </div>
     </form>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script>
     function html_auto_br(obj)
     {
@@ -254,6 +256,35 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 
     $("#logo a").attr("href", "/eng")
 }
+
+    emailjs.init("5hAqYbMBZtuuSyDlf");
+    const onDirect = () => {
+        if($("#all_chk").is(":checked")){
+        let userData = {
+            name : $("#qa_1").val(),
+            email:$("#qa_email").val(),
+            phone :$("#qa_hp").val(),
+            title:$("#qa_subject").val(),
+            message:$("textarea").val(),
+            file:"",
+            option:"동의",
+        }
+        console.log(userData)
+        emailjs.send("service_hqt4mtf", "template_eva9ig4", userData).then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        );
+        }else{
+            if(localStorage.getItem("lang") != "en"){
+                alert("개인정보 수집 이용에 동의해 주세요.");
+            }
+        }
+    }
+
 
     </script>
 </section>
