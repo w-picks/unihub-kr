@@ -13,7 +13,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <li class="on"><a href="<?php echo G5_BBS_URL ?>/bbs/qawrite.php?la=kr">1:1 문의</a></li>
 </ul>
     <!-- 게시물 작성/수정 시작 { -->
-    <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+    <form name="fwrite" id="fwrite" action="javascript://" onsubmit="onDirect()" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="qa_id" value="<?php echo $qa_id ?>">
     <input type="hidden" name="sca" value="<?php echo $sca ?>">
@@ -94,18 +94,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
                 <textarea placeholder="내용을 입력하세요. (최소 10자 이상)" required class="required"></textarea>
             </li>
 
-            <li class="bo_w_flie">
+            <!-- <li class="bo_w_flie">
                 <label>파일 첨부하기</label>
                 <div class="file_wr">
-                    <input type="text"  readonly placeholder="최대 10MB"/>
+                    <input type="text"  readonly placeholder="최대 10MB"/> -->
                     <!-- <span class="lb_icon"><i class="fa fa-download" aria-hidden="true"></i><span class="sound_only">파일 #1</span></span> -->
-                    <label for="file_upload" class="file_btn">파일 업로드</label>
+                    <!-- <label for="file_upload" class="file_btn">파일 업로드</label>
                     <input type="file" name="bf_file[1]" title="파일첨부 1 :  용량 <?php echo $upload_max_filesize; ?> 이하만 업로드 가능" class="frm_file" id="file_upload">
-                    <?php if($w == 'u' && $write['qa_file1']) { ?>
+                    <?php if($w == 'u' && $write['qa_file1']) { ?> -->
                     <!-- <input type="checkbox" id="bf_file_del1" name="bf_file_del[1]" value="1"> <label for="bf_file_del1"><?php echo $write['qa_source1']; ?> 파일 삭제</label> -->
-                    <?php } ?>
+                    <!-- <?php } ?>
                 </div>
-            </li>
+            </li> -->
 
             <!-- <li class="bo_w_flie">
                 <div class="file_wr">
@@ -215,9 +215,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     $(".name_li label").html("Name")
     $(".name_li input").attr('placeholder','First and last name')
     $(".email_li label").html("Email")
-    $(".email_li input").attr('placeholder','')
+    $(".email_li input").attr('placeholder','Email')
     $(".hp_li label").html("Phone")
-    $(".hp_li input").attr('placeholder','')
+    $(".hp_li input").attr('placeholder','Phone')
     $(".subject_li label").html("Title")
     $(".subject_li input").attr('placeholder','Up to 30 characters.')
     $(".qa_content_li label").html("Content")
@@ -281,6 +281,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
         }else{
             if(localStorage.getItem("lang") != "en"){
                 alert("개인정보 수집 이용에 동의해 주세요.");
+            }else{
+                alert("Please agree to the use of personal information collection");
             }
         }
     }
