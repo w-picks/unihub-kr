@@ -11,7 +11,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             <h2 class=""><span>R&D를 선도하는</span><br>
                 국내대학의 해외 특허 활용,<br>
                 UNIHUB가 함께합니다.</h2>
-            <button class="uni_btn" onclick="contactUs()">UNIHUB 참여하기</button>
+            <button class="uni_btn" onclick="contactUsMain()">UNIHUB 참여하기</button>
         </article>
     </section>
     <section id="business">
@@ -119,7 +119,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
             </li> -->
         </ul>
         </div>
-        <button class="uni_btn color1 scroll-trans" onclick="contactUs()">참여하기</button>
+        <button class="uni_btn color1 scroll-trans" onclick="contactUsMain()">참여하기</button>
         <article>
     </section>
     
@@ -220,7 +220,7 @@ echo latest('theme/review', 'broadcast', 3, 30);
         })
     })
                 
-    const contactUs = () => {
+    const contactUsMain = () => {
         // window.location.href='/bbs/qawrite.php'
         window.location.href='/bbs/faq.php?la=kr'
         localStorage.setItem("lang", "kr")
