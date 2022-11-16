@@ -221,8 +221,8 @@ echo latest('theme/review', 'broadcast', 3, 30);
     })
                 
     const contactUsMain = () => {
-        // window.location.href='/bbs/qawrite.php'
-        window.location.href='/bbs/faq.php?la=kr'
+        window.location.href='/bbs/qawrite.php?la=kr'
+        // window.location.href='/bbs/faq.php?la=kr'
         localStorage.setItem("lang", "kr")
     }
 </script>
