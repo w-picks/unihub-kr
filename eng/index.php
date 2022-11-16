@@ -58,7 +58,7 @@ include 'inc/header.php';
         <article>
         <span class="uni_span scroll-trans">UNIHUB PARTNERS</span>
         <h2 class="scroll-trans">UNIHUB <span class="underline">PARTNERS</span></h2>
-        <p class="scroll-trans">Six of country’s leading research <br>universities are participating UNIHUB’s licensing program.</p>
+        <p class="scroll-trans">N country’s leading research universities<br>are participating UNIHUB’s licensing program.</p>
         <ul>
             <li class="scroll-trans scroll-trans-delay-500">
                 <img src="/img/partnel_empty.png" class="pc_img">
