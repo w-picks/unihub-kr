@@ -47,6 +47,12 @@ if (G5_IS_MOBILE) {
     echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">'.PHP_EOL;
 }
 echo '<meta name="naver-site-verification" content="5a292ad6126dafbbb93b521d7ee52f3317e5a460" />';
+echo '<meta name="title" content="유니허브 -대학 특허 활용의 모든것, 유니허브" />';
+echo '<meta name="publisher" content="유니허브" />';
+echo '<meta name="author" content="유니허브" />';
+echo '<meta name="keyword" content="유니허브,unihub,대학기술,대학특허,대학특허활용,대학특허수익화,기술이전,기술사업화, 대학기술관리" />';
+echo '<meta name="description" content="국내대학의 해외 특허 활용, UNIHUB가 함께합니다.">';
+echo '<meta name="robots" content="index, follow" />';
 
 if($config['cf_add_meta'])
 echo $config['cf_add_meta'].PHP_EOL;
