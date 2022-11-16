@@ -61,7 +61,7 @@ echo $config['cf_add_meta'].PHP_EOL;
 <meta property="og:title" content="UNIHUB">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/img/favi/unihub_thumnail.png">
-<meta property="og:description" content="unihub">
+<meta property="og:description" content="대학 특허 활용의 모든것, 유니허브">
 ' ?>
 <title><?php echo $g5_head_title; ?></title>
 <link rel="stylesheet" href="<?php echo run_replace('head_css_url', G5_THEME_CSS_URL.'/'.(G5_IS_MOBILE ? 'mobile' : 'default').'.css?ver='.G5_CSS_VER, G5_THEME_URL); ?>">
