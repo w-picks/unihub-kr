@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="naver-site-verification" content="5a292ad6126dafbbb93b521d7ee52f3317e5a460" />
+  <meta name="naver-site-verification" content="651172d235c799699f0dc829ebc5e7cd2cb161d8" />
   <meta name="title" content="유니허브 -대학 특허 활용의 모든것, 유니허브" />
   <meta name="publisher" content="유니허브" />
   <meta name="author" content="유니허브" />
