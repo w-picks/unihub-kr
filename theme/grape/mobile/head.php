@@ -278,13 +278,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         }
         
         const windowUrl = window.location.href;
+        //write.php?bo_table=notice
         $(window).on("resize", () => {
             // if(window.innerWidth > 969){
             //     $(".hd_menu_btn").hide();
             // }else{
             //     $(".hd_menu_btn").show();
             // }
-            if(windowUrl.indexOf("register_result") < 0){
+            if(windowUrl.indexOf("register_result") < 0 && windowUrl.indexOf("write.php?bo_table=notice") < 0){
                 if(window.innerWidth <= 1100){
                     $("header").addClass("on");
                 }else{
@@ -297,7 +298,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
         
         $("header").on("mouseenter", function(){
-            if(windowUrl.indexOf("register_result") < 0){
+            if(windowUrl.indexOf("register_result") < 0 && windowUrl.indexOf("write.php?bo_table=notice") < 0){
 
                 if(window.innerWidth > 1100){
                     $(this).addClass("on");
@@ -305,10 +306,10 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             }
         })
         $("header").on("mouseleave",function(){
-            if(windowUrl.indexOf("register_result") < 0){
+            if(windowUrl.indexOf("register_result") < 0 && windowUrl.indexOf("write.php?bo_table=notice") < 0){
 
                 let scr = $(window).scrollTop();
-                if(window.innerWidth > 1100 && scr <= 10  && windowUrl.indexOf("register_result") < 0){
+                if(window.innerWidth > 1100 && scr <= 10){
                     $(this).removeClass("on");
                 }
             }
@@ -320,7 +321,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 setScreenSize()
         $(window).on("scroll",function(){
             setScreenSize()
-            if(windowUrl.indexOf("register_result") < 0){
+            if(windowUrl.indexOf("register_result") < 0 && windowUrl.indexOf("write.php?bo_table=notice") < 0){
 
                 let scr = $(this).scrollTop();
                 if(window.innerWidth > 1100  && windowUrl.indexOf("register_result") < 0){
