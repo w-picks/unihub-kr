@@ -192,8 +192,8 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
             <?php } ?>
 
 
-    <div class="form_01" style="display:none">  
-        <h2>기타 개인설정</h2>
+    <div class="form_01" style="">  
+        <h2 style="display:none;">기타 개인설정</h2>
         <ul>
             <?php if ($config['cf_use_signature']) { ?>
             <li>
@@ -238,7 +238,7 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
             </li>
             <?php } ?>
 
-            <li class="chk_box">
+            <li class="chk_box"  style="display:none;">
                 <input type="checkbox" name="mb_mailling" value="1" id="reg_mb_mailling" <?php echo ($w=='' || $member['mb_mailling'])?'checked':''; ?> class="selec_chk">
                 <label for="reg_mb_mailling">
                     <b class="sound_only">메일링서비스</b>
@@ -257,7 +257,7 @@ if ($config['cf_cert_use'] && ($config['cf_cert_simple'] || $config['cf_cert_ipi
             <?php } ?>
 
             <?php if (isset($member['mb_open_date']) && $member['mb_open_date'] <= date("Y-m-d", G5_SERVER_TIME - ($config['cf_open_modify'] * 86400)) || empty($member['mb_open_date'])) { // 정보공개 수정일이 지났다면 수정가능 ?>
-            <li class="chk_box">
+            <li class="chk_box"  style="display:none;">
                 <input type="checkbox" name="mb_open" value="1" id="reg_mb_open" <?php echo ($w=='' || $member['mb_open'])?'checked':''; ?> class="selec_chk">
                 <label for="reg_mb_open">
                     <b class="sound_only">정보공개</b>

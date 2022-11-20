@@ -247,14 +247,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 
     $("#hd_btn .ol").html(`
     <button class="contact_us" style="margin-left:16px;" onclick="window.location.href='/bbs/faq.php?la=en'">Contact</button> 
-    <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
+    <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px; margin-left:10px;" onClick="localStorage.setItem('lang','kr')">kr</a>
     <a href="/eng" style="height:10px; line-height:10px;">en</a>
 
     `)
 
     $("head link").eq(0).after('<link rel="stylesheet" href="/eng/css/common.css">');
 
-    $("#logo a").attr("href", "/eng")
+    $("#logo a").attr("href", "/eng");
+
+    
 }
 
     emailjs.init("5hAqYbMBZtuuSyDlf");

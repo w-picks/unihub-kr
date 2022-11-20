@@ -109,7 +109,7 @@ Company's process of purchasing and monetizing technologies, and distributing re
                     </li>
                     <li>
                         <b>Tel</b>
-                        <p>+82-70-7784-4204</p>
+                        <p>+82-70-7784-1643</p>
                     </li>
                     <li>
                         <b>Fax</b>

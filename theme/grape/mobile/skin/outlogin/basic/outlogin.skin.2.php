@@ -27,7 +27,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
         <li><?php if ($is_admin == 'super' || $is_auth) { ?><a href="<?php echo G5_ADMIN_URL ?>" class="admin">관리자</a><?php } ?></li>
     </ul>
     <button class="contact_us" style="margin-left:16px;" onclick="contactUs()">문의하기</button>
-    <a href="<?php echo G5_URL ?>" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
+    <a href="<?php echo G5_URL ?>" style="border-right:1px solid #8496ba; height:10px; line-height:10px; margin-left:10px;" onClick="localStorage.setItem('lang','kr')">kr</a>
     <a href="<?php echo G5_URL ?>/eng" style="height:10px; line-height:10px;">en</a>
 </div>
 

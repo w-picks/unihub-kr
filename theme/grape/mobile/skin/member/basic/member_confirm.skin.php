@@ -6,7 +6,7 @@ include_once(G5_THEME_MOBILE_PATH.'/head.php');
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
 <section id="detail_main" class="join">
-            <h1>로그인/회원가입</h1>
+            <h1>정보수정</h1>
         </section>
 <div id="mb_confirm" class="mbskin">
     <h1><?php echo $g5['title'] ?></h1>

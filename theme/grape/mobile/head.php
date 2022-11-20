@@ -276,31 +276,41 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
         if(window.innerWidth <= 1100){
             $("header").addClass("on");
         }
-
+        
+        const windowUrl = window.location.href;
         $(window).on("resize", () => {
             // if(window.innerWidth > 969){
             //     $(".hd_menu_btn").hide();
             // }else{
             //     $(".hd_menu_btn").show();
             // }
-            if(window.innerWidth <= 1100){
-                $("header").addClass("on");
-            }else{
-                $("header").removeClass("on");
-                
+            if(windowUrl.indexOf("register_result") < -1){
+                if(window.innerWidth <= 1100){
+                    $("header").addClass("on");
+                }else{
+                    $("header").removeClass("on");
+                    
+                }
             }
         })
 
+
         
         $("header").on("mouseenter", function(){
-            if(window.innerWidth > 1100){
-                $(this).addClass("on");
+            if(windowUrl.indexOf("register_result") < -1){
+
+                if(window.innerWidth > 1100){
+                    $(this).addClass("on");
+                }
             }
         })
         $("header").on("mouseleave",function(){
-            let scr = $(window).scrollTop();
-            if(window.innerWidth > 1100 && scr <= 10){
-                $(this).removeClass("on");
+            if(windowUrl.indexOf("register_result") < -1){
+
+                let scr = $(window).scrollTop();
+                if(window.innerWidth > 1100 && scr <= 10  && windowUrl.indexOf("register_result") < -1){
+                    $(this).removeClass("on");
+                }
             }
         })
         function setScreenSize() {
@@ -310,12 +320,15 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 setScreenSize()
         $(window).on("scroll",function(){
             setScreenSize()
-            let scr = $(this).scrollTop();
-            if(window.innerWidth > 1100){
-                if(scr > 10){
-                    $("header").addClass("on");
-                }else{
-                    $("header").removeClass("on");
+            if(windowUrl.indexOf("register_result") < -1){
+
+                let scr = $(this).scrollTop();
+                if(window.innerWidth > 1100  && windowUrl.indexOf("register_result") < -1){
+                    if(scr > 10){
+                        $("header").addClass("on");
+                    }else{
+                        $("header").removeClass("on");
+                    }
                 }
             }
         })

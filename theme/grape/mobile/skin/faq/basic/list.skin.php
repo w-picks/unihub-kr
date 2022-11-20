@@ -12,7 +12,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/style.css">', 0);
 echo '<div class="bo_top_img">'.conv_content($fm['fm_mobile_head_html'], 1).'</div>';
 ?>
 
-
 <?php
 if( count($faq_master_list) ){
 ?>
@@ -174,6 +173,7 @@ if(localStorage.getItem("lang") == "en"){
     $(".faq_tab li").eq(1).find("a").html("Q&A")
     $(".empty_table").html("No FAQs registered.<br>To register a new FAQ, use the Manage FAQs menu.")
     $(".frm_input.sch_input").attr("placeholder", "Please enter a search term.")
-    $("#sfl option").eq(0).html("title")
+    $("#sfl option").hide();
+    $("#sfl option").eq(0).show().html("title")
 }
 </script>

@@ -10,6 +10,13 @@
 #map_container .map_content > div:last-of-type {
     padding-left: 45px;
 }
+#main_vid article h2 {
+    font-size: 30px;
+    line-height: 43px;
+}
+#main_vid button {
+    margin-top: 60px;
+}
 
 @media (max-width: 880px) {
     #main_vid article {
@@ -21,5 +28,9 @@
     #intro_info {
         padding: 54px 20px;
         box-sizing: border-box;
+    }
+    #main_vid article h2 {
+        font-size: 20px;
+        line-height: 28px;
     }
 }

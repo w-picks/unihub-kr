@@ -425,7 +425,11 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                     
                 </li>
             <?php }} ?>
-            <?php if (count($list) == 0) { echo '<li class="empty_table">게시물이 없습니다.</li>'; } ?>
+            <?php if($board['bo_table'] == "broadcast_eng") { ?>
+                <?php if (count($list) == 0) { echo '<li class="empty_table">No Posts</li>'; } ?>
+                <?php } else { ?>
+                    <?php if (count($list) == 0) { echo '<li class="empty_table">게시물이 없습니다.</li>'; } ?>
+                <?php } ?>   
         </ul>
     </div>
 
@@ -441,7 +445,6 @@ if($board['bo_table'] == "notice" || $board['bo_table'] == "broadcast") {
                     <?php } else { ?>
                         <li><button type="submit" name="btn_submit" value="선택삭제" onclick="document.pressed=this.value" class="btn_m btn_b01">선택삭제</button></li>
             <?php } ?>
-
             <!-- <li><button type="submit" name="btn_submit" value="선택복사" onclick="document.pressed=this.value" class="btn_m btn_b01">선택복사</button></li> -->
             <!-- <li><button type="submit" name="btn_submit" value="선택이동" onclick="document.pressed=this.value" class="btn_m btn_b01">선택이동</button></li> -->
             <?php } ?>
@@ -646,3 +649,9 @@ function select_copy(sw) {
 </script>
 
 <!-- 게시판 목록 끝 -->
+
+<?php if($board['bo_table'] == "broadcast_eng") { ?>
+<?php include_once(G5_PATH.'/eng/inc/footer.php'); ?>
+<?php } else { ?>
+<?php include_once(G5_BBS_PATH.'/board_tail.php'); ?>
+<?php } ?>

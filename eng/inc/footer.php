@@ -35,7 +35,7 @@
             <!-- <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div> -->
         <ul class="ft_info">
             <li>Location : 10F, 251, Gangnam-daero, Seocho-gu, Seoul, Republic of Korea</li>
-            <li>Tel : +82-70-7784-4204</li>
+            <li>Tel : +82-70-7784-1643</li>
             <li>Email : ideahub@ideahub.co.kr</li>
         </ul>
     </div>

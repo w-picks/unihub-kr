@@ -69,7 +69,7 @@
         <!-- <li><a href="http://localhost:3030/adm" class="admin">관리자</a></li> -->
     </ul>
     <button class="contact_us" style="margin-left:16px;"  onclick="contactUs()">Contact</button> <!-- qawrite -->
-    <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px;">kr</a>
+    <a href="/" style="border-right:1px solid #8496ba; height:10px; line-height:10px; margin-left:10px;" onClick="localStorage.setItem('lang','kr')">kr</a>
     <a href="/eng" style="height:10px; line-height:10px;">en</a>
 </div>
 <div id="al_menu">
