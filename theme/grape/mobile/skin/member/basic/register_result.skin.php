@@ -60,7 +60,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
         </p>
     </div>
 
-     <button href="<?php echo G5_URL ?>/" style="background:none; border:none; color:#004ea2; font-weight:bold; border:2px solid #004ea2; border-radius:2px; padding:8px 12px; margin-top:20px;">메인으로 ></button>
+     <button onclick='window.location.href="<?php echo G5_URL ?>/"' style="background:none; border:none; color:#004ea2; font-weight:bold; border:2px solid #004ea2; border-radius:2px; padding:8px 12px; margin-top:20px;">메인으로 ></button>
 
 </div>
 

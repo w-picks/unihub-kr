@@ -175,5 +175,68 @@ if(localStorage.getItem("lang") == "en"){
     $(".frm_input.sch_input").attr("placeholder", "Please enter a search term.")
     $("#sfl option").hide();
     $("#sfl option").eq(0).show().html("title")
+    $("#faq_con").before(`
+    <style>
+    
+#faq_wrap {
+    margin: 10px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+#faq_wrap h2 {
+    position: absolute;
+    font-size: 0;
+    text-indent: -9999em;
+    line-height: 0;
+    overflow: hidden;
+}
+#faq_wrap ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#faq_wrap li{
+    border: 1px solid #E6EBF5;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    list-style:none;
+}
+#faq_con li a{
+    display: block;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    box-sizing: border-box;
+    padding-right: 40px;
+}
+#faq_con h3{
+    color: #005193;
+    font-size: 18px;
+    position: relative;
+    font-weight: 700;
+}
+#faq_con li a p{
+    display: inline-block;
+    margin-left: 2px;
+    font-weight: 500;
+    color: #040810;
+}
+#faq_con li a.on img{
+    transform: rotate(180deg);
+}
+#faq_con .con_inner{
+    padding: 12px 55px;
+    padding-bottom: 26px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 19.8px;
+    color: #202A3E;
+    font-weight: 300;
+}
+    </style>
+    `)
 }
 </script>

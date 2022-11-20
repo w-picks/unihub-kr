@@ -284,7 +284,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             // }else{
             //     $(".hd_menu_btn").show();
             // }
-            if(windowUrl.indexOf("register_result") < -1){
+            if(windowUrl.indexOf("register_result") < 0){
                 if(window.innerWidth <= 1100){
                     $("header").addClass("on");
                 }else{
@@ -297,7 +297,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
         
         $("header").on("mouseenter", function(){
-            if(windowUrl.indexOf("register_result") < -1){
+            if(windowUrl.indexOf("register_result") < 0){
 
                 if(window.innerWidth > 1100){
                     $(this).addClass("on");
@@ -305,10 +305,10 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             }
         })
         $("header").on("mouseleave",function(){
-            if(windowUrl.indexOf("register_result") < -1){
+            if(windowUrl.indexOf("register_result") < 0){
 
                 let scr = $(window).scrollTop();
-                if(window.innerWidth > 1100 && scr <= 10  && windowUrl.indexOf("register_result") < -1){
+                if(window.innerWidth > 1100 && scr <= 10  && windowUrl.indexOf("register_result") < 0){
                     $(this).removeClass("on");
                 }
             }
@@ -320,10 +320,10 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 setScreenSize()
         $(window).on("scroll",function(){
             setScreenSize()
-            if(windowUrl.indexOf("register_result") < -1){
+            if(windowUrl.indexOf("register_result") < 0){
 
                 let scr = $(this).scrollTop();
-                if(window.innerWidth > 1100  && windowUrl.indexOf("register_result") < -1){
+                if(window.innerWidth > 1100  && windowUrl.indexOf("register_result") < 0){
                     if(scr > 10){
                         $("header").addClass("on");
                     }else{
